@@ -22,7 +22,7 @@
 * [Ubisoft](https://www.ubisoft.com )
 ---
 ### Temática  de el sitio y público objetivo:
-La tematica de el sitio es de una compania de videojuegos que vende sus propios productos con el fin de llegar al publico que busca comprar videojuegos.   
+La temática de el sitio es de una companía de videojuegos que vende sus propios productos con el fin de llegar al publico que busca comprar videojuegos.   
 
 
 ---
