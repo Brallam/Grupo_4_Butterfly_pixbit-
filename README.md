@@ -36,7 +36,7 @@ La tematica de el sitio es de una compania de videojuegos que vende sus propios 
 
 
 ### Home
-![home](./img/productos.png "home")
+![home](./img/home.png "home")
 
 ### Detalles del producto
 ![detalles](./img/detallesProducto.png "Detalles del Producto" )
