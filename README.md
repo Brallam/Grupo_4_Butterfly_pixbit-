@@ -36,22 +36,22 @@ La tematica de el sitio es de una compania de videojuegos que vende sus propios 
 
 
 ### Home
-![home](./img/home.png "home")
+![home](./wireframe/home.png "home")
 
 ### Detalles del producto
-![detalles](./img/detallesProducto.png "Detalles del Producto" )
+![detalles](./wireframe/detallesProducto.png "Detalles del Producto" )
 
 ### Formulario de registro
-![formularioRegis](./img/formularioUsu.png "Formulario de registro" )
+![formularioRegis](./wireframe/formularioUsu.png "Formulario de registro" )
 
 ### Formulario de carga de producto
-![ModificaUsuario](./img/modificaAdmin.png " Formulario de carga de producto")
+![ModificaUsuario](./wireframe/modificaAdmin.png " Formulario de carga de producto")
 
 ### Carrito
-![Carrito](./img/carrito.png)
+![Carrito](./wireframe/carrito.png)
 
 ### Footer global
-![footer](./img/footer.png "Footer")
+![footer](./wireframe/footer.png "Footer")
 
 
 
