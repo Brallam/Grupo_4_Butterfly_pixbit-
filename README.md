@@ -28,7 +28,7 @@ La temática de el sitio es de una companía de videojuegos que vende sus propio
 ---
 ### Servicios ofrecidos:
 
- **Butterfly** **pixbit** es un sitio web que ofrece sevicios de distribucion de videojuegos.
+ **Butterfly** **PixBit** es un sitio web que ofrece sevicios de distribucion de videojuegos.
 
 ---
 
