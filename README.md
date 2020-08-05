@@ -32,7 +32,8 @@ La temática de el sitio es de una companía de videojuegos que vende sus propio
 
 ---
 
-
+### [Nuestra Primer Retrospectiva](./retro.md)
+---
 
 
 ### Home
@@ -52,6 +53,7 @@ La temática de el sitio es de una companía de videojuegos que vende sus propio
 
 ### Footer global
 ![footer](./wireframe/footer.png "Footer")
+
 
 
 
