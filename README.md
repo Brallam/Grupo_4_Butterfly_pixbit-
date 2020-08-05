@@ -19,7 +19,7 @@
 
 * [Blizzard](https://www.blizzard.com) : Tomamos lo que vendria a ser la pagina de registro
 
-* [Ubisoft](https://www.ubisoft.com ): De esta pagina nos gusto el home 
+* [Ubisoft](https://www.ubisoft.com ) : De esta pagina nos gusto el home 
 ---
 ### Temática  de el sitio y público objetivo:
 La temática de el sitio es de una companía de videojuegos que vende sus propios productos con el fin de llegar al publico que busca comprar videojuegos.   
