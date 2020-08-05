@@ -10,16 +10,16 @@
 --- 
 ### Sitios de referencia:
 
-* [G2A](https://www.g2a.com/)
-
-* [GOG](https://www.gog.com/ )
+* [G2A](https://www.g2a.com/) : Metodologia de presentacion de productos
+  
+* [GOG](https://www.gog.com/ ) : Metodologia del footer
  
-* [Steam](https://store.steampowered.com/)
+* [Steam](https://store.steampowered.com/) : Nos gusto el carrito de compras y la pagina de detalle del producto 
 
 
-* [Blizzard](https://www.blizzard.com)
+* [Blizzard](https://www.blizzard.com) : Tomamos lo que vendria a ser la pagina de registro
 
-* [Ubisoft](https://www.ubisoft.com )
+* [Ubisoft](https://www.ubisoft.com ): De esta pagina nos gusto el home 
 ---
 ### Temática  de el sitio y público objetivo:
 La temática de el sitio es de una companía de videojuegos que vende sus propios productos con el fin de llegar al publico que busca comprar videojuegos.   
