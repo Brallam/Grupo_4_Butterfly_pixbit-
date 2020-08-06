@@ -19,7 +19,8 @@ HEADER
 */
 
 header{
-    background-color: gray;
+    background-image: url("../images/banner-943868_1920.jpg");
+    background-size: 100%;
 }
 header nav{
     display: flex;
@@ -28,6 +29,9 @@ header nav{
 }
 header img{
     width: 100px;
+    margin-top: 5px;
+    background-color: chartreuse;
+    border-radius: 50px;
 }
 .menu{
     background-color: white;
@@ -40,9 +44,17 @@ header img{
 }
 
 
+
 .reg{
     margin-top: 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
+    margin: 15px 0;
+}
+.reg button{
+    margin: 3px;
+    border: none;
+    border-radius: 25px;
+    padding: 15px;
 }
