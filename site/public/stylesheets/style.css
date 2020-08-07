@@ -13,6 +13,9 @@ a{
 li{
     list-style: none;
 }
+body{
+    background-color: rgb(32, 32, 32);
+}
 
 /*
 HEADER
@@ -20,7 +23,7 @@ HEADER
 
 header{
     background-image: url("../images/banner-943868_1920.jpg");
-    background-size: 100%;
+    background-size: 100% ;
 }
 header img{
     width: 100px;
@@ -63,25 +66,58 @@ header img{
     display: flex;
  }
  /*Products*/
+.video{
+    size: 100%;
+    padding: 0px;
+}
  .productos{
      display: flex;
      flex-wrap: wrap;
      background-color: rgb(77, 77, 77);
  }
-figure .imgc{
-     size: 0px;
+.imag{
+    display: block;
+     height: 350px;
+     width: 250px;
+    margin: auto;
+    margin-top: 15px;
+ }
+ .fig{
+    display: block;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+    
  }
  section .titulo h2{ 
+     flex-wrap: wrap;
+     float: none;
      text-align: center;
      font-size: 50px;
+     margin: 30px;
+     padding: auto;
      color:rgb(21, 185, 226);
-     padding: 30px;
  }
 
  
 .content{
+    margin-top: 15px;
     display: flex;
     flex-wrap: wrap;
+    display: inline-block;
+    border-top: rgb(0, 152, 253) solid 2px;
+ }
+ .tituloG{
+     text-transform: uppercase;
+ }
+ .fas{
+     color: rgb(5, 92, 255);
+ }
+ .art,.col-md-8{
+     
+     float: right;
+     color: white;
+     text-align: left;
  }
 
 /*
