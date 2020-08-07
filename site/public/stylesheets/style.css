@@ -22,11 +22,6 @@ header{
     background-image: url("../images/banner-943868_1920.jpg");
     background-size: 100%;
 }
-header nav{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
 header img{
     width: 100px;
     margin-top: 5px;
@@ -62,7 +57,43 @@ header img{
 /*
 FOOTER
 */
-
+footer{
+    background-image: url("../images/banner-943868_1920.jpg");
+    background-size: 100%;
+}
 .fot{
-    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+.icard{
+    display: flex;
+    justify-content: space-around;
+    margin: 0px;
+    padding: 10px 30px;
+}
+.textCard{
+    display: flex;
+    justify-content: center;
+}
+.icard li{
+    margin: 0 20px;
+}
+.icard li i{
+    font-size: 40px;
+}
+ol{
+    margin: 0;
+    padding: 0;
+}
+.fot img{
+    width: 100px;
+}
+.fot ul li p{
+    font-size: 10px;
+}
+.redes li a{
+    display: flex;
+}
+.fot img{
+    
 }
