@@ -67,6 +67,27 @@ header img{
     flex-wrap: wrap;
     display: flex;
  }
+ /*Products*/
+ .productos{
+     display: flex;
+     flex-wrap: wrap;
+     background-color: rgb(77, 77, 77);
+ }
+figure .imgc{
+     size: 0px;
+ }
+ section .titulo h2{ 
+     text-align: center;
+     font-size: 50px;
+     color:rgb(21, 185, 226);
+     padding: 30px;
+ }
+
+ 
+.content{
+    display: flex;
+    flex-wrap: wrap;
+ }
 
 /*
 FOOTER
