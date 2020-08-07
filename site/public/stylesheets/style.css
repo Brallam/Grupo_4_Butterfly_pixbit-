@@ -58,8 +58,20 @@ header img{
     border-radius: 25px;
     padding: 15px;
 }
-
-.mainbox{
+/*Home*/
+.home{
     border: 1px solid black;
-    height: 800; 
+    height: 800;  }
+
+.box{
+    flex-wrap: wrap;
+    display: flex;
+ }
+
+/*
+FOOTER
+*/
+
+.fot{
+    border: 1px solid black;
 }
