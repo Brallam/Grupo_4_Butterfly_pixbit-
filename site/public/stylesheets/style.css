@@ -13,6 +13,17 @@ a{
 li{
     list-style: none;
 }
+/*
+VARIABLES
+*/
+:root{
+    --color-amarillo: #EAC926;
+    --color-grisClaro: #ebebeb;
+    --color-grisOscuro: #666666;
+    --color-azul: #03264C;
+    --color-verde: #39b54a;
+    --color-celeste: #1259c3;
+}
 
 /*
 HEADER
@@ -21,6 +32,7 @@ HEADER
 header{
     background-image: url("../images/banner-943868_1920.jpg");
     background-size: 100%;
+
 }
 header img{
     width: 100px;
@@ -124,3 +136,12 @@ ol{
 .redes li a{
     display: flex;
 }
+
+/*
+ProductDetails
+*/
+.imgDes{
+    flex-wrap: wrap;
+    display: flex;
+}
+
