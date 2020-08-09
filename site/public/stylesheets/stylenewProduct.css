@@ -1,11 +1,20 @@
+body{
+    background-color: rgb(32, 32, 32)
+}
 .col-5{
     border-right: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: white;
 }
 .col-7{
     border-left: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: white;
 }
+
 .container{
     height: 100%;
+}
+.botones, header{
+    background-color: rgb(5, 92, 255);;
 }
 a{
     text-decoration: none;
@@ -76,14 +85,49 @@ label{
     margin-left: 5px;
     margin-top: 20px;
     margin-right: 20px;
-
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
 }
-.caja6 i{
-    font-size: 30px;
+.cargaimgdlc{
     margin-bottom: 10px;
     margin-top: 10px;
     margin-left: 10px;
     border-right: 1px solid black;
     padding: 3px;
-    padding-right: 10px;
+    padding-right: 15px;
+    padding-left: 10px;
+    width: 40%;
+}
+.dlc{
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+}
+.caja6 p{
+    margin: 0 0 8px;
+}
+.dlcdesc{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+.precioDlc{
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.precioDlc button{
+    margin-left: 20px;
+}
+.caja7{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 5px;
+    margin-top: 20px;
+    margin-right: 20px;
+    padding: 10px;
 }
