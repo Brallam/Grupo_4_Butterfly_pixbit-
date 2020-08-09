@@ -76,21 +76,26 @@ header img{
     flex-wrap: wrap;
     display: flex;
  }
+ section{
+
+ }
  /*Products*/
 .video{
     size: 100%;
     padding: 10px;
+    margin: 0;
     border-radius: 10px;
 }
  .productos{
      display: flex;
      flex-wrap: wrap;
+     margin: 0px;
      background-color: rgb(77, 77, 77);
  }
 .imag{
     display: block;
-     height: 350px;
-     width: 250px;
+     height: 250px;
+     width: 150px;
     margin: auto;
     margin-top: 15px;
  }
@@ -101,24 +106,23 @@ header img{
     margin: 0px;
     
  }
- section .titulo h2{ 
-     flex-wrap: wrap;
-     float: none;
+ .titulo{ 
      text-align: center;
      font-size: 50px;
-     margin: 30px;
-     padding: auto;
      color:rgb(21, 185, 226);
  }
-
- 
 .content{
-    margin-top: 15px;
     display: flex;
     flex-wrap: wrap;
     display: inline-block;
     border-top: rgb(0, 152, 253) solid 2px;
+    border-right:  rgb(0, 152, 253) solid 2px;
  }
+ .content:nth-child(2n){
+     border-right: none;
+ }
+ 
+ 
  .tituloG{
      text-transform: uppercase;
  }
@@ -126,13 +130,36 @@ header img{
      color: rgb(5, 92, 255);
  }
  .art,.col-md-8{
-     
+     margin: 0px;
+     font-size: 20px;
      float: right;
      color: white;
      text-align: left;
- }
+    }
+.vermas{
+    margin-top: 0px;
+    font-size: 30px;
+}
+.content:hover{
+    background-color: rgba(0, 0, 0, 0.274);
+}
+.pd{
+    height: 200px;
+    width: 100%;
+    margin: 0px;
+    overflow:hidden;
+    white-space: initial;
+    text-overflow: unset;
+}
 
-
+.aff{
+    
+    
+}
+.aff:hover{
+    color: white;
+    background-color: rgba(34, 34, 34, 0.438);
+}
 /*
 ProductDetails
 */
@@ -251,4 +278,26 @@ ol{
 }
 .derechos{
     padding-top: 30px;
+}
+
+
+/*MEDIA QUERY */
+
+@media  (min-width:320px) and (max-width:760px){
+    .titulo{
+        font-size: 50px;
+    }
+  
+    .vermas{
+     font-size: 30px;
+    }
+    .video{
+        display: none;
+    }
+}
+@media   (max-width:1000px){
+    .descripcion{
+        display: none;
+    }
+
 }
