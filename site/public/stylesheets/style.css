@@ -142,6 +142,7 @@ footer{
 .textCard{
     display: flex;
     justify-content: center;
+    padding-bottom: 20px;
     border-bottom: black solid 1px;
 }
 .icard li{
