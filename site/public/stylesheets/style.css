@@ -37,7 +37,7 @@ header{
     background-size: 100% ;
 }
 header img{
-    width: 100px;
+    width: 80px;
     margin-top: 5px;
     background-color: chartreuse;
     border-radius: 50px;
@@ -79,7 +79,8 @@ header img{
  /*Products*/
 .video{
     size: 100%;
-    padding: 0px;
+    padding: 10px;
+    border-radius: 10px;
 }
  .productos{
      display: flex;
@@ -135,31 +136,39 @@ header img{
 /*
 ProductDetails
 */
-.titulo{
-    text-align: center;
-}
 
-.imgProducto{
-   
-   
-    text-align: center;
+
+.contenido article span{
+    color: var(--color-verde);
+    display: flex;
+    align-items: flex-end;
+    margin-left: 10px;
 }
 
 
 .contenido{
     border:3px solid pink ;
     background-color: whitesmoke;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    border-radius: 30px;
 }
 .contenido img{
+    margin-top: 10px;
     width:50%;
  
 }
+
+
+
 .imgDes{
     border:1px solid black ;
-    text-align: center;
+    
 }
 .imgDes img{
-width: 60%;
+
 padding: 10px;
 
 }
@@ -169,7 +178,7 @@ padding: 10px;
     padding-left: 20px;
     display: flex;
     flex-wrap: wrap;
-    text-align: center;
+    margin-top: 20px;
    
     
 }
@@ -199,6 +208,8 @@ footer{
 }
 .fot{
     display: flex;
+}
+.pay{
     flex-direction: column;
 }
 .icard{
@@ -210,6 +221,8 @@ footer{
 .textCard{
     display: flex;
     justify-content: center;
+    padding-bottom: 20px;
+    border-bottom: black solid 1px;
 }
 .icard li{
     margin: 0 20px;
@@ -222,7 +235,7 @@ ol{
     padding: 0;
 }
 .fot img{
-    width: 100px;
+    width: 150px;
 }
 .fot ul li p{
     font-size: 10px;
@@ -230,65 +243,12 @@ ol{
 .redes li a{
     display: flex;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.fotcenter {
+    justify-content: center;
+}
+.redes{
+    margin: 0;
+}
+.derechos{
+    padding-top: 30px;
+}
