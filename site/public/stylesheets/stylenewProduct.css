@@ -1,0 +1,89 @@
+.col-5{
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
+}
+.col-7{
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+}
+.container{
+    height: 100%;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/*
+BOTONES
+*/
+.botones{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*
+FORMULARIO
+*/
+img{
+    width: 100px;
+}
+
+.caja0, .caja1, .caja2, .caja3, .caja4{
+    padding-right: 25px;
+    margin-left: 25px;
+}
+
+
+.caja0 h5{
+    margin-top: 30px;
+}
+label{
+    padding-right: 6px;
+}
+
+.caja1, .caja2, .caja3, .caja4{
+    padding-top: 10px;
+}
+
+.caja3 p{
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.caja2 label{
+    width: 100%;
+}
+
+.caja5{
+    border: 1px solid black;
+    margin-left: 5px;
+    height: 300px;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.caja5 i{
+    font-size: 50px;
+}
+.caja5 a{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.caja6{
+    border: 1px solid black;
+    margin-left: 5px;
+    margin-top: 20px;
+    margin-right: 20px;
+
+}
+.caja6 i{
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-right: 1px solid black;
+    padding: 3px;
+    padding-right: 10px;
+}
