@@ -48,38 +48,50 @@
     <section class="container">
         <div class="row">
             <div class="col-12">
-                <button> <a href="">Añadir</a> </button>
-            </div>
-            <div class="col-12">
-                <div class="imgProd">
-                    <img src="images/products/human.jpg" alt="" class="img-fluid">
-                    <article class="des">
-                        <p>Human fall flat Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur incidunt
-                            eius adipisci aliquid, ipsum asperiores. Distinctio cupiditate saepe aliquam accusantium eos
-                            nemo est, magnam deserunt optio corporis placeat laboriosam autem?</p>
-                    </article>
-                    <div class="12 imgDes">
-                        <div>
-                            <img src="images/products/pelu.jpg" alt="">
-                        </div>
-                        <div>
-                            <img src="images/products/pelu.jpg" alt="">
-                        </div>
-                        <div>
-                            <img src="images/products/pelu.jpg" alt="">
-                        </div>
-                        <div>
-                            <img src="images/products/pelu.jpg" alt="">
-                        </div>
-
-
-
+                <div class="contenido">
+                    <div class="imgProducto">
+                        <img src="images/products/human.jpg" alt="">
                     </div>
+                    <div class="col-12 titulo ">
+                        <h4>Descripción</h4>
+                    </div>
+                    <p>Human fall flat Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur incidunt
+                        eius adipisci aliquid, ipsum asperiores. Distinctio cupiditate saepe aliquam accusantium eos
+                        nemo est, magnam deserunt optio corporis placeat laboriosam autem? Lorem, ipsum dolor sit
+                        amet consectetur adipisicing elit. Dolore a porro impedit maxime perferendis voluptatum
+                        veniam aliquam explicabo similique? Eius unde modi suscipit nesciunt iure facilis reiciendis
+                        placeat, quaerat doloribus recusandae molestiae ducimus fuga natus repudiandae. Porro harum
+                        dignissimos, repellat perspiciatis a magnam accusamus temporibus mollitia! Aliquid eligendi
+                        ullam excepturi!</p>
 
-                    <h2>$4.500</h2>
-                    <span>%50 OFF</span>
+                    <div class="col-12 imgDes">
+                        <div>
+                            <img src="images/products/default-image.png" alt="">
+                        </div>
+                        <div>
+                            <img src="images/products/default-image.png" alt="">
+                        </div>
+                        <div>
+                            <img src="images/products/default-image.png" alt="">
+                        </div>
+                        <div>
+                            <img src="images/products/default-image.png" alt="">
+                        </div>
+                    </div>
+                    <article class="des">
+                        <h2>$4.500</h2>
+                        <span>50% OFF</span>
+                        <i class="fas fa-truck"></i>
+
+                    </article>
+                    <div class="col-12 req">
+                        <h4>Requisitos del sistema</h4>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi ullam porro quaerat rem hic,
+                            alias perferendis! Omnis illum nam maxime!</p>
+                    </div>
                 </div>
             </div>
+        </div>
     </section>
 
     <!--scripts de boostrap-->
@@ -94,12 +106,12 @@
         crossorigin="anonymous"></script>
 </body>
 
-<footer>
-    <div class="container-fluid">
-        <div class="row">
-        </div>
-    </div>
-</footer>
+
+
+
+
+
+<%-include("./partials/footer.ejs")%>
 
 
 </html>

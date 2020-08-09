@@ -17,12 +17,13 @@ li{
 VARIABLES
 */
 :root{
-    --color-amarillo: #EAC926;
-    --color-grisClaro: #ebebeb;
-    --color-grisOscuro: #666666;
-    --color-azul: #03264C;
-    --color-verde: #39b54a;
-    --color-celeste: #1259c3;
+   
+   color: blue;
+   
+   
+}
+body{
+    background-color: rgb(32, 32, 32);
 }
 
 /*
@@ -33,6 +34,7 @@ header{
     background-image: url("../images/banner-943868_1920.jpg");
     background-size: 100%;
 
+    background-size: 100% ;
 }
 header img{
     width: 100px;
@@ -75,26 +77,118 @@ header img{
     display: flex;
  }
  /*Products*/
+.video{
+    size: 100%;
+    padding: 0px;
+}
  .productos{
      display: flex;
      flex-wrap: wrap;
      background-color: rgb(77, 77, 77);
  }
-figure .imgc{
-     size: 0px;
+.imag{
+    display: block;
+     height: 350px;
+     width: 250px;
+    margin: auto;
+    margin-top: 15px;
+ }
+ .fig{
+    display: block;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+    
  }
  section .titulo h2{ 
+     flex-wrap: wrap;
+     float: none;
      text-align: center;
      font-size: 50px;
+     margin: 30px;
+     padding: auto;
      color:rgb(21, 185, 226);
-     padding: 30px;
  }
 
  
 .content{
+    margin-top: 15px;
     display: flex;
     flex-wrap: wrap;
+    display: inline-block;
+    border-top: rgb(0, 152, 253) solid 2px;
  }
+ .tituloG{
+     text-transform: uppercase;
+ }
+ .fas{
+     color: rgb(5, 92, 255);
+ }
+ .art,.col-md-8{
+     
+     float: right;
+     color: white;
+     text-align: left;
+ }
+
+
+/*
+ProductDetails
+*/
+.titulo{
+    text-align: center;
+}
+
+.imgProducto{
+   
+   
+    text-align: center;
+}
+
+
+.contenido{
+    border:3px solid pink ;
+    background-color: whitesmoke;
+}
+.contenido img{
+    width:50%;
+ 
+}
+.imgDes{
+    border:1px solid black ;
+    text-align: center;
+}
+.imgDes img{
+width: 60%;
+padding: 10px;
+
+}
+.des {
+    border:1px solid black ;
+    text-align: left;
+    padding-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+   
+    
+}
+.des span{
+    margin-left: 4px;
+}
+.req{
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
 
 /*
 FOOTER
@@ -137,11 +231,64 @@ ol{
     display: flex;
 }
 
-/*
-ProductDetails
-*/
-.imgDes{
-    flex-wrap: wrap;
-    display: flex;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
