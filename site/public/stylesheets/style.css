@@ -26,7 +26,7 @@ header{
     background-size: 100% ;
 }
 header img{
-    width: 100px;
+    width: 80px;
     margin-top: 5px;
     background-color: chartreuse;
     border-radius: 50px;
@@ -129,6 +129,8 @@ footer{
 }
 .fot{
     display: flex;
+}
+.pay{
     flex-direction: column;
 }
 .icard{
@@ -140,6 +142,7 @@ footer{
 .textCard{
     display: flex;
     justify-content: center;
+    border-bottom: black solid 1px;
 }
 .icard li{
     margin: 0 20px;
@@ -152,11 +155,20 @@ ol{
     padding: 0;
 }
 .fot img{
-    width: 100px;
+    width: 150px;
 }
 .fot ul li p{
     font-size: 10px;
 }
 .redes li a{
     display: flex;
+}
+.fotcenter {
+    justify-content: center;
+}
+.redes{
+    margin: 0;
+}
+.derechos{
+    padding-top: 30px;
 }
