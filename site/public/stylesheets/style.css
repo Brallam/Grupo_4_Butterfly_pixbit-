@@ -94,10 +94,11 @@ header img{
     border-radius: 10px;
 }
  .productos{
+     border-radius: 15px;
      display: flex;
      flex-wrap: wrap;
      margin: 0px;
-     background-color: rgb(77, 77, 77);
+     background-color: rgb(32, 32, 32);
  }
 .imag{
     display: block;
@@ -114,20 +115,29 @@ header img{
     
  }
  .titulo{ 
+     background-color: rgb(77, 77, 77);
+     
+     border-radius: 15px 15px 0px 0px;
      text-align: center;
      font-size: 50px;
      color:rgb(21, 185, 226);
  }
 .content{
+    background-color: rgb(77, 77, 77);
     display: flex;
     flex-wrap: wrap;
     display: inline-block;
-    border-top: rgb(0, 152, 253) solid 2px;
-    border-right:  rgb(0, 152, 253) solid 2px;
+    border-top: 10px solid  rgb(32, 32, 32);
+    border-bottom:  rgb(32, 32, 32) solid 5px;
+    border-top: solid 10px  rgb(32, 32, 32);
+    border: rgb(32, 32, 32) solid 5px ;
+    border-radius: 15px;
+
  }
- .content:nth-child(2n){
-     border-right: none;
- }
+ /*.content:nth-child(2n){
+    border-right: none;
+}*/
+
  
  
  .tituloG{
@@ -136,6 +146,7 @@ header img{
  .fas{
      color: rgb(5, 92, 255);
  }
+ 
  .art,.col-md-8{
      margin: 0px;
      font-size: 20px;
@@ -143,30 +154,66 @@ header img{
      color: white;
      text-align: left;
     }
+    .pri{
+        border-radius: 5px;
+        text-align: center;
+        color: rgb(32, 224, 32);
+        margin-top: 5px;
+        border: solid rgb(32, 32, 32) 2px;
+        size: 10px;
+    }
+
 .vermas{
     margin-top: 0px;
     font-size: 30px;
 }
 .content:hover{
-    background-color: rgba(0, 0, 0, 0.274);
+    background-color:  rgb(32, 32, 32);
 }
 .pd{
+    border-top: rgba(0, 0, 0, 0.13) solid 1px;
+    border-bottom: solid 5px rgba(0, 0, 0, 0.281);
+    border-right: solid 5px rgba(0, 0, 0, 0.281);
+    border-left: black solid 1px;
     height: 200px;
     width: 100%;
     margin: 0px;
+    padding-left: 10px;
     overflow:hidden;
     white-space: initial;
     text-overflow: unset;
+    background-color: rgb(68, 68, 68);
 }
 
+.afr{
+   border-radius: 15px; 
+   background-color: rgb(77, 77, 77); 
+   border: solid rgb(32, 32, 32) 5px;
+}
 .aff{
-    
-    
+border-radius: 15px;
+margin: 10px;
+border:  rgb(32, 32, 32) solid 15px;
+display: inline-block;
+position: relative;
+text-align: center;
+
 }
-.aff:hover{
+.paf {
+    display: none;
+    position: absolute;
+    font-size: 95%;
+    bottom: 0px;
+    text-align: center;
     color: white;
-    background-color: rgba(34, 34, 34, 0.438);
-}
+    background-color: rgba(0, 0, 0, 0.377);
+  
+  }
+  
+  
+.aff:hover .paf {
+      display: block;
+  }
 /*
 ProductDetails
 */
@@ -310,26 +357,39 @@ ol{
     }
 
     /*
-    SECTION
+    home
     */
     .titulo{
-        font-size: 50px;
+        font-size: 30px;
     }
   
-    .vermas{
-     font-size: 30px;
-    }
     .video{
         display: none;
     }
+    /*.content{
+        border: rgb(0, 152, 253) solid 2px;
+    }
+    .content:nth-child(2n){
+        border-right: rgb(0, 152, 253) solid 2px;;
+    }*/
+    .aff{
+        
+        margin: 10px;
 
+    }
+    .paf{
+        
+        justify-content: center;
+        font-size: 100%;
+     }
+ 
 
     /*
     FOOTER
     */
     .redes{
         padding-left: 0;
-    }
+    }   
     .redes li a i{
         font-size: 15px;
     }
@@ -337,9 +397,16 @@ ol{
         font-size: 10px;
     }
 }
-@media   (max-width:1000px){
+@media   (min-width:760px) and (max-width:1000px){
+
     .descripcion{
         display: none;
     }
+    .paf{
+        margin: auto;
+        text-align: center;
+        font-size: 62%;
+     }
+ 
 
 }
