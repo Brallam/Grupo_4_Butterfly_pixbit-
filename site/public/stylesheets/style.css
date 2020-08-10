@@ -23,7 +23,9 @@ VARIABLES
    
 }
 body{
-    background-color: rgb(32, 32, 32);
+    background-image: url(/images/back.png) ;
+    background-repeat: initial;
+    background-size: 300px 300px;
 }
 
 /*
@@ -97,8 +99,11 @@ header img{
      border-radius: 15px;
      display: flex;
      flex-wrap: wrap;
-     margin: 0px;
-     background-color: rgb(32, 32, 32);
+     margin-bottom: 20px;
+     border-right: solid rgb(32, 32, 32);
+     border-left: solid rgb(32, 32, 32);
+     border-bottom: solid rgb(32, 32, 32);
+     background-color: rgba(32, 32, 32, 0);
  }
 .imag{
     display: block;
@@ -116,14 +121,14 @@ header img{
  }
  .titulo{ 
      background-color: rgb(77, 77, 77);
-     
+     border: rgb(32, 32, 32) solid 5px;
      border-radius: 15px 15px 0px 0px;
      text-align: center;
      font-size: 50px;
      color:rgb(21, 185, 226);
  }
 .content{
-    background-color: rgb(77, 77, 77);
+    background-color: rgba(77, 77, 77, 0.589);
     display: flex;
     flex-wrap: wrap;
     display: inline-block;
@@ -132,6 +137,8 @@ header img{
     border-top: solid 10px  rgb(32, 32, 32);
     border: rgb(32, 32, 32) solid 5px ;
     border-radius: 15px;
+    margin: auto;
+    margin-bottom: 20px;
 
  }
  /*.content:nth-child(2n){
@@ -159,7 +166,7 @@ header img{
         text-align: center;
         color: rgb(32, 224, 32);
         margin-top: 5px;
-        border: solid rgb(32, 32, 32) 2px;
+        border: solid rgb(29, 29, 29) 2px;
         size: 10px;
     }
 
@@ -168,7 +175,7 @@ header img{
     font-size: 30px;
 }
 .content:hover{
-    background-color:  rgb(32, 32, 32);
+    background-color:  rgb(46, 46, 46);
 }
 .pd{
     border-top: rgba(0, 0, 0, 0.13) solid 1px;
@@ -184,16 +191,18 @@ header img{
     text-overflow: unset;
     background-color: rgb(68, 68, 68);
 }
-
+.prf{
+    background-color: rgba(77, 77, 77, 0.322);
+}
 .afr{
    border-radius: 15px; 
    background-color: rgb(77, 77, 77); 
-   border: solid rgb(32, 32, 32) 5px;
+   border: solid 5px rgb(32, 32, 32);
 }
 .aff{
 border-radius: 15px;
 margin: 10px;
-border:  rgb(32, 32, 32) solid 15px;
+border: rgb(32, 32, 32) solid 15px;
 display: inline-block;
 position: relative;
 text-align: center;
