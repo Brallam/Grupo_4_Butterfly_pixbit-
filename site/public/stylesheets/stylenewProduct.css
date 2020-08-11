@@ -1,18 +1,25 @@
 body{
     background-color: rgb(32, 32, 32)
 }
-.col-5{
+a{
+    text-decoration: none;
+    color: black;
+}
+li{
+    list-style: none;
+}
+.da{
     border-right: 1px solid rgba(0, 0, 0, 0.5);
     background-color: white;
 }
-.col-7{
-    border-left: 1px solid rgba(0, 0, 0, 0.5);
+
+.cd{
     background-color: white;
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+    
 }
 
-.container{
-    height: 100%;
-}
+
 .botones, header{
     background-color: rgb(5, 92, 255);;
 }
@@ -20,6 +27,7 @@ a{
     text-decoration: none;
     color: black;
 }
+
 
 /*
 BOTONES
@@ -130,4 +138,57 @@ label{
     margin-top: 20px;
     margin-right: 20px;
     padding: 10px;
+}
+/*
+FOOTER
+*/
+footer{
+    background-image: url("../images/banner-943868_1920.jpg");
+    background-size: 100%;
+}
+.fot{
+    display: flex;
+}
+.pay{
+    flex-direction: column;
+}
+.icard{
+    display: flex;
+    justify-content: space-around;
+    margin: 0px;
+    padding: 10px 30px;
+}
+.textCard{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    border-bottom: black solid 1px;
+}
+.icard li{
+    margin: 0 20px;
+}
+.icard li i{
+    font-size: 40px;
+}
+ol{
+    margin: 0;
+    padding: 0;
+}
+.fot img{
+    width: 150px;
+}
+.fot ul li p{
+    font-size: 10px;
+}
+.redes li a{
+    display: flex;
+}
+.fotcenter {
+    justify-content: center;
+}
+.redes{
+    margin: 0;
+}
+.derechos{
+    padding-top: 30px;
 }
