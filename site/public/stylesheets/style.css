@@ -93,7 +93,7 @@ header img{
     size: 100%;
     padding: 10px;
     margin: 0;
-    border-radius: 10px;
+    border-radius: 50% solid;
 }
  .productos{
      border-radius: 15px;
@@ -138,8 +138,8 @@ header img{
     border: rgb(32, 32, 32) solid 5px ;
     border-radius: 15px;
     margin: auto;
+    margin-top: 20px;
     margin-bottom: 20px;
-
  }
  /*.content:nth-child(2n){
     border-right: none;
