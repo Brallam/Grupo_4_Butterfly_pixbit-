@@ -76,6 +76,9 @@ header img{
     border-radius: 25px;
     padding: 15px;
 }
+.menu2{
+    display: none;
+}
 /*Home*/
 .home{
     border: 1px solid black;
@@ -359,10 +362,29 @@ ol{
 
     .burger{
         background-color: rgb(77, 77, 77);
+        margin-top: 15px;
+        display: none;
     }
     .burger i{
         font-size: 40px;
         color: rgb(21, 185, 226);
+    }
+    .reg{
+        padding-left: 0;
+    }
+    .carrito{
+        display: none;
+    }
+    .reg button{
+        font-size: 10px;
+    }
+    .logo img{
+        margin: 5px;
+    }
+    .menu2{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 
     /*
@@ -404,6 +426,9 @@ ol{
     }
     .fot ul li p{
         font-size: 10px;
+    }
+    .derechos{
+        padding: 10px;
     }
 }
 @media   (min-width:760px) and (max-width:1000px){
