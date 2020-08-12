@@ -33,7 +33,7 @@ HEADER
 */
 
 header{
-    background-image: url("../images/banner-943868_1920.jpg");
+    background-image: url("../images/Header-background.jpg");
     background-size: 100%;
 
     background-size: 100% ;
@@ -41,7 +41,7 @@ header{
 header img{
     width: 80px;
     margin-top: 5px;
-    background-color: chartreuse;
+    background-color: rgb(21, 185, 226);
     border-radius: 50px;
 }
 .menu{
@@ -61,7 +61,12 @@ header img{
 .menu a{
     font-size: 17px;
 }
-
+.btn-primary{
+    background-color: rgb(21, 185, 226);
+}
+.btn-primary:hover{
+    background-color: rgb(21, 185, 226);
+}
 
 .reg{
     margin-top: 15px;
@@ -87,9 +92,6 @@ header img{
 .box{
     flex-wrap: wrap;
     display: flex;
- }
- section{
-
  }
  /*Products*/
 .video{
@@ -296,7 +298,7 @@ padding: 10px;
 FOOTER
 */
 footer{
-    background-image: url("../images/banner-943868_1920.jpg");
+    background-image: url("../images/Header-background.jpg");
     background-size: 100%;
 }
 .fot{
@@ -359,7 +361,9 @@ ol{
     /*
     HEADER
     */
-
+    header{
+        background-size: cover;
+    }
     .burger{
         background-color: rgb(77, 77, 77);
         margin-top: 15px;
@@ -422,16 +426,20 @@ ol{
         padding-left: 0;
     }   
     .redes li a i{
-        font-size: 15px;
+        font-size: 20px;
     }
     .fot ul li p{
-        font-size: 10px;
+        font-size: 15px;
     }
     .derechos{
         padding: 10px;
     }
+    footer{
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }
-@media   (min-width:760px) and (max-width:1000px){
+@media   (min-width:760px) and (max-width:1024px){
 
     .descripcion{
         display: none;
