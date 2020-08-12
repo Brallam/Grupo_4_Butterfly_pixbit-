@@ -231,7 +231,8 @@ text-align: center;
 /*
 ProductDetails
 */
-
+.cajaP{
+    align-items: center;}
 
 .contenido article span{
     color: var(--color-verde);
@@ -245,8 +246,8 @@ ProductDetails
     border:3px solid pink ;
     background-color: whitesmoke;
     text-align: center;
-    display: flex;
-    flex-wrap: wrap;
+    
+    
     margin: 20px 0;
     border-radius: 30px;
 }
@@ -255,17 +256,15 @@ ProductDetails
     width:50%;
  
 }
-
+.titulo2{
+    color:black;
+    border: 2px solid black;
+}
 
 
 .imgDes{
     border:1px solid black ;
     
-}
-.imgDes img{
-
-padding: 10px;
-
 }
 .des {
     border:1px solid black ;
@@ -286,7 +285,9 @@ padding: 10px;
 }
 
 
-
+conteiner{
+    border: 3px solid orange;
+}
 
 
 

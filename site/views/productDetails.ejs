@@ -1,107 +1,73 @@
-<!DOCTYPE html>
-<html lang="es">
+<%-include("./partials/head.ejs")%>
+<%-include("./partials/header.ejs")%>
 
-<head>
-    <meta charset="UTF-8">
+<div class="container">
+    <div class="row"> <video autoplay loop width="100%" src="/media/video.mp4" alt=""></video>
+    </div>
+</div>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
-        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="stylesheets/style.css">
-
-    <title>Document</title>
-</head>
-
-<body> 
-    <header>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-4">
-                    <a href=""><img src="images/LogoMakr_8h3KUr.png" alt=""></a>
-                </div>
-
-                <div class="col-8 reg">
-                    <button type="button" class="btn btn-primary">Registrate</button>
-                    <button type="button" class="btn btn-success">Iniciar Sesion</button>
-                </div>
-
-                <nav class="col-12">
-                    <ul class="menu">
-
-                        <li><a href="/">Tienda</a></li>
-                        <li><a href="">Noticias</a></li>
-                        <li><a href="">FAQ</a></li>
-                        <li><a href="">Menu</a></li>
-                    </ul>
-                </nav>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 img1 contenido">
+            <img src="images/products/human.jpg" alt="">
         </div>
-    </header>
-    <div class="container">
-        <div class="row"> <video autoplay loop width="100%" src="/media/video.mp4" alt=""></video>
+
+    
+    
+        <div class="col-12 col-md-6 contenido">
+            <p>Human fall flat Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur incidunt
+                eius adipisci aliquid, ipsum asperiores. Distinctio cupiditate saepe aliquam accusantium eos
+                nemo est, magnam deserunt optio corporis placeat laboriosam autem? Lorem, ipsum dolor sit
+                amet consectetur adipisicing elit. Dolore a porro impedit maxime perferendis voluptatum
+                veniam aliquam explicabo similique? Eius unde modi suscipit nesciunt iure facilis reiciendis
+                placeat, quaerat doloribus recusandae molestiae ducimus fuga natus repudiandae. Porro harum
+                dignissimos, repellat perspiciatis a magnam accusamus temporibus mollitia! Aliquid eligendi
+                ullam excepturi!</p>
+        </div>
+
+    </div>
+
+    <div class=" imgDes contenido">
+
+        <img class=" col-12 " src="images/products/default-image.png" alt="">
+
+        <div>
+            <img class=" col-12 " src="images/products/default-image.png" alt="">
+        </div>
+        <div>
+            <img class=" col-12 " src="images/products/default-image.png" alt="">
+        </div>
+        <div>
+            <img class=" col-12 " src="images/products/default-image.png" alt="">
+        </div>
+    </div>
+    <div class="row ">
+        <article class="col-12 contenido detalle2">
+            <h2>$4.500</h2>
+            <span>50% OFF</span>
+            <i class="fas fa-truck"></i>
+        </article>
+    </div>
+    <div class="row">
+        <div class="col-12 contenido requisito">
+            <h4>Requisitos del sistema</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi ullam porro quaerat rem hic,
+                alias perferendis! Omnis illum nam maxime!</p>
         </div>
     </div>
 
-    <section class="container">
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="contenido">
-                    <div class="col-12 img1">
-                        <img src="images/products/human.jpg" alt="">
-                    </div>
-                    <div class="col-12 titulo ">
-                        <h4>Descripción</h4>
-                    </div>
-                    <p>Human fall flat Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur incidunt
-                        eius adipisci aliquid, ipsum asperiores. Distinctio cupiditate saepe aliquam accusantium eos
-                        nemo est, magnam deserunt optio corporis placeat laboriosam autem? Lorem, ipsum dolor sit
-                        amet consectetur adipisicing elit. Dolore a porro impedit maxime perferendis voluptatum
-                        veniam aliquam explicabo similique? Eius unde modi suscipit nesciunt iure facilis reiciendis
-                        placeat, quaerat doloribus recusandae molestiae ducimus fuga natus repudiandae. Porro harum
-                        dignissimos, repellat perspiciatis a magnam accusamus temporibus mollitia! Aliquid eligendi
-                        ullam excepturi!</p>
-                        
-                    <div class=" col-12 imgDes">
-                        <div>
-                            <img src="images/products/default-image.png" alt="">
-                        </div>
-                        <div>
-                            <img src="images/products/default-image.png" alt="">
-                        </div>
-                        <div>
-                            <img src="images/products/default-image.png" alt="">
-                        </div>
-                        <div>
-                            <img src="images/products/default-image.png" alt="">
-                        </div>
-                    </div>
-                    <article class="des">
-                        <h2>$4.500</h2>
-                        <span>50% OFF</span>
-                        <i class="fas fa-truck"></i>
+</div>
 
-                    </article>
-                    <div class="col-12 req">
-                        <h4>Requisitos del sistema</h4>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi ullam porro quaerat rem hic,
-                            alias perferendis! Omnis illum nam maxime!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!--scripts de boostrap-->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
+
+<!--scripts de boostrap-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
 <%-include("./partials/footer.ejs")%>
-
