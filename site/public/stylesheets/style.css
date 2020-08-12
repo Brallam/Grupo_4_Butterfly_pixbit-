@@ -88,9 +88,6 @@ header img{
     flex-wrap: wrap;
     display: flex;
  }
- section{
-
- }
  /*Products*/
 .video{
     size: 100%;
@@ -135,14 +132,13 @@ header img{
     display: flex;
     flex-wrap: wrap;
     display: inline-block;
-    border-top: 10px solid  rgb(32, 32, 32);
-    border-bottom:  rgb(32, 32, 32) solid 5px;
-    border-top: solid 10px  rgb(32, 32, 32);
+    size: 1px;
     border: rgb(32, 32, 32) solid 5px ;
     border-radius: 15px;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
+    max-width: 520px;
  }
  /*.content:nth-child(2n){
     border-right: none;
@@ -437,10 +433,22 @@ ol{
         display: none;
     }
     .paf{
+        position: relative;
         margin: auto;
         text-align: center;
         font-size: 62%;
      }
  
 
+}
+/*carrito*/
+.carrito{
+    margin-top: 50px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.concar{
+    background-color: grey;
+    border-radius: 25px;
+    display: block;
 }
