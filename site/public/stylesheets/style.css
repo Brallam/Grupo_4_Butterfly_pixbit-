@@ -262,6 +262,9 @@ DETALLE DEL PRODUCTO
 .imgDes img {
   width: 100%;
 }
+.detalle22{
+    display: flex;
+}
 .titulo2 {
   color: black;
   border: 2px solid black;
@@ -318,10 +321,12 @@ DETALLE DEL PRODUCTO
 .cont {
   border-right: 1px solid rgba(0, 0, 0, 0.5);
   background-color: white;
+ 
 }
 .c1 {
   padding-right: 25px;
   margin-left: 25px;
+
 }
 
 /*
