@@ -246,24 +246,36 @@ ProductDetails
     border:3px solid pink ;
     background-color: whitesmoke;
     text-align: center;
-    
-    
     margin: 20px 0;
     border-radius: 30px;
 }
 .contenido img{
     margin-top: 10px;
-    width:50%;
+   
  
+}
+.imgDes{
+    border:1px solid black ;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.imgDes img{
+    width: 100%;
 }
 .titulo2{
     color:black;
     border: 2px solid black;
 }
-
+.botoncarrito{
+    text-align: center;
+}
 
 .imgDes{
     border:1px solid black ;
+    display: flex;
+    flex-wrap: wrap;
+
     
 }
 .des {
@@ -284,8 +296,13 @@ ProductDetails
     margin-top: 10px;
 }
 
-
-conteiner{
+.zoom{
+    transition: 0.5s ;
+}
+.zoom:hover{
+    transform: scale(1.2);
+}
+.conteiner{
     border: 3px solid orange;
 }
 
