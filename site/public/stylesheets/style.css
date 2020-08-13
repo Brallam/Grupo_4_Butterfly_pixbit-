@@ -248,11 +248,15 @@ ProductDetails
     text-align: center;
     margin: 20px 0;
     border-radius: 30px;
+    padding-right: 10px;
 }
 .contenido img{
     margin-top: 10px;
    
  
+}
+.img1{
+    padding: 10px;
 }
 .imgDes{
     border:1px solid black ;
@@ -300,10 +304,21 @@ ProductDetails
     transition: 0.5s ;
 }
 .zoom:hover{
-    transform: scale(1.2);
+    transform: scale(1.7);
+    z-index: 1;
+    position: relative;
 }
 .conteiner{
     border: 3px solid orange;
+}
+.cajabo{
+margin: auto;
+justify-content:center;
+
+}
+.btn-success{
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
