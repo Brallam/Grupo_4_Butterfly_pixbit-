@@ -10,6 +10,11 @@ a{
     text-decoration: none;
     color: black;
 }
+a:hover{
+    text-decoration: none;
+    text-shadow: none;
+    background-color: none;
+}
 li{
     list-style: none;
 }
@@ -87,13 +92,16 @@ header img{
 /*Home*/
 .home{
     border: 1px solid black;
-    height: 800;  }
+    height: 800; 
+    
+ }
 
 .box{
     flex-wrap: wrap;
     display: flex;
  }
  /*Products*/
+
 .video{
     size: 100%;
     padding: 10px;
@@ -230,7 +238,8 @@ text-align: center;
 /*
 ProductDetails
 */
-
+.cajaP{
+    align-items: center;}
 
 .contenido article span{
     color: var(--color-verde);
@@ -244,8 +253,8 @@ ProductDetails
     border:3px solid pink ;
     background-color: whitesmoke;
     text-align: center;
-    display: flex;
-    flex-wrap: wrap;
+    
+    
     margin: 20px 0;
     border-radius: 30px;
 }
@@ -254,17 +263,15 @@ ProductDetails
     width:50%;
  
 }
-
+.titulo2{
+    color:black;
+    border: 2px solid black;
+}
 
 
 .imgDes{
     border:1px solid black ;
     
-}
-.imgDes img{
-
-padding: 10px;
-
 }
 .des {
     border:1px solid black ;
@@ -285,7 +292,9 @@ padding: 10px;
 }
 
 
-
+conteiner{
+    border: 3px solid orange;
+}
 
 
 
@@ -375,9 +384,6 @@ ol{
     .reg{
         padding-left: 0;
     }
-    .carrito{
-        display: none;
-    }
     .reg button{
         font-size: 10px;
     }
@@ -435,7 +441,11 @@ ol{
     }
     footer{
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: cover; width: 100%;
+        position:relative ;
+    }
+    .concar{
+        display: block;
     }
 }
 @media   (min-width:760px) and (max-width:1024px){
@@ -449,10 +459,16 @@ ol{
         text-align: center;
         font-size: 62%;
      }
- 
+ /*footer*/
+ footer{
+     position: relative;
+ }
 
 }
 /*carrito*/
+.all{
+   flex-wrap: wrap;
+}
 .carrito{
     margin-top: 50px;
     text-align: center;
@@ -465,41 +481,105 @@ ol{
 }
 
 .selecpro{
+    text-align: center;
     border:rgba(0, 0, 0, 0.719) 2px solid;
     background-color: rgba(128, 128, 128, 0.582);
-    min-width: 630px;
+    max-width: 700px;
     border-radius: 25px;
+    display: block;
+  
+    
 }
 .producto{
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
-    border: black solid 1px;
+    border: rgb(21, 185, 226) solid 1px;
+    border-radius: 5px;
     text-align: center;
-    align-items: center
+    
+    flex-wrap: wrap;
 }
-
+.imgc{
+    margin: 10px 0;
+    max-width: 120px;
+}
 .infp{
+ border-radius: 15px;
+ margin: auto;   
  text-align: start;
-
- 
+ -webkit-text-stroke:black 0.5px;
+ color: black;
+ font-size: 20px; 
+ background-color: rgba(255, 255, 255, 0.301);
 }
 .publi{
+    float: right;
     border:rgba(0, 0, 0, 0.719) 2px solid;
     background-color: rgba(128, 128, 128, 0.556);
-    max-width: 250px;
-    margin-left: auto;
+    max-width: 280px;
+    max-height: 500px;
+    margin-left: auto   ;
     border-radius: 25px;
 }
+
 .info{
-    border:rgba(0, 0, 0, 0.719) 2px solid;
+    float: left;
     background-color: rgba(128, 128, 128, 0.582);
-    min-width: 630px;
+    max-width: 700px;
     border-radius: 25px;
+    
+}
+.seg{
+    border-radius: 15px;
+    background-color:  rgb(21, 185, 226) ;
+    border: cyan solid 1px;
+    color: white;
+    position: absolute;
+    text-transform: capitalize;
+    bottom:0;  
+}
+.preciop{
+    align-items: center;
+    border-radius: 15px;
+    margin: 0;
+    color: rgb(63, 68, 49);
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    border: cyan solid 1px;
+    background-color:white ;
+}
+.ep{ 
+    align-items: center;
+    float: right;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    display: flex;
+   
 }
 .eliminar{
-    bottom: 0px;
+    float: right;
+    border-radius: 10px;
+    color: wheat;
+    border: red solid 1px;
+    background-color: rgba(148, 17, 17, 0.815);
+    margin-bottom: 10px;
+    max-width: 130px;
+}
+.comprar{
+    max-width: 130px;
+    color: white;
+    border-radius: 10px;
+    border: green solid 1px;
+    float: right;
+    background-color:rgb(61, 199, 61) ;
 }
 .precio{
-    bottom: 0px;
-}
+    border-radius: 25px;
+    float: right;
+    background-color: rgb(21, 185, 226);
+    border: cyan solid 1px;
+    text-align: center;
+    
+ }

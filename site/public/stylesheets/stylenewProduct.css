@@ -211,6 +211,12 @@ ol{
     .da, .cd{
         border: 0;
     }
+    .precioDlc button{
+        margin-left: 5px;
+    }
+    .dlcdesc{
+        margin-bottom: 4px;
+    }
     /*
     FOOTER
     */
