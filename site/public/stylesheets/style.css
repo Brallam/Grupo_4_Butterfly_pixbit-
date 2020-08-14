@@ -148,10 +148,6 @@ header img {
   margin-bottom: 20px;
   max-width: 520px;
 }
-/*.content:nth-child(2n){
-    border-right: none;
-}*/
-
  
  
  .tituloG{
@@ -289,9 +285,11 @@ DETALLE DEL PRODUCTO
 }
 .imgDes img {
   width: 100%;
+  margin-bottom: 10px;
 }
 .detalle22{
     display: flex;
+    flex-wrap: wrap;
 }
 .titulo2 {
   color: black;
@@ -308,7 +306,6 @@ DETALLE DEL PRODUCTO
 }
 .des {
   border: 1px solid black;
-  text-align: left;
   padding-left: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -333,30 +330,75 @@ DETALLE DEL PRODUCTO
 .conteiner {
   border: 3px solid orange;
 }
-.cajabo {
-  margin: auto;
-}
 .btn-success {
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 30%;
+ margin-top: 10%;
 }
 /* FORMULARIO DE REGISTRO */
-.formu {
-  text-align: center;
+.cajaregis {
+border: 3px solid rgba(0, 0, 0, 0.5);
+background-color:grey;
+display: flex;
+flex-wrap: wrap;
+text-align: center;
+justify-content: center;
+margin: 30px 30px ;
+box-shadow: rgba(255, 255, 255, 0.301)
+ 5px 10px 7px 0px inset;
+ border-radius: 20px ;
+ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
-  margin: auto;
 }
-.cont {
-  border-right: 1px solid rgba(0, 0, 0, 0.5);
-  background-color: white;
- 
+.cajalogo{
+   justify-content: center;
+   display: flex;
+   flex-wrap: wrap;
+   border-radius: 20px;
+   margin: 10px;
 }
-.c1 {
-  padding-right: 25px;
-  margin-left: 25px;
+.cajalogo img{
+    width:20%;
+}
+.titulo4{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    
+    border-radius: 5px;
+    color:#fff;
+    
+}
+.titulo4 h4{
+    font-weight: 100;
+}
+
+
+
+.labe input{
+    border-radius: 10px;
+}
+.registrado{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top:20px;
+    margin-bottom: 20px;
+    justify-content: center;
 
 }
-
+.boton{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   text-align: center;
+}
+.inf{
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+.btn-success {
+    margin-right: 30%;
+}
 /*
 FOOTER
 */
@@ -416,7 +458,7 @@ ol {
 .derechos {
   padding-top: 30px;
 }
-/*carrito*/
+/*CARRITO*/
 .all{
     flex-wrap: wrap;
     margin: auto;
