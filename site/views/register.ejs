@@ -3,39 +3,70 @@
 
 
 
+
+
+
+
+
+
+
+
 <div class="container">
-    <div class="row conductor">
-        <div class="formu">
+    <div class="row ">
+        <div class="cajaregis">
+            <div class=" col-12 cajalogo">
 
-
-            <div class="cont">
-                <div>
-                    <img src="images/LogoMakr_8h3KUr.png" alt="">
-                </div>
-                <h5>Formulario de Registro</h5>
-                <div class="row c1">
-                    <form action="">
-                        <label for="nombreCompleto">NombreCompleto:</label>
-                        <input type="text" name="nombreCompleto" id=""><br>
-
-                        <label for="nombreUs">Nombre de usuario:</label>
-                        <input type="text" name="nombreUs" id=""><br>
-
-                        <label for="email">Email:</label>
-                        <input type="email" name="email" id=""><br>
-
-                        <label for="contraseña">Contraseña:</label>
-                        <input type="password" name="contraseña" id="">
-
-                    </form>
-                </div>
+                <img src="images/LogoMakr_8h3KUr.png" alt="" class="">
             </div>
+                <div class=" col-12 titulo4">
+                    <h4>Formulario de registro</h4>
+                </div>
+                <form action="" method="POST" class="col-12 col-md-5 formu">
+                    <div class="col-12 labe">
+                        <label for="nombreCompleto">Nombre:</label><br>
+                        <input type="text" class="field" placeholder="ingrese su nombre" id="nombreCompleto">
+                    </div>
+                    <div class="col-12 labe">
+                        <label for="nombreUsuario">Nombre usuario:</label><br>
+                        <input type="text" class="field" placeholder="ingrese su usuario" id="nombreCompleto">
+                    </div>
+                    <div class="col-12 labe">
+                        <label for="email">Email:</label><br>
+                        <input type="email" class="field" id="email" placeholder="ingrese su email" name="email">
+                    </div>
+                    <div class="col-12 labe">
+                        <label for="password">Contraseña:</label><br>
+                        <input type="password" class="field" id="pwd" placeholder=" ingrese su contraseña"
+                            name="password">
+                    </div>
+                    <div class="col-12 labe">
+                        <label for="password">Confirme contraseña:</label><br>
+                        <input type="password" class="field" id="pwd" placeholder="confirme su contraseña"
+                            name="password">
+                    </div>
 
+                    <div class="col-12 inf ">
 
+                        <a href="">Terminos y condiciones</a>
 
+                    </div>
+                    <div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" name="remember">subcribirse a las noticias</label>
+                        </div>
+                    </div>
+                    <div class="boton">
+                        
+                            <button type="submit" class="btn btn-success">siguiente</button>
+                        
+                    </div>
+                    <div class=" col-12 registrado">
+                        <p>Ya tenés una cuenta? </p><a href="">ingresa aquí</a>
+                    </div>
+                </form>
+           
         </div>
     </div>
-</div>
 
 
 
@@ -44,15 +75,4 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-<%-include("./partials/footer.ejs")%>
+    <%-include("./partials/footer.ejs")%>
