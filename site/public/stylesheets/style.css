@@ -343,7 +343,7 @@ DETALLE DEL PRODUCTO
   flex-wrap: wrap;
   text-align: center;
   justify-content: center;
-  margin: 30px 30px;
+  margin: 30px auto;
   box-shadow: rgba(255, 255, 255, 0.301) 5px 10px 7px 0px inset;
   border-radius: 20px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
