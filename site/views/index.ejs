@@ -1,135 +1,55 @@
-<%-include("./partials/head.ejs")%>
-<%-include("./partials/header.ejs")%>
+<%-include("./partials/head.ejs")%> <%-include("./partials/header.ejs")%>
 <section class="container ur">
-  
-  <div class="row col-12 video"> <video  autoplay loop width="100%" src="/media/video.mp4" alt=""></video>
+  <div class="row col-12 video">
+    <img autoplay loop width="100%" src="/images/banner.gif" alt=""></video>
   </div>
-  <div class=" productos col-12 ">
-     
-      <div class="row">
-        <div class="titulo col-md-12 col-12">
-          <p>JUEGOS  BUTTEFLY PIX BIT</p>
-        </div>
-        <div class="col-12 col-md-6 content ">
-          <a class="vermas" href="/products/detail">
-          <figure  class=" col-md-4  fig" >
-          <img class="img-fluid imag"  src="/images/products/human.jpg" alt="">
-          </figure>
-          <article class="art col-md-8">
-            <h2 class="tituloG">human fall flat  </h2>
-            <p class="pd">Sinopsis: Lorem ipsum dolor sit amet consectetur adipisicing elit. In cupiditate fugiat quaerat reprehenderit adipisci  quidem totam, omnis fugit nam dolores libero eveniet ducimus voluptas blanditiis consequatur quibusdam esse </p>
-            <h3 class="pri col-4">$150 </h3>
-          </article>
-        </a>
-        </div>
-        <div class="col-12 col-md-6 content ">
-          <a class="vermas" href="/products/detail">
-          <figure  class=" col-md-4  fig" >
-          <img class="img-fluid imag"  src="/images/products/human.jpg" alt="">
-          </figure>
-          <article class="art col-md-8">
-            <h2 class="tituloG">human fall flat  </h2>
-            <p class="pd">Sinopsis: Lorem ipsum dolor sit amet consectetur adipisicing elit. In cupiditate fugiat quaerat reprehenderit adipisci  quidem totam, omnis fugit nam dolores libero eveniet ducimus voluptas blanditiis consequatur quibusdam esse </p>
-            <h3 class="pri col-4 ">$100 </h3>
-          </article>
-        </a>
-        </div>
-        <div class="col-12 col-md-6 content ">
-          <a class="vermas" href="/products/detail">
-          <figure  class=" col-md-4  fig" >
-          <img class="img-fluid imag"  src="/images/products/human.jpg" alt="">
-          </figure>
-          <article class="art col-md-8">
-            <h2 class="tituloG">human fall flat   </h2>
-            <p class="pd">Sinopsis: Lorem ipsum dolor sit amet consectetur adipisicing elit. In cupiditate fugiat quaerat reprehenderit adipisci  quidem totam, omnis fugit nam dolores libero eveniet ducimus voluptas blanditiis consequatur quibusdam esse </p>
-            <h3 class="pri col-4">$100 </h3>
-          </article>
-        </a>
-        </div>
-        <div class="col-12 col-md-6 content ">
-          <a class="vermas" href="/products/detail">
-          <figure  class=" col-md-4  fig" >
-          <img class="img-fluid imag"  src="/images/products/human.jpg" alt="">
-          </figure>
-          <article class="art col-md-8">
-            <h2 class="tituloG">human fall flat   </h2>
-            <p class="pd">Sinopsis: Lorem ipsum dolor sit amet consectetur adipisicing elit. In cupiditate fugiat quaerat reprehenderit adipisci  quidem totam, omnis fugit nam dolores libero eveniet ducimus voluptas blanditiis consequatur quibusdam esse </p>
-            <h3 class="pri col-4">$100 </h3>
-          </article>
-        </a>
-        </div>
-        <div class="col-12 col-md-6 content ">
-          <a class="vermas" href="/products/detail">
-          <figure  class=" col-md-4  fig" >
-          <img class="img-fluid imag"  src="/images/products/human.jpg" alt="">
-          </figure>
-          <article class="art col-md-8">
-            <h2 class="tituloG">human fall flat   </h2>
-            <p class="pd">Sinopsis: Lorem ipsum dolor sit amet consectetur adipisicing elit. In cupiditate fugiat quaerat reprehenderit adipisci  quidem totam, omnis fugit nam dolores libero eveniet ducimus voluptas blanditiis consequatur quibusdam esse </p>
-            <h3 class="pri col-4"3>$100 </h3>
-          </article>
-        </a>
-        </div>
-        <div class="col-12 col-md-6 content ">
-          <a class="vermas" href="/products">
-          <figure  class=" col-md-4  fig" >
-          <img class="img-fluid imag"  src="/images/products/human.jpg" alt="">
-          </figure>
-          <article class="art col-md-8">
-            <h2 class="tituloG">human fall flat  </h2>
-            <p class="pd">Sinopsis: Lorem ipsum dolor sit amet consectetur adipisicing elit. In cupiditate fugiat quaerat reprehenderit adipisci  quidem totam, omnis fugit nam dolores libero eveniet ducimus voluptas blanditiis consequatur quibusdam esse </p>
-            <h3 class="pri col-4">$100 </h3>
-          </article>
-        </a>
-        </div>
+  <div class="productos col-12">
+    <div class="row">
+      <div class="titulo col-md-12 col-12">
+        <p>JUEGOS BUTTEFLY PIX BIT</p>
       </div>
+      <% bpb.forEach(p => { %>
+      <div class="col-12 col-md-6 content">
+        <a class="vermas" href="/products/<%-p.id%> ">
+          <figure class="col-md-4 fig">
+            <img
+              class="img-fluid imag"
+              src="/images/products/<%= p.image %> "
+              alt=""
+            />
+          </figure>
+          <article class="art col-md-8">
+            <h2 class="tituloG"><%-p.name%></h2>
+            <p class="pd">
+              <%- p.description%>
+            </p>
+            <h3 class="pri col-4"><%-p.price %></h3>
+          </article>
+        </a>
+      </div>
+      <%})%>
+    </div>
   </div>
   <div class="productos col-12 prf">
-    <div class="row ">
+    <div class="row">
       <div class="titulo col-12 col-md-12">
         <p>JUEGOS DE COMPANIAS ALFILIADAS</p>
-    </div>
-      <div class="col-md-3 col-12">
-          <div class="aff">
-            <a href="/">
-              <img class="img-fluid" src="/images/products/noman.jpg" alt="">
-              <div class="paf">
-              <h4 class="pet">NO MAN'S SKY</h4>
-              <p class="pet">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias quidem sequi odio quos reiciendis expedita est doloremque modi necessitatibus et voluptatum, totam neque! Est illo nisi sint sapiente corrupti.</p>
-              </div>
-            </a>
-          </div>
       </div>
+      <% af.forEach(p => { %>
       <div class="col-md-3 col-12">
-        <div class="aff"> <a href="/">
-            <img class="img-fluid" src="/images/products/noman.jpg" alt="">
-            <div class="paf">
-            <h4 class="pet">NO MAN'S SKY</h4>
-            <p class="pet">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias quidem sequi odio quos reiciendis expedita est doloremque modi necessitatibus et voluptatum, totam neque! Est illo nisi sint sapiente corrupti.</p>
+        <div class="aff">
+          <a href="/products/<%- p.id%>">
+            <img class="img-fluid" src="/images/products/<%-p.image%>" alt="" />
+            <div class="paf col-12">
+              <h4 class="pet"><%-p.name %> </h4>
+              <p class="pet">
+                <%- p.description %> 
+              </p>
             </div>
-        </a>
-    </div>
-    </div>
-    <div class="col-md-3 col-12 ">
-      <div class="aff"> <a href="/">
-          <img class="img-fluid" src="/images/products/noman.jpg" alt="">
-          <div class="paf">
-          <h4 class="pet">NO MAN'S SKY</h4>
-          <p class="pet">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias quidem sequi odio quos reiciendis expedita est doloremque modi necessitatibus et voluptatum, totam neque! Est illo nisi sint sapiente corrupti.</p>
-          </div>
-      </a>
-  </div>
-  </div>
-  <div class="col-md-3 col-12">
-    <div class="aff"> <a href="/">
-        <img class="img-fluid" src="/images/products/noman.jpg" alt="">
-        <div class="paf">
-        <h4 class="pet">NO MAN'S SKY</h4>
-        <p class="pet">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis alias quidem sequi odio quos reiciendis expedita est doloremque modi necessitatibus et voluptatum, totam neque! Est illo nisi sint sapiente corrupti.</p>
+          </a>
         </div>
-    </a>
-</div>
-</div>
+      </div>
+      <% }) %>
     </div>
   </div>
 </section>
