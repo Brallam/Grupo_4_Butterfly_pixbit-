@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function(req, res, next) {
-    res.render("newProduct");
-  });
+var controller = require("../controllers/gamesController")
+
+router.get('/', controller.mostrarForm);
 
 module.exports = router;

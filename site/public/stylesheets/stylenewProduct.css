@@ -40,6 +40,10 @@ BOTONES
 /*
 FORMULARIO
 */
+
+.formulario{
+    height: 100vh;
+}
 img{
     width: 100px;
 }
@@ -49,6 +53,9 @@ img{
 .caja0, .caja1, .caja2, .caja3, .caja4{
     padding-right: 25px;
     margin-left: 25px;
+}
+.descripcion, .especificaiones, .nombre{
+    width: 100%;
 }
 
 
@@ -141,65 +148,6 @@ label{
     margin-right: 20px;
     padding: 10px;
 }
-/*
-FOOTER
-*/
-footer{
-    background-image: url("../images/Header-background.jpg");
-    background-size: 100%;
-}
-.fot{
-    display: flex;
-}
-.pay{
-    flex-direction: column;
-}
-.icard{
-    display: flex;
-    justify-content: space-around;
-    margin: 0px;
-    padding: 10px 30px;
-}
-.textCard{
-    display: flex;
-    justify-content: center;
-    padding-bottom: 20px;
-    border-bottom: black solid 1px;
-}
-.icard li{
-    margin: 0 20px;
-}
-.icard li i{
-    font-size: 40px;
-}
-ol{
-    margin: 0;
-    padding: 0;
-}
-.fot img{
-    width: 150px;
-    height: 150px;
-}
-.fot ul li p{
-    font-size: 15px;
-}
-.redes li a{
-    display: flex;
-}
-.redes li a i{
-    font-size: 25px;
-}
-.fotcenter {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.redes{
-    margin: 0;
-}
-.derechos{
-    padding-top: 30px;
-}
 
 @media  (min-width:320px) and (max-width:760px){
     .caja5{
@@ -216,24 +164,5 @@ ol{
     }
     .dlcdesc{
         margin-bottom: 4px;
-    }
-    /*
-    FOOTER
-    */
-    .redes{
-        padding-left: 0;
-    }   
-    .redes li a i{
-        font-size: 20px;
-    }
-    .fot ul li p{
-        font-size: 15px;
-    }
-    .derechos{
-        padding: 10px;
-    }
-    footer{
-        background-repeat: no-repeat;
-        background-size: cover;
     }
 }
