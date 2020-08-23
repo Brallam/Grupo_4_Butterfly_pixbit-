@@ -5,5 +5,6 @@ var controller = require("../controllers/adminController")
 
 router.get('/', controller.mostrarForm);
 router.get('/newProduct', controller.mostrarForm);
+router.post('/', controller.publicar)
 
 module.exports = router;

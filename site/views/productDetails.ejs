@@ -2,6 +2,7 @@
 <body>
 <%-include("./partials/header.ejs")%>
 
+
 <div class="container">
     <div class="row"> <video autoplay loop width="100%" src="/media/video.mp4" alt=""></video>
     </div>
@@ -10,13 +11,12 @@
 <div class="container">
     <div class="row">
         <div class="col-12 cajaPrincipal">
-            <div class="col-12 col-md-6 CajaimgPrincipal ">
-                <img src="/images/products/<%=producto.image %>  " alt="">
+            <div class="col-12 col-md-7 CajaimgPrincipal ">
+                <img src="/images/products/<%= producto.image %>  " alt="">
             </div>
-            <div class="col-12 col-md-6 cajaDescripcion">
-                <h4 class="col-12"> <%-producto.name %> </h4>
-                <h5><%-producto.description  %> 
-                </h5>
+            <div class="col-12 col-md-5 cajaDescripcion">
+                <h4 class="col-12"><%= producto.name %> </h4>
+                <h5><%=producto.description%> <h5>
             </div>
         </div>
     </div>
@@ -25,25 +25,25 @@
             <div class=" col-12 col-md-6 cajaImagenes">
 
                 <div class="col-6 col-md-3">
-                    <img class="zoom img fluid" src="images/products/default-image.png" alt="">
+                    <img class="zoom img fluid" src="/images/products/default-image.png" alt="">
                 </div>
                 <div class="col-6 col-md-3">
-                    <img class="zoom img fluid" src="images/products/default-image.png" alt="">
+                    <img class="zoom img fluid" src="/images/products/default-image.png" alt="">
                 </div>
                 <div class="col-6 col-md-3">
-                    <img class="zoom img fluid" src="images/products/default-image.png" alt="">
+                    <img class="zoom img fluid" src="/images/products/default-image.png" alt="">
                 </div>
                 <div class="col-6 col-md-3">
-                    <img class="zoom img fluid" src="images/products/default-image.png" alt="">
+                    <img class="zoom img fluid" src="/images/products/default-image.png" alt="">
                 </div>
 
             </div>
             <div class="col-12 col-md-6 detalles3">
                 <div class="col-4 col-md-4">
-                    <h3> $1.500</h3>
+                    <h3>$<%= producto.price %> </h3>
                 </div>
                 <div class="col-4 col-md-4">
-                    <span>50% OFF</span>
+                    <span>% OFF</span>
                     <i class="fas fa-truck"></i>
                     <i class="fas fa-credit-card "></i>
                 </div>
@@ -58,9 +58,7 @@
                 <div class="requisitos">
                     <h4>Requisitos del sistema</h4>
                     <div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima officia exercitationem
-                            numquam voluptatum dignissimos eaque autem cumque rerum doloremque deleniti, pariatur dolore
-                            labore beatae magni natus, architecto officiis. Harum, delectus?</p>
+                        <p><%= producto.requirements %> </p>
                     </div>
                 </div>
             </div>
