@@ -1,13 +1,18 @@
 
 [{"id":1,
     "name":"Human Fall Flat",
-    "price":150,"genere":["Estrategia","Aventura"],
+    "price":150,"genre":["Estrategia","Aventura"],
     "description":"Human: Fall Flat es un divertido juego de plataformas ambientado en paisajes flotantes y oníricos para hasta 8 jugadores en línea. Ahora con niveles gratuitos para recompensar a una comunidad muy entregada.",
     "requirements":"Procesador: Intel Core2 Duo E6750 (2 * 2660), Memoria: 1024 MB de RAM, Gráficos: GeForce GT 740 (2048 MB)",
-    "image":"human.jpg"},
+    "image":"human.jpg",
+    "propiedad":true
+},
 {"id":2,
     "name":"PelucheOsi",
     "price":4,
-    "genere":["Peluche","juguete"],
+    "genre":["terror","rol"],
     "description":"Es un mal juego",
-    "image":"pelu.jpg"}]
+    "image":"pelu.jpg",
+    "propiedad":false
+}
+]

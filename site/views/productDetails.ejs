@@ -1,4 +1,5 @@
 <%-include("./partials/head.ejs")%>
+<body>
 <%-include("./partials/header.ejs")%>
 
 <div class="container">
@@ -10,12 +11,11 @@
     <div class="row">
         <div class="col-12 cajaPrincipal">
             <div class="col-12 col-md-6 CajaimgPrincipal ">
-                <img src="images/products/human.jpg " alt="">
+                <img src="/images/products/<%=producto.image %>  " alt="">
             </div>
             <div class="col-12 col-md-6 cajaDescripcion">
-                <h4 class="col-12">Descripción </h4>
-                <h5>Human: Fall Flat Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit exercitationem voluptatibus labore sed, laborum quos reiciendis vel rerum iusto natus voluptate explicabo vero nam ipsum reprehenderit adipisci corrupti commodi quae?
-                   
+                <h4 class="col-12"> <%-producto.name %> </h4>
+                <h5><%-producto.description  %> 
                 </h5>
             </div>
         </div>
@@ -67,4 +67,6 @@
         </div>   
 </div>
 
-    <%-include("./partials/footer.ejs")%>
+    <%-include("./partials/footer.ejs")%> 
+</body>
+</html>

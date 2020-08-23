@@ -13,7 +13,7 @@ module.exports={
         let producto = dbProduct.filter(producto=>{
             return id==producto.id
         })
-        console.log(producto)
+       
         res.render('productDetails',{
             title:"Detalle",
             producto:producto[0]
