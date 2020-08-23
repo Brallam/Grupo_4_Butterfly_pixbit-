@@ -4,7 +4,19 @@ module.exports={
 
     pruebaVista:function(req,res,next){
         res.render('productDetails',{
-            title:'Detalle del producto'
+            
+            productos: dbProduct
+        })
+    },
+    detalle:function(req,res,next){
+        let id= req.params.id;
+        let producto = dbProduct.filter(producto=>{
+            return id==producto.id
+        })
+        console.log(producto)
+        res.render('productDetails',{
+            
+            producto:producto[0]
         })
     }
 }
