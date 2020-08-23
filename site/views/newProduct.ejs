@@ -9,19 +9,15 @@
     <title>Document</title>
 </head>
 
-<header>
-    <div class="container">
-        <div class="row botones">
-            <button type="button" class="btn btn-success">Atras</button>
-            <button type="button" class="btn btn-success">Vista previa</button>
-            <button type="button" class="btn btn-success">Guardar</button>
-        </div>
-    </div>
-</header>
 
 <body>
-<form  class= "asd" action="" method="POST">
     <div class="container"> 
+      <form  class= "formulario" action="" method="POST">
+        <div class="row botones">
+          <button type="button" class="btn btn-success">Atras</button>
+          <button type="button" class="btn btn-success">Vista previa</button>
+          <button type="submit" class="btn btn-success">Guardar</button>
+      </div>
         <div class="row cd">
             <div class="col-12 col-md-5 da">
                 <div class="row caja0">
@@ -30,58 +26,58 @@
                 </div>
                 <div class="row caja1">
                     <label for="nombre-producto">Nombre</label>
-                    <input type="text" name="nombre-producto" id="nombre-producto">
+                    <input class="nombre" type="text" name="name" id="nombre-producto">
                 </div>
                 <div class="row caja2">
                     <label for="descripcion">Descripcion</label>
-                    <textarea name="descripcion" id="descripcion" cols="40" rows="6" ></textarea>
+                    <textarea class="descripcion" name="description" id="descripcion" cols="40" rows="6" ></textarea>
                 </div>
                 <div class="row caja3">
                     <p>Generos</p>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="accion">
+                        <input class="form-check-input" type="checkbox" value="0" id="accion" name="Accion">
                         <label class="form-check-label" for="accion">
                           Accion
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="disparos">
+                        <input class="form-check-input" type="checkbox" value="1" id="disparos" name="Disparos">
                         <label class="form-check-label" for="disparos">
                           Disparos
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="estrategia">
+                        <input class="form-check-input" type="checkbox" value="2" id="estrategia" name="Estrategia">
                         <label class="form-check-label" for="estrategia">
                           Estrategia
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="simulacion">
+                        <input class="form-check-input" type="checkbox" value="3" id="simulacion" name="Simulacion">
                         <label class="form-check-label" for="simulacion">
                           Simulacion
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="deporte">
+                        <input class="form-check-input" type="checkbox" value="4" id="deporte" name="Deporte">
                         <label class="form-check-label" for="deporte">
                           Deporte
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="carrera">
+                        <input class="form-check-input" type="checkbox" value="5" id="carrera" name="Carrera">
                         <label class="form-check-label" for="carrera">
-                          Carreras
+                          Carrera
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="aventura">
+                        <input class="form-check-input" type="checkbox" value="6" id="aventura" name="Aventura">
                         <label class="form-check-label" for="aventura">
                           Aventura
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="rol">
+                        <input class="form-check-input" type="checkbox" value="7" id="rol" name="ROL">
                         <label class="form-check-label" for="rol">
                           Rol
                         </label>
@@ -89,7 +85,7 @@
                 </div>
                 <div class="row caja4">
                     <label for="especificasiones">Especificasiones</label>
-                    <textarea name="especificasiones" id="especificasiones" cols="40" rows="6"></textarea>
+                    <textarea class="especificaiones" name="requirements" id="especificasiones" cols="40" rows="6"></textarea>
                 </div>
             </div>
             <div class="col-12 col-md-7 cd">
@@ -123,17 +119,12 @@
                 <div class="row caja7">
                     <div class="precio">
                       <label for="precio">Precio</label>
-                      <input type="number" id="precio">
+                      <input type="number" id="precio" name="price">
                     </div>
                 </div>
             </div>
         </div>
+      </form>
     </div>
-</form>
-
-<!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
-</html>-->
-<%-include("./partials/footer.ejs")%>
+
