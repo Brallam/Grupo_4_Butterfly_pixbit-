@@ -21,6 +21,7 @@
             "juguete"
         ],
         "description": "Es un mal juego",
+        "requirements": "Procesador: Intel Core2 Duo E6750 (2 * 2660), Memoria: 1024 MB de RAM, Gráficos: GeForce GT 740 (2048 MB)",
         "image": "pelu.jpg",
         "propiedad": false
     }
