@@ -148,6 +148,18 @@ label{
     margin-right: 20px;
     padding: 10px;
 }
+/*
+ADMIN
+*/
+.container{
+    background-color: white;
+}
+.menuinfo{
+    border: 1px solid black;
+}
+.menuitem{
+    border: 1px solid gray;
+}
 
 @media  (min-width:320px) and (max-width:760px){
     .caja5{

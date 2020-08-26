@@ -606,15 +606,7 @@ ol {
   header {
     background-size: cover;
   }
-  .burger {
-    background-color: rgb(77, 77, 77);
-    margin-top: 15px;
-    display: none;
-  }
-  .burger i {
-    font-size: 40px;
-    color: rgb(21, 185, 226);
-  }
+  
   .reg {
     padding-left: 0;
   }

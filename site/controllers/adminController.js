@@ -6,8 +6,11 @@ module.exports = {
     mostrarForm:(req,res)=>{
         res.render("newProduct",{});
     },
-    agregar:(req,res)=>{
-        res.render("newProduct",{});
+    lista:(req,res)=>{
+        let dbP = dbProduct
+        res.render("admin",{
+            dbP: dbP
+        });
     },
     publicar:(req,res)=>{
 
@@ -42,6 +45,6 @@ module.exports = {
 
         fs.writeFileSync(path.join(__dirname,"..", "data","productsDataBase.json"),JSON.stringify(dbProduct), "utf-8");
 
-        res.send(dbProduct)
+        res.redirect('/admin')
     }
 }
