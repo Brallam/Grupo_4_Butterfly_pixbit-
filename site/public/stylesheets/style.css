@@ -18,6 +18,9 @@ a:hover {
 li {
   list-style: none;
 }
+.osi{
+  padding-bottom: 50px;
+}
 /*
 VARIABLES
 */
@@ -37,8 +40,10 @@ HEADER
 header {
   background-image: url("../images/Header-background.jpg");
   background-size: 100%;
-
   background-size: 100%;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
 }
 header img {
   width: 80px;
@@ -103,6 +108,7 @@ header img {
   padding: 10px;
   margin: 0;
   border-radius: 50% solid;
+  padding-top: 100px;
 }
 .productos {
   border-radius: 15px;
@@ -632,12 +638,6 @@ ol {
   .video {
     display: none;
   }
-  /*.content{
-        border: rgb(0, 152, 253) solid 2px;
-    }
-    .content:nth-child(2n){
-        border-right: rgb(0, 152, 253) solid 2px;;
-    }*/
   .aff {
     margin: 10px;
   }
