@@ -529,7 +529,7 @@ ol {
   background-color: rgba(128, 128, 128, 0.556);
   border-radius: 25px;
   margin: auto;
-  margin-bottom: 10px;
+  margin-top: 0;
 }
 .pubf {
   margin: auto;
