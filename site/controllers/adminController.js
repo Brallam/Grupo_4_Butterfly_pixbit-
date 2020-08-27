@@ -41,7 +41,7 @@ module.exports = {
             description: req.body.description,
             requirements: req.body.requirements,
             image: (req.files[0])?req.files[0].filename:"default-image.png",
-            propiedad: Boolean(req.body.propiedad)
+            propiedad: Boolean(Number(req.body.propiedad))
         }
         dbProduct.push(newProduct);
 
