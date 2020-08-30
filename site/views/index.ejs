@@ -21,7 +21,7 @@
             <p class="pd">
               <%- p.description%>
             </p>
-            <h3 class="pri col-4"><%-p.price %></h3>
+            <h3 class="pri col-6"><%if (p.price!=0){ %>$<%-p.price %><% }else{%>Free to Play<%}%></h3>
           </article>
         </a>
       </div>
@@ -34,15 +34,16 @@
         <p>JUEGOS DE COMPANIAS ALFILIADAS</p>
       </div>
       <% af.forEach(p => { %>
-      <div class="col-md-3 col-12">
+      <div class="col-lg-3 col-md-6 col-12 of">
         <div class="aff">
           <a href="/products/<%- p.id%>">
-            <img class="img-fluid" src="/images/products/<%-p.image%>" alt="" />
+            <img class="imga" src="/images/products/<%-p.image%>" alt=""> 
             <div class="paf col-12">
-              <h4 class="pet"><%-p.name %> </h4>
+              <h4 class="pet"><%-p.name %></h4>
               <p class="pet">
                 <%- p.description %> 
               </p>
+            </img>
             </div>
           </a>
         </div>
