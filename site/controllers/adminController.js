@@ -18,8 +18,8 @@ module.exports = {
         let lastID = 1;
 
         dbProduct.forEach(producto => {
-            if(producto.id > lastID){
-                lastID = producto.id
+            if(producto.id >= lastID){
+                lastID = lastID + 1
             }
         });
 
@@ -34,13 +34,14 @@ module.exports = {
         })
 
         let newProduct = {
-            id: lastID + 1,
+            id: lastID,
             name: req.body.name,
             price: Number(req.body.price),
             genre: generosfiltrados,
             description: req.body.description,
             requirements: req.body.requirements,
-            image: "default-image.png"
+            image: (req.files[0])?req.files[0].filename:"default-image.png",
+            propiedad: Boolean(Number(req.body.propiedad))
         }
         dbProduct.push(newProduct);
 
@@ -60,7 +61,7 @@ module.exports = {
         });
     },
     editp:(req,res)=>{
-        let id= req.params.id
+        let id= Number(req.params.id)
         let reqgeneros = [req.body.Accion, req.body.Disparos, req.body.Estrategia, req.body.Simulacion, req.body.Deporte, req.body.Carrera, req.body.Aventura, req.body.ROL]
         let generos = ["Accion", "Disparos", "Estrategia", "Simulacion", "Deporte", "Carrera", "Aventura", "ROL"]
         let generosfiltrados = []
