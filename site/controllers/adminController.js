@@ -72,18 +72,21 @@ module.exports = {
             }
         })
 
-        let newProduct = {
-            id:id,
+        let editProduct = {
+            id:Number(id),
             name: req.body.name,
             price: Number(req.body.price),
             genre: generosfiltrados,
             description: req.body.description,
             requirements: req.body.requirements,
-            image: "default-image.png"  
-        }
+            image: (req.files[0])?req.files[0].filename:"default-image.png",
+            propiedad: Boolean(Number(req.body.propiedad))
+            
+
+         }
         let p=id
         p=p-1
-        dbProduct.splice(p,1,newProduct)
+        dbProduct.splice(p,1,editProduct)
         fs.writeFileSync(path.join(__dirname,"..", "data","productsDataBase.json"),JSON.stringify(dbProduct), "utf-8");
 
         res.redirect('/admin')
