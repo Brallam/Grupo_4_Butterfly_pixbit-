@@ -42,7 +42,8 @@
                                     <th scope="row"><%- producto.id %></th>
                                     <td><%- producto.name %></td>
                                     <td><%- producto.price %> </td>
-                                    <td><a href="/admin/editproduct/<%-producto.id%>"><button type="button" class="btn btn-info" >Editar</button><button type="button" class="btn btn-danger">Borrar</button></td>
+                                    <td><a href="/admin/editproduct/<%-producto.id%>">
+                                      <button type="button" class="btn btn-info" >Editar</button> <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST"><button type="button" class="btn btn-danger">Borrar</button></td></form>
                                   </tr>
                                   <% }); %> 
                                 </tbody>

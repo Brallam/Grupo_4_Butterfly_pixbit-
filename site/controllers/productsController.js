@@ -15,4 +15,16 @@ module.exports = {
       producto: producto[0]
     });
   },
+  eliminar:function(req,res){
+    let aEliminar;
+    let idProducto = req.params.id;
+    dbProduct.forEach(producto => {
+      if(producto.id== idProducto){
+         aEliminar = dbProduct.indexof(producto)
+        
+      }
+    })
+    dbProduct.splice(aEliminar,1)
+    res.redirect('/admin')
+  }
 };
