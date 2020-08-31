@@ -52,7 +52,26 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        Aqui se muestran los usuarios
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">editar</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <% usuarios.forEach(producto => { %>
+                          <tr>
+                            <th scope="row"><%- producto.id %></th>
+                            <td><%- producto.name %></td>
+                            
+                            
+                          </tr>
+                          <% }); %> 
+                        </tbody>
+                      </table>
                     </div>
                   </div>
             </div>
