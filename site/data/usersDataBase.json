@@ -1,16 +1,19 @@
-[{
-    "id": 1,
-    "name": "Charly",
-    "nameU":"Charly1",
-    "email": "charly@gmail.com",
-    "password": "12345678",
-    "admin": true
-},{ 
-"id": 2,
-    "name": "Pepe",
-    "nameU":"Pepe1",
-    "email": "pepe@gmail.com",
-    "password": "123456789",
-    "admin": false
+[
+    {
+        "id": 1,
+        "name": "Charly",
+        "nameU": "Charly1",
+        "email": "charly@gmail.com",
+        "password": "12345678",
+        "admin": true
+    },
+    {
+        "id": 2,
+        "name": "Pepe",
+        "nameU": "Pepe1",
+        "email": "pepe@gmail.com",
+        "password": "123456789",
+        "admin": false
+    }
     
-}]
+]

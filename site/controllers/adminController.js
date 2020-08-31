@@ -1,4 +1,5 @@
 const dbProduct = require("../data/database");
+const dbUsers = require('../data/databaseUsers');
 const fs = require("fs");
 const path = require("path");
 
@@ -10,6 +11,7 @@ module.exports = {
     lista:(req,res)=>{
         let dbP = dbProduct
         res.render("admin",{
+            usuarios:dbUsers,
             dbP: dbP
         });
     },
