@@ -1,0 +1,120 @@
+
+/*CARRITO*/
+.all {
+    flex-wrap: wrap;
+    margin: auto;
+  }
+  .carrito {
+    margin-top: 50px;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+  .concar {
+    flex-wrap: wrap;
+    display: block;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    max-width: 800px;
+  }
+  
+  .selecpro {
+    text-align: center;
+    border: rgba(0, 0, 0, 0.719) 2px solid;
+    background-color: rgba(128, 128, 128, 0.582);
+  
+    border-radius: 25px;
+    margin: 0;
+  }
+  .producto {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: rgb(21, 185, 226) solid 1px;
+    border-radius: 5px;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+  
+  .infp {
+    border-radius: 15px;
+    margin: auto;
+    text-align: start;
+    -webkit-text-stroke: black 0.5px;
+    color: black;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.301);
+  }
+  .pub {
+    flex-wrap: wrap;
+    float: right;
+    border: rgba(0, 0, 0, 0.719) 2px solid;
+    background-color: rgba(128, 128, 128, 0.556);
+    border-radius: 25px;
+    margin: auto;
+    margin-top: 0;
+  }
+  .pubf {
+    margin: auto;
+  }
+  .info {
+    float: left;
+    background-color: rgba(128, 128, 128, 0.582);
+    max-width: 700px;
+    border-radius: 25px;
+    border: rgba(0, 0, 0, 0.719) 2px solid;
+  }
+  .imgc {
+    margin: 10px 0px;
+    max-width: 120px;
+  }
+  .seg {
+    border-radius: 15px;
+    background-color: rgb(21, 185, 226);
+    border: cyan solid 1px;
+    color: white;
+    text-transform: capitalize;
+    float: left;
+  }
+  .preciop {
+    align-items: center;
+    border-radius: 15px;
+    margin: 0;
+    color: rgb(63, 68, 49);
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    border: cyan solid 1px;
+    background-color: white;
+    float: right;
+  }
+  .ep {
+    align-items: center;
+    float: right;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    display: flex;
+  }
+  .eliminar {
+    float: right;
+    border-radius: 10px;
+    color: wheat;
+    border: red solid 1px;
+    background-color: rgba(148, 17, 17, 0.815);
+  
+    max-width: 130px;
+  }
+  .comprar {
+    max-width: 130px;
+    color: white;
+    border-radius: 10px;
+    border: green solid 1px;
+    float: right;
+    background-color: rgb(61, 199, 61);
+  }
+  .precio {
+    border-radius: 25px;
+    float: right;
+    background-color: rgb(21, 185, 226);
+    border: cyan solid 1px;
+    text-align: center;
+  }
