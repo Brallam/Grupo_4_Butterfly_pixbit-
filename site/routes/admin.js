@@ -22,5 +22,6 @@ router.get('/newProduct', controller.mostrarForm);
 router.post('/newProduct',upload.any(), controller.publicar)
 router.get('/editproduct/:id', controller.edit);
 router.post('/editproduct/:id',upload.any(), controller.editp)
+router.delete('/delete/:id',controller.eliminar)
 
 module.exports = router;
