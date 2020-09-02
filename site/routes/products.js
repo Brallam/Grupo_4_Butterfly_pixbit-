@@ -7,4 +7,5 @@ const controller = require('../controllers/productsController');
 router.get('/', controller.pruebaVista);
 router.get('/:id', controller.detalle);
 
+
 module.exports = router;

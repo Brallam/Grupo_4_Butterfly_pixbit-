@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Charly",
+        "nameU": "Charly1",
+        "email": "charly@gmail.com",
+        "password": "12345678",
+        "admin": true
+    },
+    {
+        "id": 2,
+        "name": "Pepe",
+        "nameU": "Pepe1",
+        "email": "pepe@gmail.com",
+        "password": "123456789",
+        "admin": false
+    },
+    {
+        "id": 3,
+        "name": "angel",
+        "nameU": "gambito",
+        "email": "angelgimenez992@gmail.com",
+        "password": "123456789"
+    },
+    {
+        "id": 4,
+        "name": "asdasd",
+        "nameU": "asdasd",
+        "email": "asdasd@hotmail.com",
+        "password": "1234567"
+    }
+]

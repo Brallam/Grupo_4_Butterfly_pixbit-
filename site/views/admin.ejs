@@ -33,7 +33,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Precio</th>
-                                    <th scope="col">editar</th>
+                                    <th scope="col">Editar</th>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -42,7 +42,9 @@
                                     <th scope="row"><%- producto.id %></th>
                                     <td><%- producto.name %></td>
                                     <td><%- producto.price %> </td>
-                                    <td><a href="/admin/editproduct/<%-producto.id%>"><button type="button" class="btn btn-info" >Editar</button><button type="button" class="btn btn-danger">Borrar</button></td>
+                                    <td><a href="/admin/editproduct/<%-producto.id%>">
+                                     <button type="button" class="btn btn-info" >Editar</button></a>
+                                     <form class="btn" action="/admin/delete/<%-producto.id%>?_method=DELETE" method="POST"></form><button type="submit" class="btn btn-danger"> Borrar </button></td></form>
                                   </tr>
                                   <% }); %> 
                                 </tbody>
@@ -50,7 +52,25 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        Aqui se muestran los usuarios
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <% usuarios.forEach(producto => { %>
+                          <tr>
+                            <th scope="row"><%- producto.id %></th>
+                            <td><%- producto.name %></td>
+                            
+                            
+                          </tr>
+                          <% }); %> 
+                        </tbody>
+                      </table>
                     </div>
                   </div>
             </div>
