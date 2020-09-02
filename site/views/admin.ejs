@@ -33,7 +33,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Precio</th>
-                                    <th scope="col">editar</th>
+                                    <th scope="col">Editar</th>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -43,8 +43,9 @@
                                     <td><%- producto.name %></td>
                                     <td><%- producto.price %> </td>
                                     <td><a href="/admin/editproduct/<%-producto.id%>">
-                                      <button type="button" class="btn btn-info" >Editar</button></td>
-                                    <td><form class="btn" action="/admin/<%-producto.id%>?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger"> Borrar </form></button></td>
+                                     <button type="button" class="btn btn-info" >Editar</button></a>
+                                     <form class="btn" action="/admin/delete/<%-producto.id%>?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger"> Borrar </button></td></form>
+                                  </tr>
                                   <% }); %> 
                                 </tbody>
                               </table>
@@ -56,19 +57,17 @@
                           <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Precio</th>
-                            <th scope="col">editar</th>
+                            
                           </tr>
                         </thead>
                         <tbody>
-                            <% dbP.forEach(producto => { %>
+                            <% usuarios.forEach(producto => { %>
                           <tr>
                             <th scope="row"><%- producto.id %></th>
                             <td><%- producto.name %></td>
-                            <td><%- producto.price %> </td>
-                            <td><a href="/admin/editproduct/<%-producto.id%>">
-                              <button type="button" class="btn btn-info" >Editar</button></td>
-                            <td><form class="btn" action="/admin/<%-producto.id%>?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger"> Borrar </form></button></td>
+                            
+                            
+                          </tr>
                           <% }); %> 
                         </tbody>
                       </table>

@@ -1,0 +1,64 @@
+/* FORMULARIO DE REGISTRO */
+.cajaregistro {
+    border: 3px solid rgba(0, 0, 0, 0.5);
+    background-color: grey;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    margin-top: 1000px ;
+    margin: 30px auto;
+    box-shadow: rgba(255, 255, 255, 0.301) 5px 10px 7px 0px inset;
+    border-radius: 20px;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  }
+  .cajalogo {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    margin: 10px;
+  }
+  .cajalogo img {
+    width: 20%;
+  }
+  .titulo4 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    border-radius: 5px;
+    color: #fff;
+  }
+  .titulo4 h4 {
+    font-weight: 100;
+  }
+  
+  .labe input {
+    border-radius: 10px;
+  }
+  .registrado {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  .boton {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+  .inf {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .btn-success {
+    margin-right: 30%;
+  }
+  /*LOGIN*/
+  .boton{
+    margin-bottom: 30px;
+    border-radius: 5px;
+  }

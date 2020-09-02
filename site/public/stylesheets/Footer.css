@@ -1,0 +1,60 @@
+
+/*
+FOOTER
+*/
+footer {
+    background-image: url("../images/Header-background.jpg");
+    background-size: 100%;
+  }
+  .fot {
+    display: flex;
+  }
+  .pay {
+    flex-direction: column;
+  }
+  .icard {
+    display: flex;
+    justify-content: space-around;
+    margin: 0px;
+    padding: 10px 30px;
+  }
+  .textCard {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    border-bottom: black solid 1px;
+  }
+  .icard li {
+    margin: 0 20px;
+  }
+  .icard li i {
+    font-size: 40px;
+  }
+  ol {
+    margin: 0;
+    padding: 0;
+  }
+  .fot img {
+    width: 150px;
+    height: 150px;
+  }
+  .fot ul li p {
+    font-size: 15px;
+  }
+  .redes li a {
+    display: flex;
+  }
+  .redes li a i {
+    font-size: 25px;
+  }
+  .fotcenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .redes {
+    margin: 0;
+  }
+  .derechos {
+    padding-top: 30px;
+  }

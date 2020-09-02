@@ -1,15 +1,19 @@
 const dbProduct = require("../data/database");
+const dbUsers = require('../data/databaseUsers');
 const fs = require("fs");
 const path = require("path");
 
 module.exports = {
     mostrarForm:(req,res)=>{
-        res.render("newProduct",{});
+        res.render("newProduct",{
+            title:"Carga del producto"
+        });
  
     },
     lista:(req,res)=>{
         let dbP = dbProduct
         res.render("admin",{
+            usuarios:dbUsers,
             dbP: dbP
         });
     },
@@ -19,9 +23,11 @@ module.exports = {
 
         dbProduct.forEach(producto => {
             if(producto.id >= lastID){
-                lastID = lastID + 1
+                lastID = producto.id
             }
         });
+
+        lastID = lastID + 1 
 
         let reqgeneros = [req.body.Accion, req.body.Disparos, req.body.Estrategia, req.body.Simulacion, req.body.Deporte, req.body.Carrera, req.body.Aventura, req.body.ROL]
         let generos = ["Accion", "Disparos", "Estrategia", "Simulacion", "Deporte", "Carrera", "Aventura", "ROL"]
@@ -35,11 +41,11 @@ module.exports = {
 
         let newProduct = {
             id: lastID,
-            name: req.body.name,
+            name: req.body.name.trim(),
             price: Number(req.body.price),
             genre: generosfiltrados,
-            description: req.body.description,
-            requirements: req.body.requirements,
+            description: req.body.description.trim(),
+            requirements: req.body.requirements.trim(),
             image: (req.files[0])?req.files[0].filename:"default-image.png",
             propiedad: Boolean(Number(req.body.propiedad))
         }
@@ -100,11 +106,9 @@ module.exports = {
             
           }
         })
-      
         dbProduct.splice(aEliminar,1)
         fs.writeFileSync(path.join(__dirname,"..", "data","productsDataBase.json"),JSON.stringify(dbProduct), "utf-8");
-       
-          
         res.redirect('/admin')
       }
-}
+    };
+    

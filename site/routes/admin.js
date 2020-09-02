@@ -17,12 +17,16 @@ let storage = multer.diskStorage({
 
 let upload = multer({storage:storage})
 
-router.get('/', controller.lista);
-router.get('/newProduct', controller.mostrarForm);
-router.post('/newProduct',upload.any(), controller.publicar)
-router.get('/editproduct/:id', controller.edit);
-router.post('/editproduct/:id',upload.any(), controller.editp)
-router.delete('/:id',controller.eliminar)
+//RUTAS
 
+router.get('/', controller.lista);
+
+router.get('/newProduct', controller.mostrarForm);
+router.post('/newProduct',upload.any(), controller.publicar);
+
+router.get('/editproduct/:id', controller.edit);
+router.post('/editproduct/:id',upload.any(), controller.editp);
+
+router.delete('/delete/:id',controller.eliminar)
 
 module.exports = router;

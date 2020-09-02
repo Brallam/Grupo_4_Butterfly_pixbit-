@@ -1,22 +1,23 @@
 <%-include("./partials/head.ejs")%>
 <%-include("./partials/header.ejs")%>
 <div class="container">
+    <h6 class="osi">PelucheOsi</h6>
     <div class="row ">
-        <div class="cajaregis">
+        <div class="cajaregistro">
             <div class=" col-12 cajalogo">
-                <img src="images/LogoMakr_8h3KUr.png" alt="" class="">
+                <img src="/images/LogoMakr_8h3KUr.png" alt="" class="">
                 </div>
                 <div class=" col-12 titulo4">
                     <h4>Formulario de registro</h4>
                 </div>
-                <form action="" method="POST" class="col-12 col-md-5 formu">
+                <form action="/users/register" method="POST" class="col-12 col-md-5 formu">
                     <div class="col-12 labe">
-                        <label for="nombreCompleto">Nombre:</label><br>
-                        <input type="text" name="nombreCompleto"class="field" placeholder="ingrese su nombre" id="nombreCompleto">
+                        <label for="name">Nombre:</label><br>
+                        <input type="text" name="name"class="field" placeholder="ingrese su nombre" >
                     </div>
                     <div class="col-12 labe">
-                        <label for="nombreUsuario">Nombre usuario:</label><br>
-                        <input type="text" name="nombreUsuario" class="field" placeholder="ingrese su usuario" id="nombreCompleto">
+                        <label for="nameU">Nombre usuario:</label><br>
+                        <input type="text" name="nameU" class="field" placeholder="ingrese su usuario" >
                     </div>
                     <div class="col-12 labe">
                         <label for="email">Email:</label><br>
@@ -28,8 +29,8 @@
                            >
                     </div>
                     <div class="col-12 labe">
-                        <label for="Conpassword">Confirme contraseña:</label><br>
-                        <input type="password"  name="Conpassword" class="field" id="pwd" placeholder="confirme su contraseña"
+                        <label for="Cpassword">Confirme contraseña:</label><br>
+                        <input type="password"  name="Cpassword" class="field" id="pwd" placeholder="confirme su contraseña"
                            >
                     </div>
 
@@ -45,11 +46,11 @@
                     </div>
                     <div class="boton">
                         
-                            <button type="submit" class="btn btn-success">siguiente</button>
+                            <button type="submit" class="btn btn-success">Registrarse</button>
                         
                     </div>
                     <div class=" col-12 registrado">
-                        <p> ¿Ya tenés una cuenta? </p><a href="">ingresa aquí</a>
+                        <p> ¿Ya tenés una cuenta? </p><a href="/users/login">ingresa aquí</a>
                     </div>
                 </form>
            
