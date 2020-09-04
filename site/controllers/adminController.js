@@ -91,7 +91,7 @@ module.exports = {
             genre: generosfiltrados,
             description: req.body.description.trim(),
             requirements: req.body.requirements.trim(),
-            image: (req.files[0])?req.files[0].filename.orignal:img,
+            image: (req.files[0])?req.files[0].filename:img,
             propiedad: Boolean(Number(req.body.propiedad))
             
 
