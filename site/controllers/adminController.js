@@ -2,6 +2,7 @@ const dbProduct = require("../data/database");
 const dbUsers = require('../data/databaseUsers');
 const fs = require("fs");
 const path = require("path");
+const { stringify } = require("querystring");
 
 module.exports = {
     mostrarForm:(req,res)=>{
@@ -77,21 +78,30 @@ module.exports = {
                 generosfiltrados.push(generos[element])
             }
         })
-
+        let img
+        dbProduct.forEach(m=>{
+            if (m.id==id){
+                return img=m.image
+               }
+        })
         let editProduct = {
             id:Number(id),
-            name: req.body.name,
+            name: req.body.name.trim(),
             price: Number(req.body.price),
             genre: generosfiltrados,
-            description: req.body.description,
-            requirements: req.body.requirements,
-            image: (req.files[0])?req.files[0].filename:"default-image.png",
+            description: req.body.description.trim(),
+            requirements: req.body.requirements.trim(),
+            image: (req.files[0])?req.files[0].filename.orignal:img,
             propiedad: Boolean(Number(req.body.propiedad))
             
 
          }
-        let p=id
-        p=p-1
+        let p
+        dbProduct.forEach(m=>{
+            if (m.id==id){
+             return p=dbProduct.indexOf(m) 
+            }
+        })
         dbProduct.splice(p,1,editProduct)
         fs.writeFileSync(path.join(__dirname,"..", "data","productsDataBase.json"),JSON.stringify(dbProduct), "utf-8");
 
