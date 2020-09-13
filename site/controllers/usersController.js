@@ -2,10 +2,20 @@ let dbUsers = require('../data/databaseUsers');
 const dbProduct = require("../data/database");
 const fs = require("fs");
 const path = require("path");
+const { stringify } = require("querystring");
 
 module.exports = {
-
-   guardar:function(req,res){
+    registro:(req,res,next)=>{
+        res.render("register",{
+            title:"Registro"
+         }) 
+    },
+    login:(req,res,nex)=>{
+        res.render("login",{
+            title:'Iniciar Sesion'
+          })
+    },
+    guardar:function(req,res){
     let lastID = 1;
         dbUsers.forEach(usuario => {
             if(usuario.id >= lastID){
@@ -19,6 +29,7 @@ module.exports = {
         nameU:req.body.nameU.trim(),
         email:(req.body.email).trim(),
         password:req.body.password.trim(),
+        image: (req.files[0])?req.files[0].filename:"default-image.png",
         admin: false
     }
 
