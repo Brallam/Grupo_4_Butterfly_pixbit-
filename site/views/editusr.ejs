@@ -1,0 +1,34 @@
+
+<%-include("./partials/head.ejs")%>
+<%-include("./partials/header.ejs")%>
+
+<div class="">
+    <h6 class="osi">PelucheOsi</h6>
+    <div class="container">
+        <div class="col-12">
+            <form  action="" method="POST" enctype="multipart/form-data">
+            <div class="cajaPrincipal">
+                <div class="col-4"><img src="/images/users/<%=user.image%> " alt="" class="img-fluid">
+                    <div class="uploadimage">
+                        <h6>Cambiar foto de perfil</h6>
+                        <input type="file" name="image">
+                      </div>
+                    </div>
+                <ul>
+                <li>Numero de Identificacion: <%-user.id%>  </li>
+                <li>Nombre: <input class="nombre" type="text" name="name" id="nombre-de-usuario " value="<%-user.name %> "> </li>
+                <li>Nombre de usuario: <input class="nombre" type="text" name="nameU" id="alias-de-usuario" value="<%-user.nameU %> "> </li>
+                <li >Email: <%-user.email%>  </li>
+                <li>Juegos Adquiridos: Undefined </li>
+                </ul>
+                <div>
+                <button type="submit" class="btn btn-success">Guardar</button>
+                <a href="/users/profile/<%-user.id%> "><button type="button" class="btn btn-success">Atras</button></a> </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<%-include("./partials/footer.ejs")%>

@@ -1,0 +1,26 @@
+<%-include("./partials/head.ejs")%>
+<%-include("./partials/header.ejs")%>
+
+<div class="">
+    <h6 class="osi">PelucheOsi</h6>
+    <div class="container">
+        <div class="col-12">
+            <div class="cajaPrincipal">
+                <div class="col-4"><img src="/images/users/<%=user.image%> " alt="" class="img-fluid"></div>
+                <ul>
+                <li>Numero de Identificacion: <%-user.id%>  </li>
+                <li>Nombre: <%-user.name%>  </li>
+                <li>Nombre de usuario: <%-user.nameU%> </li>
+                <li>Email: <%-user.email%>  </li>
+                <li>Juegos Adquiridos: Undefined </li>
+                </ul>
+                <a href="/users/edit/<%-user.id%> "><button>Editar perfil</button></a>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+
+<%-include("./partials/footer.ejs")%>

@@ -6,6 +6,51 @@ const { stringify } = require("querystring");
 var { check, validationResult, body } = require('express-validator')
 
 module.exports = {
+    profile:(req,res,next)=>{
+        let id  =req.params.id;
+        let usr=dbUsers.filter((usr)=>{
+            return id==usr.id
+        })
+        res.render("usersProf",{
+            title: "Perfil ",
+            user:usr[0]
+        })
+    
+    },
+    editper:(req,res,next)=>{
+        let id  =req.params.id;
+        let usr=dbUsers.filter((usr)=>{
+            return id==usr.id
+        })
+        res.render("editusr",{
+            title: "Perfil ",
+            user:usr[0]
+        })
+    },
+    editf:(req,res,next)=>{
+        let id  =req.params.id;
+        let user = dbUsers.filter((m) => {
+            return id == m.id;
+          });
+        let editusr = {
+            id:Number(id),
+            name: req.body.name.trim(),
+            nameU: req.body.nameU.trim(),
+            email:user[0].email,
+            password:user[0].password,
+            image: (req.files[0])?req.files[0].filename:user[0].image,
+         }
+        let p
+        dbUsers.forEach(m=>{
+            if (m.id==id){
+             return p=dbUsers.indexOf(m) 
+            }
+        })
+        dbUsers.splice(p,1,editusr)
+        fs.writeFileSync(path.join(__dirname,"..",'data',"UsersDataBase.json"),JSON.stringify(dbUsers),'utf-8')
+        res.redirect("/users/profile/"+id )
+
+    },
     registro:(req,res,next)=>{
         res.render("register",{
             title:"Registro"
