@@ -13,7 +13,8 @@ module.exports = {
         })
         res.render("usersProf",{
             title: "Perfil ",
-            user:usr[0]
+            user:usr[0],
+            userLog: req.session.userLog
         })
     
     },
@@ -24,7 +25,8 @@ module.exports = {
         })
         res.render("editusr",{
             title: "Perfil ",
-            user:usr[0]
+            user:usr[0],
+            userLog: req.session.userLog
         })
     },
     editf:(req,res,next)=>{
@@ -53,12 +55,14 @@ module.exports = {
     },
     registro:(req,res,next)=>{
         res.render("register",{
-            title:"Registro"
+            title:"Registro",
+            userLog: req.session.userLog
          }) 
     },
     login:(req,res,nex)=>{
         res.render("login",{
-            title:'Iniciar Sesion'
+            title:'Iniciar Sesion',
+            userLog: req.session.userLog
           })
     },
    guardar:function(req,res){
@@ -90,7 +94,41 @@ module.exports = {
     
     res.redirect('/')
     }else{
-        return res.render('register', {errors: errors.errors, title:'Registro'})
+        return res.render('register', {
+            errors: errors.errors, 
+            title:'Registro',
+            userLog: req.session.userLog
+        })
     }
+   },
+   processLogin:function(req,res){
+       let errors = validationResult(req);
+       let userALogearse
+
+       if(errors.isEmpty()){
+        dbUsers.forEach(user=>{
+            if(user.email == req.body.email){
+                if(user.password == req.body.password){
+                    userALogearse = user;
+                }
+            }
+        })
+        if(userALogearse == undefined){
+            return res.render("login",{
+                title:'Iniciar Sesion',
+                errors: [
+                    {msg: 'Credenciales invalidas'}
+                ]
+              })
+        }
+
+        req.session.userLog = userALogearse
+        res.redirect('/')
+       }else{
+            res.render("login",{
+            title:'Iniciar Sesion',
+            errors: errors.errors
+          })
+       }
    }
 }

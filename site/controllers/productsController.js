@@ -3,7 +3,8 @@ const dbProduct = require("../data/dataBase");
 module.exports = {
   pruebaVista: function (req, res, next) {
     res.render("productDetails", {
-      title:"Detalle del producto"
+      title:"Detalle del producto",
+      userLog: req.session.userLog
     });
   },
   detalle: function (req, res, next) {
@@ -14,7 +15,8 @@ module.exports = {
     console.log(producto);
     res.render("productDetails", {
         title:"Detalle del producto",
-        producto: producto[0]
+        producto: producto[0],
+        userLog: req.session.userLog
     });
   }
 }

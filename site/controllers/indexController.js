@@ -8,10 +8,12 @@ module.exports={
         let af=dbProduct.filter(m=>{
             return m.propiedad==false;
         })
+
         res.render("index", {
             title: "Butterfly PixBit",
             bpb:bpb,
             af:af,
+            userLog: req.session.userLog
         })
     })
 }

@@ -22,12 +22,16 @@ router.get('/', function(req, res, next) {
  res.send('respond with a resource');
 });
 router.get("/profile/:id",controller.profile)
+
 router.get("/edit/:id",controller.editper)
 router.post("/edit/:id",upload.any(),controller.editf)
-router.get('/register', controller.registro)
 
-  router.get("/login", controller.login )
-  router.post('/register', upload.any(),usersValidator, controller.guardar)
+router.get('/register', controller.registro)
+router.post('/register', upload.any(),usersValidator, controller.guardar)
+
+router.get("/login", controller.login )
+router.post('/login', controller.processLogin)
+
 
 
 module.exports = router;
