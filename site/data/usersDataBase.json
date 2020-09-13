@@ -6,7 +6,7 @@
         "email": "charly@gmail.com",
         "password": "12345678",
         "admin": true,
-        "image":""
+        "image": ""
     },
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "email": "pepe@gmail.com",
         "password": "123456789",
         "admin": false,
-        "image":""
+        "image": ""
     },
     {
         "id": 3,
@@ -23,7 +23,7 @@
         "nameU": "gambito",
         "email": "angelgimenez992@gmail.com",
         "password": "123456789",
-        "image":""
+        "admin": false
     },
     {
         "id": 4,
@@ -31,6 +31,23 @@
         "nameU": "asdasd",
         "email": "asdasd@hotmail.com",
         "password": "1234567",
-        "image":""
+        "admin": false
+    },
+    {
+        "id": 5,
+        "name": "jere",
+        "nameU": "jeremias",
+        "email": "jeremias@gmail.com",
+        "password": "123123",
+        "admin": false
+    },
+    {
+        "id": 6,
+        "name": "adasd",
+        "nameU": "dsad",
+        "email": "addasasd@gmail.com",
+        "password": "123j",
+        "image": "default-image.png",
+        "admin": false
     }
 ]

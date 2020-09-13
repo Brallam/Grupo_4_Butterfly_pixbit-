@@ -10,7 +10,21 @@
                 <div class=" col-12 titulo4">
                     <h4>Formulario de registro</h4>
                 </div>
-                <form action="/users/register" method="POST" class="col-12 col-md-5 formu">
+                
+                
+                
+                <form action="/users/register" method="POST" class="col-12 col-md-5 formu" enctype="multipart/form-data">
+                    <% if(typeof errors != 'undefined'){ %> 
+                    
+                    
+                            <% for (let i = 0; i < errors.length; i++){ %> 
+                            
+                                <small class="text-danger"><%= errors[i].msg %></small><br>
+                                
+                            <% } %> 
+                        
+                        
+                    <% } %> 
                     <div class="col-12 labe">
                         <label for="name">Nombre:</label><br>
                         <input type="text" name="name"class="field" placeholder="ingrese su nombre" >

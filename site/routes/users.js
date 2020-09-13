@@ -1,11 +1,9 @@
 var express = require('express');
 var router = express.Router();
-const override=require("method-override")
+let controller = require('../controllers/usersController');
 const multer = require('multer');
 const path = require('path')
-
-
-let controller = require('../controllers/usersController')
+const usersValidator = require('../validators/usersValidator');
 
 let storage = multer.diskStorage({
   destination:(req,file,callback)=>{
@@ -25,7 +23,7 @@ router.get('/', function(req, res, next) {
 router.get('/register', controller.registro)
 
   router.get("/login", controller.login )
-  router.post('/register', upload.any(), controller.guardar)
+  router.post('/register', upload.any(),usersValidator, controller.guardar)
 
 
 module.exports = router;

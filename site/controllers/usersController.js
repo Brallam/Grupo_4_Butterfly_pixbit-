@@ -3,6 +3,7 @@ const dbProduct = require("../data/database");
 const fs = require("fs");
 const path = require("path");
 const { stringify } = require("querystring");
+var { check, validationResult, body } = require('express-validator')
 
 module.exports = {
     registro:(req,res,next)=>{
@@ -15,7 +16,12 @@ module.exports = {
             title:'Iniciar Sesion'
           })
     },
-    guardar:function(req,res){
+   guardar:function(req,res){
+    let errors = validationResult(req);
+
+
+    if(errors.isEmpty()){
+
     let lastID = 1;
         dbUsers.forEach(usuario => {
             if(usuario.id >= lastID){
@@ -38,5 +44,8 @@ module.exports = {
     fs.writeFileSync(path.join(__dirname,"..",'data',"UsersDataBase.json"),JSON.stringify(dbUsers),'utf-8')
     
     res.redirect('/')
+    }else{
+        return res.render('register', {errors: errors.errors, title:'Registro'})
+    }
    }
 }
