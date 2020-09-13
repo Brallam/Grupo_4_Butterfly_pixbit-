@@ -40,6 +40,7 @@ module.exports = {
             nameU: req.body.nameU.trim(),
             email:user[0].email,
             password:user[0].password,
+            admin:user[0].admin,
             image: (req.files[0])?req.files[0].filename:user[0].image,
          }
         let p
