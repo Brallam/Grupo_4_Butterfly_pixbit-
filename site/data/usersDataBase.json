@@ -20,13 +20,23 @@
         "name": "angel",
         "nameU": "gambito",
         "email": "angelgimenez992@gmail.com",
-        "password": "123456789"
+        "password": "123456789",
+        "admin": false
     },
     {
         "id": 4,
         "name": "asdasd",
         "nameU": "asdasd",
         "email": "asdasd@hotmail.com",
-        "password": "1234567"
+        "password": "1234567",
+        "admin": false
+    },
+    {
+        "id": 5,
+        "name": "jere",
+        "nameU": "jeremias",
+        "email": "jeremias@gmail.com",
+        "password": "123123",
+        "admin": false
     }
 ]

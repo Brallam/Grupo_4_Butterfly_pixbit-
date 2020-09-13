@@ -2,10 +2,16 @@ let dbUsers = require('../data/databaseUsers');
 const dbProduct = require("../data/database");
 const fs = require("fs");
 const path = require("path");
+var { check, validationResult, body } = require('express-validator')
+
 
 module.exports = {
 
    guardar:function(req,res){
+    let errors = validationResult(req);
+
+    if(errors.isEmpty()){
+
     let lastID = 1;
         dbUsers.forEach(usuario => {
             if(usuario.id >= lastID){
@@ -27,5 +33,8 @@ module.exports = {
     fs.writeFileSync(path.join(__dirname,"..",'data',"UsersDataBase.json"),JSON.stringify(dbUsers),'utf-8')
     
     res.redirect('/')
+    }else{
+        return res.render('register', {errors: errors.errors, title:'Registro'})
+    }
    }
 }
