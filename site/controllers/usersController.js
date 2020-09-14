@@ -1,9 +1,11 @@
-let dbUsers = require('../data/databaseUsers');
-const dbProduct = require("../data/database");
+//MÓDULOS
 const fs = require("fs");
 const path = require("path");
-const { stringify } = require("querystring");
+const bcrypt = require('bcrypt');
 var { check, validationResult, body } = require('express-validator')
+//BASES DE DATOS
+let dbUsers = require('../data/databaseUsers');
+const dbProduct = require("../data/database");
 
 module.exports = {
     profile:(req,res,next)=>{
@@ -66,7 +68,7 @@ module.exports = {
             userLog: req.session.userLog
           })
     },
-   guardar:function(req,res){
+   processRegister:function(req,res){
     let errors = validationResult(req);
 
 
@@ -84,7 +86,7 @@ module.exports = {
         name: req.body.name.trim(),
         nameU:req.body.nameU.trim(),
         email:(req.body.email).trim(),
-        password:req.body.password.trim(),
+        password:bcrypt.hashSync(req.body.password,10),
         image: (req.files[0])?req.files[0].filename:"default-image.png",
         admin: false
     }
@@ -96,8 +98,9 @@ module.exports = {
     res.redirect('/')
     }else{
         return res.render('register', {
-            errors: errors.errors, 
+            errors: errors.mapped(), 
             title:'Registro',
+            old:req.body,
             userLog: req.session.userLog
         })
     }
