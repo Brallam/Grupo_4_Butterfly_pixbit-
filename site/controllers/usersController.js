@@ -118,7 +118,8 @@ module.exports = {
                 title:'Iniciar Sesion',
                 errors: [
                     {msg: 'Credenciales invalidas'}
-                ]
+                ],
+                userLog: req.session.userLog
               })
         }
 
@@ -127,7 +128,8 @@ module.exports = {
        }else{
             res.render("login",{
             title:'Iniciar Sesion',
-            errors: errors.errors
+            errors: errors.errors,
+            userLog: req.session.userLog
           })
        }
    }

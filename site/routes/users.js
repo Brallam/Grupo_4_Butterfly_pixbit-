@@ -5,6 +5,8 @@ let controller = require('../controllers/usersController');
 const multer = require('multer');
 const path = require('path')
 const usersValidator = require('../validators/usersValidator');
+const loginValidator = require('../validators/loginValidator');
+const sessionUserCheck = require('../middlewares/sessionUserCheck')
 
 let storage = multer.diskStorage({
   destination:(req,file,callback)=>{
@@ -26,11 +28,11 @@ router.get("/profile/:id",controller.profile)
 router.get("/edit/:id",controller.editper)
 router.post("/edit/:id",upload.any(),controller.editf)
 
-router.get('/register', controller.registro)
+router.get('/register',sessionUserCheck, controller.registro)
 router.post('/register', upload.any(),usersValidator, controller.guardar)
 
-router.get("/login", controller.login )
-router.post('/login', controller.processLogin)
+router.get("/login",sessionUserCheck, controller.login )
+router.post('/login',loginValidator ,controller.processLogin)
 
 
 

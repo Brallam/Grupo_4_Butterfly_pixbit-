@@ -24,18 +24,30 @@
                 
                 <div class="col-7 col-md-5 reg">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <% if(userLog == undefined){ %> 
+                        <button type="button" class="btn btn-primary dropdown-toggle boton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-user"></i>
                         </button>
                         <div class="dropdown-menu">
-                          <a class="dropdown-item" href="/users/login">Iniciar Sesion</a>
-                          <a class="dropdown-item" href="/users/register">Registrate</a>
+                            <a class="dropdown-item" href="/users/login">Iniciar Sesion</a>
+                            <a class="dropdown-item" href="/users/register">Registrate</a>
+                          </div>
+                        <% }else{ %> 
+                        <button class="avatar btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="/images/users/<%= userLog.image %>" alt="" class="avatarimg">
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/users/profile/<%= userLog.id %>"><%= userLog.name %> </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/#">Mis keys</a>
+                            <a class="dropdown-item" href="/#">Cerrar session</a>
                         </div>
+                        <% } %> 
                       </div>
-                    <a href="/carrito"><button type="button" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Carrito</button></a>
+                    <a href="/carrito"><button type="button" class="btn btn-primary boton"><i class="fas fa-shopping-cart"></i> Carrito</button></a>
                     <% if(userLog != undefined){  
                             if(userLog.admin){ %> 
-                    <a href="/admin"><button type="button" class="btn btn-success"> Admin</button></a>
+                    <a href="/admin"><button type="button" class="btn btn-success boton"> Admin</button></a>
                     <% }} %> 
                 </div>
             </div>

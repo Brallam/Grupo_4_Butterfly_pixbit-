@@ -55,8 +55,11 @@ body {
   .reg {
     padding-left: 0;
   }
-  .reg button {
+  .boton {
     font-size: 10px;
+  }
+  .avatarimg{
+    width: 50px;
   }
   .logo img {
     margin: 5px;

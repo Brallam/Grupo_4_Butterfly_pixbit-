@@ -16,6 +16,14 @@ header {
     background-color: rgb(21, 185, 226);
     border-radius: 50px;
   }
+  .avatarimg{
+    width: 60px;
+    margin: 0px
+  }
+  .avatar{
+    padding: 0px;
+    border-radius: 50px;
+  }
   .menu {
     background-color: white;
     border-radius: 10px;
@@ -47,7 +55,7 @@ header {
     justify-content: flex-end;
     margin: 15px 0;
   }
-  .reg button {
+  .boton {
     margin: 3px;
     border: none;
     border-radius: 25px;

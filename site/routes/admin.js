@@ -5,6 +5,7 @@ var controller = require("../controllers/adminController")
 const override=require("method-override")
 const multer = require('multer');
 const path = require('path')
+const userAdminCheck = require('../middlewares/userAdminCheck')
 
 let storage = multer.diskStorage({
     destination:(req,file,callback)=>{
@@ -19,14 +20,14 @@ let upload = multer({storage:storage})
 
 //RUTAS
 
-router.get('/', controller.lista);
+router.get('/',userAdminCheck, controller.lista);
 
-router.get('/newProduct', controller.mostrarForm);
+router.get('/newProduct', userAdminCheck, controller.mostrarForm);
 router.post('/newProduct',upload.any(), controller.publicar);
 
-router.get('/editproduct/:id', controller.edit);
+router.get('/editproduct/:id', userAdminCheck, controller.edit);
 router.post('/editproduct/:id',upload.any(), controller.editp);
 
-router.delete('/delete/:id',controller.eliminar)
+router.delete('/delete/:id',userAdminCheck, controller.eliminar)
 
 module.exports = router;
