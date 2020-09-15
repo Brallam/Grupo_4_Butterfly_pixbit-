@@ -21,15 +21,15 @@
                     <% } %> 
                     <div class="col-12 labe">
                         <label for="name">Nombre:</label><br>
-                        <input type="text" name="name"class="field" placeholder="ingrese su nombre" >
+                        <input type="text" name="name"class="field" value="<%= (typeof old != 'undefined' && old.name)?old.name:'' %>" placeholder="ingrese su nombre" >
                     </div>
                     <div class="col-12 labe">
                         <label for="nameU">Nombre usuario:</label><br>
-                        <input type="text" name="nameU" class="field" placeholder="ingrese su usuario" >
+                        <input type="text" name="nameU" class="field"value="<%= (typeof old != 'undefined' && old.nameU)?old.nameU:'' %>" placeholder="ingrese su usuario" >
                     </div>
                     <div class="col-12 labe">
                         <label for="email">Email:</label><br>
-                        <input type="email" name="email" class="field" id="email" placeholder="ingrese su email">
+                        <input type="email" name="email" class="field" id="email"value="<%= (typeof old != 'undefined' && old.email)?old.email:'' %>" placeholder="ingrese su email">
                     </div>
                     <div class="col-12 labe">
                         <label for="password">Contraseña:</label><br>

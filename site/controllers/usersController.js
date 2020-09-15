@@ -5,7 +5,6 @@ const bcrypt = require('bcrypt');
 var { check, validationResult, body } = require('express-validator')
 //BASES DE DATOS
 let dbUsers = require('../data/databaseUsers');
-const dbProduct = require("../data/database");
 
 module.exports = {
     profile:(req,res,next)=>{
