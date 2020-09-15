@@ -26,21 +26,21 @@
                     <div class="btn-group">
                         <% if(userLog == undefined){ %> 
                         <button type="button" class="btn btn-primary dropdown-toggle boton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-user"></i>
+                            <i class="fas fa-user iconInvitado"></i>Invitado
                         </button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="/users/login">Iniciar Sesion</a>
                             <a class="dropdown-item" href="/users/register">Registrate</a>
                           </div>
                         <% }else{ %> 
-                        <button class="avatar btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="avatar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="/images/users/<%= userLog.image %>" alt="" class="avatarimg">
                         </button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="/users/profile/<%= userLog.id %>"><%= userLog.name %> </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/#">Mis keys</a>
-                            <a class="dropdown-item" href="/#">Cerrar session</a>
+                            <a class="dropdown-item" href="/users/logout">Cerrar session</a>
                         </div>
                         <% } %> 
                       </div>

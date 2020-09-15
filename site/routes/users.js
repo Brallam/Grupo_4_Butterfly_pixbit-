@@ -40,6 +40,8 @@ router.post('/register', upload.any(),registerValidator, controller.processRegis
 router.get("/login",sessionUserCheck, controller.login )
 router.post('/login',loginValidator ,controller.processLogin)
 
+router.get('/logout', controller.logout)
+
 
 
 module.exports = router;

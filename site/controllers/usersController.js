@@ -98,7 +98,7 @@ module.exports = {
     res.redirect('/')
     }else{
         return res.render('register', {
-            errors: errors.mapped(), 
+            errors: errors.errors, 
             title:'Registro',
             old:req.body,
             userLog: req.session.userLog
@@ -112,7 +112,7 @@ module.exports = {
        if(errors.isEmpty()){
         dbUsers.forEach(user=>{
             if(user.email == req.body.email){
-                if(user.password == req.body.password){
+                if(bcrypt.compareSync(req.body.password, user.password)){
                     userALogearse = user;
                 }
             }
@@ -136,5 +136,9 @@ module.exports = {
             userLog: req.session.userLog
           })
        }
+   },
+   logout:function(req,res){
+    req.session.destroy();
+    res.redirect('/')
    }
 }
