@@ -37,7 +37,7 @@
                             <img src="/images/users/<%= userLog.image %>" alt="" class="avatarimg">
                         </button>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/users/profile/<%= userLog.id %>"><%= userLog.name %> </a>
+                            <a class="dropdown-item nombrePerfil" href="/users/profile/<%= userLog.id %>"><%= userLog.name.toUpperCase() %> </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/#">Mis keys</a>
                             <a class="dropdown-item" href="/users/logout">Cerrar session</a>

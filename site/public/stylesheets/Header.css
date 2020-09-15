@@ -77,3 +77,6 @@ header {
   .menu2 {
     display: none;
   }
+.nombrePerfil{
+  font-weight: bold;
+}
