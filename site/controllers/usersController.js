@@ -5,7 +5,6 @@ const bcrypt = require('bcrypt');
 var { check, validationResult, body } = require('express-validator')
 //BASES DE DATOS
 let dbUsers = require('../data/databaseUsers');
-const dbProduct = require("../data/database");
 
 module.exports = {
     profile:(req,res,next)=>{
@@ -98,7 +97,7 @@ module.exports = {
     res.redirect('/')
     }else{
         return res.render('register', {
-            errors: errors.mapped(), 
+            errors: errors.errors, 
             title:'Registro',
             old:req.body,
             userLog: req.session.userLog
@@ -120,6 +119,7 @@ module.exports = {
         if(userALogearse == undefined){
             return res.render("login",{
                 title:'Iniciar Sesion',
+
                 errors: [
                     {msg: 'Credenciales invalidas'}
                 ],
