@@ -86,7 +86,7 @@ module.exports = {
         nameU:req.body.nameU.trim(),
         email:(req.body.email).trim(),
         password:bcrypt.hashSync(req.body.password,10),
-        image: (req.files[0])?req.files[0].filename:"default-image.png",
+        image: (req.files[0])?req.files[0].filename:"default.png",
         admin: false
     }
 
@@ -94,6 +94,7 @@ module.exports = {
     
     fs.writeFileSync(path.join(__dirname,"..",'data',"UsersDataBase.json"),JSON.stringify(dbUsers),'utf-8')
     
+
     res.redirect('/users/login')
     }else{
         return res.render('register', {
