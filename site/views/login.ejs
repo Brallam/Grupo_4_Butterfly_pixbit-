@@ -16,7 +16,7 @@
                         <% for (let i = 0; i < errors.length; i++){ %> 
                             <small class="text-danger"><%= errors[i].msg %></small><br>
                         <% } %>                      
-                <% } %>
+                    <% } %>
                     <div class="col-12 labe">
                         <label for="email">Email:</label><br>
                         <input type="email" name="email" class="field" id="email" placeholder="ingrese su email">
@@ -25,7 +25,11 @@
                         <label for="password">Contraseña:</label><br>
                         <input type="password" name="password" class="field" id="pwd" placeholder=" ingrese su contraseña">
                     </div>
-                   
+                    
+                    <div class="col-12 labe">
+                        <label for="">Recordar Sesión?</label>
+                        <input type="checkbox" name="remember" >
+                    </div>
                     <div class="boton">
                         
                             <button type="submit boton6" class="btn btn-success">Ingresar</button>

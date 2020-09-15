@@ -1,9 +1,10 @@
-let dbUsers = require('../data/databaseUsers');
-const dbProduct = require("../data/database");
+//MÓDULOS
 const fs = require("fs");
 const path = require("path");
-const { stringify } = require("querystring");
+const bcrypt = require('bcrypt');
 var { check, validationResult, body } = require('express-validator')
+//BASES DE DATOS
+let dbUsers = require('../data/databaseUsers');
 
 module.exports = {
     profile:(req,res,next)=>{
@@ -66,7 +67,7 @@ module.exports = {
             userLog: req.session.userLog
           })
     },
-   guardar:function(req,res){
+   processRegister:function(req,res){
     let errors = validationResult(req);
 
 
@@ -84,7 +85,7 @@ module.exports = {
         name: req.body.name.trim(),
         nameU:req.body.nameU.trim(),
         email:(req.body.email).trim(),
-        password:req.body.password.trim(),
+        password:bcrypt.hashSync(req.body.password,10),
         image: (req.files[0])?req.files[0].filename:"default-image.png",
         admin: false
     }
@@ -98,6 +99,7 @@ module.exports = {
         return res.render('register', {
             errors: errors.errors, 
             title:'Registro',
+            old:req.body,
             userLog: req.session.userLog
         })
     }
@@ -109,7 +111,7 @@ module.exports = {
        if(errors.isEmpty()){
         dbUsers.forEach(user=>{
             if(user.email == req.body.email){
-                if(user.password == req.body.password){
+                if(bcrypt.compareSync(req.body.password, user.password)){
                     userALogearse = user;
                 }
             }
@@ -119,17 +121,26 @@ module.exports = {
                 title:'Iniciar Sesion',
                 errors: [
                     {msg: 'Credenciales invalidas'}
-                ]
+                ],
+                userLog: req.session.userLog
               })
         }
-
+        if(req.body.remember=! undefined){
+            res.cookie("usrsess", userALogearse.email,{maxAge: 3.154e+10} )
+        }
         req.session.userLog = userALogearse
         res.redirect('/')
        }else{
             res.render("login",{
             title:'Iniciar Sesion',
-            errors: errors.errors
+            errors: errors.errors,
+            userLog: req.session.userLog
           })
        }
+   },
+   logout:function(req,res){
+    req.cookie.destroy();
+    req.session.destroy();
+    res.redirect('/')
    }
 }
