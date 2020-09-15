@@ -94,7 +94,7 @@ module.exports = {
     
     fs.writeFileSync(path.join(__dirname,"..",'data',"UsersDataBase.json"),JSON.stringify(dbUsers),'utf-8')
     
-    res.redirect('/')
+    res.redirect('/users/login')
     }else{
         return res.render('register', {
             errors: errors.errors, 
@@ -111,7 +111,7 @@ module.exports = {
        if(errors.isEmpty()){
         dbUsers.forEach(user=>{
             if(user.email == req.body.email){
-                if(user.password == req.body.password){
+                if(bcrypt.compareSync(req.body.password, user.password)){
                     userALogearse = user;
                 }
             }
@@ -119,7 +119,6 @@ module.exports = {
         if(userALogearse == undefined){
             return res.render("login",{
                 title:'Iniciar Sesion',
-
                 errors: [
                     {msg: 'Credenciales invalidas'}
                 ],
@@ -136,5 +135,9 @@ module.exports = {
             userLog: req.session.userLog
           })
        }
+   },
+   logout:function(req,res){
+    req.session.destroy();
+    res.redirect('/')
    }
 }

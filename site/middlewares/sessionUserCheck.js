@@ -1,7 +1,7 @@
-module.exports = function sessionUserChech(req,res,next){
-    if(req.session.userLog == undefined){
+module.exports = function sessionUserCheck(req,res,next){
+    if(req.session.userLog ){
         next()
     }else{
-        res.redirect('/')
+        res.redirect('/users/login')
     }
 }

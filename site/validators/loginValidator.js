@@ -5,6 +5,5 @@ const bcrypt = require ('bcrypt')
 let dbUsers = require('../data/databaseUsers');
 
 module.exports = [
-    check('email').trim().isEmail().withMessage('El email ingresado es invalido')
-
-     ]
+    check('email').trim().isEmail().withMessage('El email ingresado es invalido'),
+]

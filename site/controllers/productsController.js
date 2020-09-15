@@ -18,5 +18,12 @@ module.exports = {
         producto: producto[0],
         userLog: req.session.userLog
     });
-  }
+  },
+  vistaCarrito:function(req, res, next) {
+    res.render("carrito",{
+      title:"Carrito de compras",
+      userLog: req.session.userLog
+    });
+  
+}
 }

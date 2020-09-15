@@ -18,12 +18,25 @@ header {
   }
   .avatarimg{
     width: 60px;
-    margin: 0px
+    margin: 0px;
+    border-radius: 50px;
   }
   .avatar{
     padding: 0px;
     border-radius: 50px;
+    margin: 0px;
   }
+  .avatar:focus {
+    outline: 1px dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+}
+.dropdown-toggle::after{
+  display: none;
+}
+.reg .fas{
+  padding-top: 3px;
+  padding-right: 2px;
+}
   .menu {
     background-color: white;
     border-radius: 10px;
@@ -64,3 +77,6 @@ header {
   .menu2 {
     display: none;
   }
+.nombrePerfil{
+  font-weight: bold;
+}
