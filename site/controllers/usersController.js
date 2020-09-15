@@ -126,7 +126,9 @@ module.exports = {
                 userLog: req.session.userLog
               })
         }
-
+        if(req.body.remember=! undefined){
+            res.cookie("usrsess", userALogearse.email,{maxAge: 3.154e+10} )
+        }
         req.session.userLog = userALogearse
         res.redirect('/')
        }else{
@@ -138,6 +140,7 @@ module.exports = {
        }
    },
    logout:function(req,res){
+    req.cookie.destroy();
     req.session.destroy();
     res.redirect('/')
    }

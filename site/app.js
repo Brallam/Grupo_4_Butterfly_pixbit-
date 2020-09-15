@@ -6,9 +6,11 @@ var logger = require('morgan');
 var methodOverride = require('method-override');
 var session = require('express-session');
 
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter=require("./routes/products")
+var recsess=require("./middlewares/usrsessmidd")
 
 var admin = require('./routes/admin')
 var carritoRouter=require("./routes/carrito")
@@ -24,11 +26,11 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.use( methodOverride ('_method'));
 app.use(session({secret: 'Secreto'}));
-
+app.use(recsess);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/products", productRouter)

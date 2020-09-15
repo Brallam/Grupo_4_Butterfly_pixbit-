@@ -1,1 +1,0 @@
-![retro](./retro/retro2.png)

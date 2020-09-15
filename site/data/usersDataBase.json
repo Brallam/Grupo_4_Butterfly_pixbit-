@@ -3,7 +3,7 @@
         "id": 1,
         "name": "Charly's",
         "nameU": "charly01",
-        "email": "Charly@gmail.com",
+        "email": "charly@gmail.com",
         "password": "$2b$10$d4cktEoGB7NuBp8jMj2pUe23gBtsnsUgd6zaTkgicY.wfhrcc4mvK",
         "image": "image1600039988066.jpg",
         "admin": true
@@ -14,8 +14,8 @@
         "nameU": "pepin",
         "email": "pepe@gmail.com",
         "password": "$2b$10$W9fTFjz1ykEn8b1V/pz1YOdXJP2qNP.4fEIt2W35vjRshmmsdqTy6",
-        "admin": false,
-        "image": "image1600115775642.png"
+        "image": "image1600115775642.png",
+        "admin": false
     },
     {
         "id": 3,
@@ -28,12 +28,11 @@
     },
     {
         "id": 4,
-        "name": "carl",
-        "nameU": "carl99",
-        "email": "carl@hotmail.com",
-        "password": "$2b$10$UvFhePQyKqfYYw5auh4qau2kMCuuFzDMZKVUw1/OBdv4qgAyudaQq",
-        "image": "default-image.png",
-        "admin": false
+        "name": "Braian",
+        "nameU": "Brallam",
+        "email": "Braianifernandez87@hotmail.com",
+        "password": "$2b$10$z.yYYJdaTBMQTFvnaE5maO/cq7sIIZASk2wxcRZKP18C4F3iHK8vq",
+        "admin": true,
+        "image": "image1600188521062.jpg"
     }
-    
 ]
