@@ -1,17 +1,16 @@
-
 <%-include("./partials/head.ejs")%>
 <%-include("./partials/header.ejs")%>
 
 <div class="">
     <h6 class="osi">PelucheOsi</h6>
     <div class="container">
-        <div class="col-12">
+        <div class="row">
             <form  action="" method="POST" enctype="multipart/form-data">
-            <div class="cajaPrincipal">
-                <div class="col-4"><img src="/images/users/<%=user.image%> " alt="" class="img-fluid">
+            <div class="col-12 cajaPrincipal">
+                <div class="col-12 col-md-4"><img src="/images/users/<%=user.image%> " alt="" class="img-fluid">
                     <div class="uploadimage">
-                        <h6>Cambiar foto de perfil</h6>
-                        <input type="file" name="image">
+                        <label for="image"><i class="fas fa-cloud-upload-alt labeledit" aria-hidden="true"> Cambiar foto</i><input id="image"type="file" class="imputedit" name="image"></label>
+                        
                       </div>
                     </div>
                 <ul>
@@ -21,14 +20,12 @@
                 <li >Email: <%-user.email%>  </li>
                 <li>Juegos Adquiridos: Undefined </li>
                 </ul>
-                <div>
-                <button type="submit" class="btn btn-success">Guardar</button>
-                <a href="/users/profile/<%-user.id%> "><button type="button" class="btn btn-success">Atras</button></a> </div>
+                <div class="col-12">
+                <button type="submit" class=" btn-success col-6 col-md-2 editbttm">Guardar</button> <a href="/users/profile/<%- user.id %> "><button type="button" class="editbttm btn-success col-6 col-md-2">Atras</button></a>
+                </div>
             </div>
             </form>
         </div>
     </div>
 </div>
-
-
 <%-include("./partials/footer.ejs")%>

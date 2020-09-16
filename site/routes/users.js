@@ -11,6 +11,7 @@ const loginValidator = require('../validators/loginValidator');
 
 //MIDDLEWARES
 const sessionUserCheck = require('../middlewares/sessionUserCheck')
+const userchck=require("../middlewares/editmidd")
 
 //MULTER
 const multer = require('multer');
@@ -31,7 +32,7 @@ router.get('/', function(req, res, next) {
 });
 router.get("/profile/:id",controller.profile)
 
-router.get("/edit/:id",controller.editper)
+router.get("/edit/:id",userchck,controller.editper)
 router.post("/edit/:id",upload.any(),controller.editf)
 
 router.get('/register',sessionUserCheck, controller.registro)

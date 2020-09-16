@@ -39,7 +39,32 @@ body {
   background-repeat: initial;
   background-size: 300px 300px;
 }
+input {
+  width: 145px;
+  overflow:hidden;
+}
+.imputedit{
+  display: none;
+}
+.labeledit{
 
+  color:black;
+  margin-left: 5px;
+  font-size: 25px;
+}
+.labeledit:hover{
+ color: blue;
+}
+.editbttm{
+  margin: 0  auto;
+  margin-left: 20px;
+  width: 85px;
+}
+.texti{
+
+  font-size: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 
 /*MEDIA QUERY */
@@ -70,6 +95,9 @@ body {
     justify-content: space-between;
   }
 
+  .osi{
+    padding-bottom: 155px;
+  }
   /*
     home
     */
