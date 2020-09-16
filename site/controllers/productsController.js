@@ -18,6 +18,5 @@ module.exports = {
         producto: producto[0],
         userLog: req.session.userLog
     });
-  
-}
+  }
 }

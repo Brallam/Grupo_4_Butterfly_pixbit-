@@ -1,23 +1,32 @@
-//---MÓDULOS
 var express = require('express');
 var router = express.Router();
-const override=require("method-override")
 
-//---CONTROLADORES
 var controller = require("../controllers/adminController")
-//---MIDDLEWARES
+const override=require("method-override")
+const multer = require('multer');
+const path = require('path')
 const userAdminCheck = require('../middlewares/userAdminCheck')
-const multerProduct = require('../middlewares/multerProduct')
 
-//RUTAS DE PRODUCTOS
+let storage = multer.diskStorage({
+    destination:(req,file,callback)=>{
+        callback(null,'public/images/products')
+    },
+    filename:(req,file,callback)=>{
+        callback(null,file.fieldname + Date.now() + path.extname(file.originalname))
+    }
+})
+
+let upload = multer({storage:storage})
+
+//RUTAS
 
 router.get('/',userAdminCheck, controller.lista);
 
 router.get('/newProduct', userAdminCheck, controller.mostrarForm);
-router.post('/newProduct',multerProduct.any(),userAdminCheck, controller.publicar);
+router.post('/newProduct',upload.any(), controller.publicar);
 
 router.get('/editproduct/:id', userAdminCheck, controller.edit);
-router.post('/editproduct/:id',multerProduct.any(),userAdminCheck, controller.editp);
+router.post('/editproduct/:id',upload.any(), controller.editp);
 
 router.delete('/delete/:id',userAdminCheck, controller.eliminar)
 

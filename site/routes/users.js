@@ -1,8 +1,8 @@
-//MÓDULOS 
+//MODULOS 
 var express = require('express');
 var router = express.Router();
+const path = require('path')
 
-//CONTROLADORES
 let controller = require('../controllers/usersController');
 
 //VALIDACIONES
@@ -11,21 +11,37 @@ const loginValidator = require('../validators/loginValidator');
 
 //MIDDLEWARES
 const sessionUserCheck = require('../middlewares/sessionUserCheck')
-const multerPerfil = require('../middlewares/multerPerfil')
+
+//MULTER
+const multer = require('multer');
+let storage = multer.diskStorage({
+  destination:(req,file,callback)=>{
+      callback(null,"public/images/users")
+  },
+  filename:(req,file,callback)=>{
+      callback(null,file.fieldname + Date.now() + path.extname(file.originalname))
+  }
+})
+
+let upload = multer({storage:storage})
 
 /* RUTAS DE USUARIOS */
+router.get('/', function(req, res, next) {
+ res.send('respond with a resource');
+});
+router.get("/profile/:id",controller.profile)
 
-router.get('/register', controller.registro)
-router.post('/register', multerPerfil.any(),registerValidator, controller.processRegister)
+router.get("/edit/:id",controller.editper)
+router.post("/edit/:id",upload.any(),controller.editf)
 
-router.get("/login", controller.login )
+router.get('/register',sessionUserCheck, controller.registro)
+router.post('/register', upload.any(),registerValidator, controller.processRegister)
+
+router.get("/login",sessionUserCheck, controller.login )
 router.post('/login',loginValidator ,controller.processLogin)
 
-router.get("/profile/:id",sessionUserCheck,controller.profile)
-
-router.get("/edit/:id",sessionUserCheck,controller.editper)
-router.post("/edit/:id",multerPerfil.any(),sessionUserCheck,controller.editf)
-
 router.get('/logout', controller.logout)
+
+
 
 module.exports = router;
