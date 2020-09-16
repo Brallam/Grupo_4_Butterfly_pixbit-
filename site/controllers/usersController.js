@@ -139,8 +139,11 @@ module.exports = {
        }
    },
    logout:function(req,res){
-    req.cookie.destroy();
+    
     req.session.destroy();
+    if(req.cookies.usrsess){
+        res.cookie('usrsess','',{maxAge:-1})
+    }
     res.redirect('/')
    }
 }
