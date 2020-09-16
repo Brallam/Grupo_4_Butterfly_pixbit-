@@ -1,7 +1,7 @@
 //MODULOS 
 var express = require('express');
 var router = express.Router();
-const path = require('path')
+const path = require('path');
 
 let controller = require('../controllers/usersController');
 
