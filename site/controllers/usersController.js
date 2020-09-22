@@ -134,7 +134,9 @@ module.exports = {
             res.render("login",{
             title:'Iniciar Sesion',
             errors: errors.errors,
-            userLog: req.session.userLog
+            userLog: req.session.userLog,
+            old:req.body,
+
           })
        }
    },
