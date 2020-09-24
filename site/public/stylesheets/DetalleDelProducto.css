@@ -96,6 +96,10 @@ DETALLE DEL PRODUCTO
   .requisitos h4{
     margin-top: 25px;
   }
+ .detalles3 span .fas {
+    font-size: 30px;  }
+
+
   /*MEDIA QUERY DETALLE DEL PRODUCTO */
   @media (min-width: 767px) and (max-width: 2570px) {
     .img1{
