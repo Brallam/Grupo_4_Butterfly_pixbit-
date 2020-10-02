@@ -31,7 +31,7 @@ module.exports = {
         lastID = lastID + 1 
 
         let reqgeneros = [req.body.Accion, req.body.Disparos, req.body.Estrategia, req.body.Simulacion, req.body.Deporte, req.body.Carrera, req.body.Aventura, req.body.ROL]
-        let generos = ["Accion", "Disparos", "Estrategia", "Simulacion", "Deporte", "Carrera", "Aventura", "ROL"]
+        let generos = ["Pelucheosi","Accion", "Disparos", "Estrategia", "Simulacion", "Deporte", "Carrera", "Aventura", "ROL"]
         let generosfiltrados = []
 
         reqgeneros.forEach(element =>{
@@ -70,7 +70,7 @@ module.exports = {
     editp:(req,res)=>{
         let id= Number(req.params.id)
         let reqgeneros = [req.body.Accion, req.body.Disparos, req.body.Estrategia, req.body.Simulacion, req.body.Deporte, req.body.Carrera, req.body.Aventura, req.body.ROL]
-        let generos = ["Accion", "Disparos", "Estrategia", "Simulacion", "Deporte", "Carrera", "Aventura", "ROL"]
+        let generos = ["Pelucheosi","Accion", "Disparos", "Estrategia", "Simulacion", "Deporte", "Carrera", "Aventura", "ROL"]
         let generosfiltrados = []
 
         reqgeneros.forEach(element =>{
