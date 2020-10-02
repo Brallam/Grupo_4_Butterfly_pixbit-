@@ -3,6 +3,7 @@ var express = require('express');
 var router = express.Router();
 const path = require('path');
 
+//CONTROLADORES
 let controller = require('../controllers/usersController');
 
 //VALIDACIONES
@@ -11,20 +12,11 @@ const loginValidator = require('../validators/loginValidator');
 
 //MIDDLEWARES
 const sessionUserCheck = require('../middlewares/sessionUserCheck')
-const userchck=require("../middlewares/editmidd")
+const userCheck=require("../middlewares/editmidd")
+const multerUsers =require('../middlewares/multerUsers')
 
-//MULTER
-const multer = require('multer');
-let storage = multer.diskStorage({
-  destination:(req,file,callback)=>{
-      callback(null,"public/images/users")
-  },
-  filename:(req,file,callback)=>{
-      callback(null,file.fieldname + Date.now() + path.extname(file.originalname))
-  }
-})
 
-let upload = multer({storage:storage})
+
 
 /* RUTAS DE USUARIOS */
 router.get('/', function(req, res, next) {
@@ -32,11 +24,11 @@ router.get('/', function(req, res, next) {
 });
 router.get("/profile/:id",controller.profile)
 
-router.get("/edit/:id",userchck,controller.editper)
-router.post("/edit/:id",upload.any(),controller.editf)
+router.get("/edit/:id",userCheck,controller.editper)
+router.post("/edit/:id",multerUsers.any(),controller.editf)
 
 router.get('/register',sessionUserCheck, controller.registro)
-router.post('/register', upload.any(),registerValidator, controller.processRegister)
+router.post('/register', multerUsers.any(),registerValidator, controller.processRegister)
 
 router.get("/login",sessionUserCheck, controller.login )
 router.post('/login',loginValidator ,controller.processLogin)

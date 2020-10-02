@@ -1,5 +1,8 @@
+//MODULOS
 var express = require('express');
 var router = express.Router();
+
+//CONTROLADORES
 var controller=require("../controllers/indexController")
 
 /* GET home page. */

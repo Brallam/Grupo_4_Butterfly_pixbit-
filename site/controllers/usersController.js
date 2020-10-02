@@ -94,7 +94,7 @@ module.exports = {
     
     fs.writeFileSync(path.join(__dirname,"..",'data',"UsersDataBase.json"),JSON.stringify(dbUsers),'utf-8')
     
-    res.redirect('/')
+    res.redirect('/users/login')
     }else{
         return res.render('register', {
             errors: errors.errors, 
@@ -134,7 +134,9 @@ module.exports = {
             res.render("login",{
             title:'Iniciar Sesion',
             errors: errors.errors,
-            userLog: req.session.userLog
+            userLog: req.session.userLog,
+            old:req.body,
+
           })
        }
    },
