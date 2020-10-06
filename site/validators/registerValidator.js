@@ -1,6 +1,7 @@
 const {check,validationResult,body} = require('express-validator');
 
 let dbUsers = require('../data/databaseUsers');
+const db = require('../database/models')
 
 module.exports= [
         check('name').trim().isLength({min: 1}).withMessage('El nombre es obligatorio'),
@@ -12,17 +13,19 @@ module.exports= [
         check('password').trim().isLength({min: 6}).withMessage('La contraseña tiene que tener un minimo de 6 caracteres'),
 
         body('email').trim().custom(function(value){
-          
-          for (let i = 0; i < dbUsers.length; i++) {
-            if(dbUsers[i].email == value){
-              return false;
+         return db.users.findOne({
+            where :{
+            email : value
             }
-          }
-          return true;
-        }).withMessage('El usuario ya existe'),
-
+          }).then(function(user){
+            if(user){
+              return Promise.reject('El usuario ya existe')
+            }
+          })
+        }),
+        
         body('Cpassword').trim().custom(function(value, {req}){
           return value == req.body.password
-        }).withMessage('Las contraseñas no coinciden')
+        })
       ]
      

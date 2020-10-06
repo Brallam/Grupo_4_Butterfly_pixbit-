@@ -1,8 +1,9 @@
+//BASE DE DATOS
 const dbProduct = require("../data/database");
 const dbUsers = require('../data/databaseUsers');
+//MODULOS 
 const fs = require("fs");
 const path = require("path");
-const { stringify } = require("querystring");
 
 module.exports = {
     mostrarForm:(req,res)=>{
@@ -12,6 +13,7 @@ module.exports = {
  
     },
     lista:(req,res)=>{
+       
         let dbP = dbProduct
         res.render("admin",{
             usuarios:dbUsers,

@@ -3,9 +3,11 @@ const fs = require("fs");
 const path = require("path");
 const bcrypt = require('bcrypt');
 var { check, validationResult, body } = require('express-validator')
-//BASES DE DATOS
+//BASE DE DATOS
 let dbUsers = require('../data/databaseUsers');
 
+// SEQUELIZE
+const db = require('../database/models')
 module.exports = {
     profile:(req,res,next)=>{
         let id  =req.params.id;
@@ -73,28 +75,23 @@ module.exports = {
 
     if(errors.isEmpty()){
 
-    let lastID = 1;
-        dbUsers.forEach(usuario => {
-            if(usuario.id >= lastID){
-                lastID = usuario.id
-            }
-    });
-    lastID = lastID + 1
-    let newUser ={
-        id: lastID,
-        name: req.body.name.trim(),
-        nameU:req.body.nameU.trim(),
-        email:(req.body.email).trim(),
-        password:bcrypt.hashSync(req.body.password,10),
-        image: (req.files[0])?req.files[0].filename:"default-image.png",
-        admin: false
-    }
-
-    dbUsers.push(newUser);
-    
-    fs.writeFileSync(path.join(__dirname,"..",'data',"UsersDataBase.json"),JSON.stringify(dbUsers),'utf-8')
-    
-    res.redirect('/users/login')
+        db.users.create(
+            {
+            name: req.body.name.trim(),
+            nameU:req.body.nameU.trim(),
+            email:req.body.email.trim(),
+            password:bcrypt.hashSync(req.body.password,10),
+            image: (req.files[0])?req.files[0].filename:"default-image.png",
+            admin: false
+        }
+        )
+        .then(function(result){
+            console.log(result)
+        })
+        return  res.redirect('/users/login')
+        .catch(errores=>{
+            console.log(errores)
+        })
     }else{
         return res.render('register', {
             errors: errors.errors, 
