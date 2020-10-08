@@ -116,9 +116,13 @@ module.exports = {
             id:user.id,
             name:user.name,
             nameU:user.nameU,
-            image:user.image
+            email:user.email,
+            image:user.image,
+            admin:user.admin
             }
-            
+            if(req.body.remember=! undefined){
+                res.cookie("usrsess", req.session.userLog.email,{maxAge: 3.154e+10} )
+            }
             res.locals.user = req.session.userLog
             res.redirect('/')
         })

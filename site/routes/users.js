@@ -15,9 +15,6 @@ const sessionUserCheck = require('../middlewares/sessionUserCheck')
 const userCheck=require("../middlewares/editmidd")
 const multerUsers =require('../middlewares/multerUsers')
 
-
-
-
 /* RUTAS DE USUARIOS */
 router.get('/', function(req, res, next) {
  res.send('respond with a resource');
