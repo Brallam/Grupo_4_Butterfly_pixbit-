@@ -116,7 +116,8 @@ module.exports = {
             id:user.id,
             name:user.name,
             nameU:user.nameU,
-            image:user.image
+            image:user.image,
+            
             }
             
             res.locals.user = req.session.userLog
