@@ -82,7 +82,7 @@ module.exports = {
             email:req.body.email.trim(),
             password:bcrypt.hashSync(req.body.password,10),
             image: (req.files[0])?req.files[0].filename:"default-image.png",
-            admin: false
+            admin: true
         }
         )
         .then(function(result){
@@ -116,10 +116,13 @@ module.exports = {
             id:user.id,
             name:user.name,
             nameU:user.nameU,
+            email:user.email,
             image:user.image,
-            
+            admin:user.admin
             }
-            
+            if(req.body.remember=! undefined){
+                res.cookie("usrsess", req.session.userLog.email,{maxAge: 3.154e+10} )
+            }
             res.locals.user = req.session.userLog
             res.redirect('/')
         })

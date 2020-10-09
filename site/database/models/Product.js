@@ -14,7 +14,7 @@ module.exports=(sequelize,dataTypes)=>{
             type: dataTypes.STRING(100),
             allowNull:false
         },
-        genre:{
+        id_genre:{
             type: dataTypes.INTEGER(11),
             allowNull:false
         },
@@ -46,5 +46,16 @@ module.exports=(sequelize,dataTypes)=>{
         underscored : true
     } 
     const Product = sequelize.define(alias,cols,config);
+
+    /*Product.associate = function(models){
+        Product.belongsToMany(models.Genres, {
+            as:"generos",
+            through: "products_has_genre",
+            foreignKey: "products_id",
+            otherKey: "genre_id",
+            timestamps : false
+        });
+    }*/
+
     return Product;
 }
