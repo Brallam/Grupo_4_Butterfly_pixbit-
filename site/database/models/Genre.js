@@ -17,21 +17,18 @@ module.exports=(sequelize,dataTypes)=>{
 
     }
     let config = {
-        tableName: "genres",
+        tableName: "genre",
         timestamps : false,
         underscored : true
     } 
     const Genres = sequelize.define(alias,cols,config);
 
-    /*Genres.associate = function(models){
-        Genres.belongsToMany(models.products, {
+    Genres.associate = function(models){
+        Genres.hasMany(models.products, {
             as:"productos",
-            through: "products_has_genre",
-            foreignKey: "genre_id",
-            otherKey: "products_id",
-            timestamps : false
+            foreignKey: "id_genre"
         });
-    }*/
+    }
 
     return Genres
 }

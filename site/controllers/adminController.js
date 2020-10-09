@@ -20,9 +20,12 @@ module.exports = {
         .then((element)=>{
             dbusuario = element
         })
-        db.products.findAll()
+
+        db.products.findAll({
+           include: [{association: "generos"}]
+        })
         .then(function(element){
-            console.log(element)
+            console.log(element[2].generos.gname)
             res.render("admin",{
                 usuarios:dbusuario,
                 dbP: element
