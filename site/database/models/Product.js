@@ -47,15 +47,12 @@ module.exports=(sequelize,dataTypes)=>{
     } 
     const Product = sequelize.define(alias,cols,config);
 
-    /*Product.associate = function(models){
-        Product.belongsToMany(models.Genres, {
+    Product.associate = function(models){
+        Product.belongsTo(models.Genres, {
             as:"generos",
-            through: "products_has_genre",
-            foreignKey: "products_id",
-            otherKey: "genre_id",
-            timestamps : false
+            foreignKey: "id_genre"
         });
-    }*/
+    }
 
     return Product;
 }
