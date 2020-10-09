@@ -3,8 +3,29 @@ let dbProduct = require('../data/dataBase')
 const db = require('../database/models')
 module.exports={
     index:((req,res)=>{
+        db.products.findAll({
+            include: [{association: "generos"}],
+            where:{propiedad:true}
 
-        db.sequelize.query('SELECT * FROM users')
+         })
+         .then(function(element){
+             let bpb=element
+             db.products.findAll({
+                include: [{association: "generos"}],
+                where:{propiedad:false}
+             })
+            .then((element)=>{
+                let af=element
+                res.render("index", {
+                title:"Detalle del producto",
+                producto: element[0],
+                bpb:bpb,
+                af:af,
+                userLog: req.session.userLog})
+            })
+         })
+
+       /* db.sequelize.query('SELECT * FROM users')
         .then(function(resultados){
             let usuarios = resultados[0]   
             console.log(usuarios)
@@ -21,6 +42,6 @@ module.exports={
             bpb:bpb,
             af:af,
             userLog: req.session.userLog
-        })
+        })*/
     })
     }
