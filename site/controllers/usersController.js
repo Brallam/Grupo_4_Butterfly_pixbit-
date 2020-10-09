@@ -10,7 +10,18 @@ let dbUsers = require('../data/databaseUsers');
 const db = require('../database/models')
 module.exports = {
     profile:(req,res,next)=>{
-        let id  =req.params.id;
+        db.users.findAll(
+            {where: { id:req.params.id}}
+        )
+        .then((element)=>{
+            console.log(element)
+            res.render("usersProf",{
+                title: "Perfil ",
+                user:element[0],
+                userLog: req.session.userLog
+          
+         }) } )
+       /* let id  =req.params.id;
         let usr=dbUsers.filter((usr)=>{
             return id==usr.id
         })
@@ -18,7 +29,7 @@ module.exports = {
             title: "Perfil ",
             user:usr[0],
             userLog: req.session.userLog
-        })
+        })*/
     
     },
     editper:(req,res,next)=>{

@@ -19,18 +19,20 @@ module.exports = {
         db.users.findAll()
         .then((element)=>{
             dbusuario = element
+         db.products.findAll({
+                include: [{association: "generos"}]
+             })
+             .then(function(element){
+                 console.log("-----------*--------------------------")
+                 console.log(element[0].generos.id)
+                 res.render("admin",{
+                     usuarios:dbusuario,
+                     dbP: element
+                 });
+             })
         })
 
-        db.products.findAll({
-           include: [{association: "generos"}]
-        })
-        .then(function(element){
-            console.log(element[2].generos.gname)
-            res.render("admin",{
-                usuarios:dbusuario,
-                dbP: element
-            });
-        })
+       
     },
     publicar:(req,res)=>{
 
