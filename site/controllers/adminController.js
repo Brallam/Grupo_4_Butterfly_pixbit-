@@ -20,7 +20,7 @@ module.exports = {
         .then((element)=>{
             dbusuario = element
          db.products.findAll({
-                include: [{association: "generos"}]
+                //include: [{association: "generos"}]
              })
              .then(function(element){
                  console.log("-----------*--------------------------")
@@ -106,7 +106,15 @@ module.exports = {
         res.redirect('/admin')
     },
     eliminar:function(req,res){
-        let aEliminar;
+        
+        db.users.destroy({
+            where:{
+                id:req.params.id
+            }
+        })
+        return res.redirect('/admin')
+
+        /*let aEliminar;
         let idProducto = req.params.id;
         dbProduct.forEach(producto => {
           if(producto.id== idProducto){
@@ -117,6 +125,9 @@ module.exports = {
         dbProduct.splice(aEliminar,1)
         fs.writeFileSync(path.join(__dirname,"..", "data","productsDataBase.json"),JSON.stringify(dbProduct), "utf-8");
         res.redirect('/admin')
+        */
+
+
       }
     };
     

@@ -17,7 +17,7 @@ module.exports={
             .then((element)=>{
                 let af=element
                 res.render("index", {
-                title:"Detalle del producto",
+                title:"ButterFly-PixBit",
                 producto: element[0],
                 bpb:bpb,
                 af:af,
