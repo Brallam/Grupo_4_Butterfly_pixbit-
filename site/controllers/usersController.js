@@ -21,51 +21,35 @@ module.exports = {
                 userLog: req.session.userLog
           
          }) } )
-       /* let id  =req.params.id;
-        let usr=dbUsers.filter((usr)=>{
-            return id==usr.id
-        })
-        res.render("usersProf",{
-            title: "Perfil ",
-            user:usr[0],
-            userLog: req.session.userLog
-        })*/
-    
     },
     editper:(req,res,next)=>{
         let id  =req.params.id;
-        let usr=dbUsers.filter((usr)=>{
-            return id==usr.id
+        db.users.findAll({
+        where:{id: req.params.id}})
+        .then((m)=>{
+            res.render("editusr",{
+                title:"Editar Perfil",
+                user:m[0],
+                userLog: req.session.userLog
+            })
         })
-        res.render("editusr",{
-            title: "Perfil ",
-            user:usr[0],
-            userLog: req.session.userLog
-        })
+      
     },
     editf:(req,res,next)=>{
-        let id  =req.params.id;
-        let user = dbUsers.filter((m) => {
-            return id == m.id;
-          });
-        let editusr = {
-            id:Number(id),
+        let id =req.params.id;
+        db.users.findAll({where: { id:id}})
+        .then((m)=>{
+        let newusr = {
+            id:Number(m.id),
             name: req.body.name.trim(),
             nameU: req.body.nameU.trim(),
-            email:user[0].email,
-            password:user[0].password,
-            admin:user[0].admin,
-            image: (req.files[0])?req.files[0].filename:user[0].image,
+            email:m[0].email,
+            password:m[0].password,
+            admin:m[0].admin,
+            image: (req.files[0])?req.files[0].filename:m[0].image,
          }
-        let p
-        dbUsers.forEach(m=>{
-            if (m.id==id){
-             return p=dbUsers.indexOf(m) 
-            }
+         db.users.update(newusr, {where: { id:id}})
         })
-        dbUsers.splice(p,1,editusr)
-        fs.writeFileSync(path.join(__dirname,"..",'data',"UsersDataBase.json"),JSON.stringify(dbUsers),'utf-8')
-        res.redirect("/users/profile/"+id )
 
     },
     registro:(req,res,next)=>{

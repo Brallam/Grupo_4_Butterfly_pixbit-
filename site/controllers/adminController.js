@@ -23,8 +23,6 @@ module.exports = {
                 //include: [{association: "generos"}]
              })
              .then(function(element){
-                 console.log("-----------*--------------------------")
-                 console.log(element[0].generos.id)
                  res.render("admin",{
                      usuarios:dbusuario,
                      dbP: element
@@ -45,9 +43,7 @@ module.exports = {
             image: (req.files[0])?req.files[0].filename:"default-image.png",
             propiedad: Boolean(Number(req.body.propiedad))
         })
-        .then(function(result){
-            console.log(result)
-        })
+       
         .catch(errores=>{
             console.log(errores)
         })
@@ -56,53 +52,36 @@ module.exports = {
     },
     edit:(req,res)=>{
         let id = req.params.id;
-        let producto = dbProduct.filter((producto) => {
-          return id == producto.id;
-        });
-        console.log(producto);
-        res.render("editproduct", {
-            title:"Detalle del producto",
-          producto: producto[0]
-        });
+        
+        db.products.findAll({  include: [{association: "generos"}],
+        where:{id: req.params.id}})
+        .then((m)=>{
+            console.log(m)
+            res.render("editproduct",{
+                title:"Editar producto",
+                producto:m[0]
+            })
+        })
     },
     editp:(req,res)=>{
         let id= Number(req.params.id)
-        let reqgeneros = [req.body.Accion, req.body.Disparos, req.body.Estrategia, req.body.Simulacion, req.body.Deporte, req.body.Carrera, req.body.Aventura, req.body.ROL]
-        let generos = ["Pelucheosi","Accion", "Disparos", "Estrategia", "Simulacion", "Deporte", "Carrera", "Aventura", "ROL"]
-        let generosfiltrados = []
-
-        reqgeneros.forEach(element =>{
-            if(element != null){
-                generosfiltrados.push(generos[element])
-            }
-        })
         let img
-        dbProduct.forEach(m=>{
-            if (m.id==id){
-                return img=m.image
-               }
+        db.products.findAll({  include: [{association: "generos"}],
+        where:{id:id}})
+        .then((m)=>{
+            return img=m[0].image
         })
-        let editProduct = {
-            id:Number(id),
+        let producto={
             name: req.body.name.trim(),
             price: Number(req.body.price),
-            genre: generosfiltrados,
-            description: req.body.description.trim(),
-            requirements: req.body.requirements.trim(),
+            id_genre: req.body.genero,
+            descripcion: req.body.description.trim(),
+            requisito: req.body.requirements.trim(),
             image: (req.files[0])?req.files[0].filename:img,
             propiedad: Boolean(Number(req.body.propiedad))
-            
-
-         }
-        let p
-        dbProduct.forEach(m=>{
-            if (m.id==id){
-             return p=dbProduct.indexOf(m) 
-            }
-        })
-        dbProduct.splice(p,1,editProduct)
-        fs.writeFileSync(path.join(__dirname,"..", "data","productsDataBase.json"),JSON.stringify(dbProduct), "utf-8");
-
+          }
+        db.products.update(producto,{  include: [{association: "generos"}],
+        where:{id:id}})
         res.redirect('/admin')
     },
     eliminar:function(req,res){
