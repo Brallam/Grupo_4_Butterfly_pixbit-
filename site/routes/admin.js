@@ -16,8 +16,9 @@ const multerProduct =require('../middlewares/multerProduct')
 
 router.get('/',userAdminCheck, controller.lista);
 
-router.get('/newProduct', userAdminCheck, controller.mostrarForm);
+router.get('/newProduct', controller.mostrarForm);
 router.post('/newProduct',multerProduct.any(), controller.publicar);
+router.get("/banner",controller.banner)
 
 router.get('/editproduct/:id', userAdminCheck, controller.edit);
 router.post('/editproduct/:id',multerProduct.any(), controller.editp);

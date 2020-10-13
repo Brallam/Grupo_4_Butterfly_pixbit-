@@ -6,7 +6,8 @@ var router = express.Router();
 var controller=require("../controllers/indexController")
 
 /* GET home page. */
-router.get('/', controller.index);
+router.get("/",controller.home)
+router.get('/store', controller.index);
 
 module.exports = router;
 

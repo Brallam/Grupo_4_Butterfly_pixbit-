@@ -2,6 +2,12 @@ let dbProduct = require('../data/dataBase')
 // SEQUELIZE
 const db = require('../database/models')
 module.exports={
+    home:((req,res)=>{
+        res.render("Home",{
+            title:"Butterfly pixbit",
+            userLog: req.session.userLog
+        })
+    }),
     index:((req,res)=>{
         db.products.findAll({
             include: [{association: "generos"}],
@@ -17,7 +23,7 @@ module.exports={
             .then((element)=>{
                 let af=element
                 res.render("index", {
-                title:"Detalle del producto",
+                title:"Tienda",
                 producto: element[0],
                 bpb:bpb,
                 af:af,

@@ -5,9 +5,80 @@
     height: 800;
   }
   
+  .homeb{
+    margin-top: 0px ;
+  }
   .box {
     flex-wrap: wrap;
     display: flex;
+  }
+  .bannerh{
+    max-width:100%; 
+    height:500px;
+    width: 1180px;
+    position: inherit;
+  
+  }
+  .homedet{
+    margin-top: 30px;
+    border-radius: 5px;
+    border: rgb(34, 34, 34) solid 5px;
+  }
+  .box{
+    position: absolute;
+
+    bottom: 0px;
+    width: 100%;
+    max-height: 100%;
+    
+    color: white;
+    background-color: rgba(0, 0, 0, 0.377);
+  }
+  .titlenews{
+    float:left;
+    font-size: 500%;
+  }
+  .description{
+    display:none ;
+    font-size: 130%;
+  }
+  .imgbox:hover .description{
+    display: block;
+  }
+  .contnoti{display: flex;
+  flex-wrap: wrap; }
+
+  .boxnoti{
+    margin: 30px auto;
+
+    
+  }
+  .noti{
+    max-width: 300px;
+    border: solid 2px black;
+    display: block;
+    flex-wrap: wrap;
+    background-color: rgba(82, 82, 82, 0.479);
+  }
+  .zoom1{
+    transition: 0.5s;
+  }
+  .zoom1:hover{
+    transform: scale(1.05);
+      z-index: 2;
+      position: relative;
+  }
+  .minititle{
+    color: blanchedalmond;
+    font-size: 200%;
+  }
+  .minidesc{
+    color:blanchedalmond;
+    font-size: 130%;
+  }
+  .miniprice{
+    color: green;
+    font-size: 140%;
   }
   /*Products*/
   

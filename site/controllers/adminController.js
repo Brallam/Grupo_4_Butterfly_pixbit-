@@ -96,6 +96,26 @@ module.exports = {
         dbProduct.splice(aEliminar,1)
         fs.writeFileSync(path.join(__dirname,"..", "data","productsDataBase.json"),JSON.stringify(dbProduct), "utf-8");
         res.redirect('/admin')
-      }
+      },
+    banner:(req,res)=>{
+        res.render("noticiabanner",{
+            title:"Carga del producto"
+        })
+    },
+    bannerpub:(req,res)=>{
+
+        db.noticiabanner.create({
+            titulo: req.body.name.trim(),
+            descripcion: req.body.description.trim(),
+            image: (req.files[0])?req.files[0].filename:"default-image.png", 
+            ref:req.body.ref,
+        })
+       
+        .catch(errores=>{
+            console.log(errores)
+        })
+        res.redirect('/admin')
+
+    }
     };
     

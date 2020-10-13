@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head class="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d302e505c7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/stylenewProduct.css">
+    <title><%= title %></title>
+</head>
+
+
+<body>
+    <div class="container"> 
+      <form  class= "formulario" action="" method="POST" enctype="multipart/form-data">
+        <div class="row botones">
+          <a href="/admin"><button type="button" class="btn btn-success">Atras</button></a>
+          <button type="button" class="btn btn-success">Vista previa</button>
+          <button type="submit" class="btn btn-success">Guardar</button>
+      </div>
+        <div class="row cd">
+            <div class="col-12">
+                <div class="row caja0">
+                    <img src="/images/LogoMakr_8h3KUr.png" alt="">
+                    <h5>Noticia tipo banner</h5>
+                </div>
+                <div class="uploadimage col-12">
+                  <i class="fas fa-images col-12"></i>
+                  <h6>Carga aqui las imagenes</h6>
+                  <div class="alert alert-secondary" role="alert">
+                    Se recomienda imagenes 1180x500
+                  </div>
+                  <input class="col-12" type="file" name="image">
+                </div>
+                <div class="row caja1">
+                    <label for="nombre-producto">Titulo</label>
+                    <input class="nombre" type="text" name="title" id="Titulo" >
+                </div>
+                <div class="row caja2">
+                    <label for="descripcion">Descripcion</label>
+                    <textarea class="descripcion" name="description" id="descripcion" cols="40" rows="6" ></textarea>
+                </div>
+                
+            </div>
+               
