@@ -46,7 +46,7 @@ module.exports = {
             email:m[0].email,
             password:m[0].password,
             admin:m[0].admin,
-            image: (req.files[0])?req.files[0].filename:m[0].image,
+            image: (req.files[0])?req.files[0].filename:m.image,
          }
          db.users.update(newusr, {where: { id:id}})
         })

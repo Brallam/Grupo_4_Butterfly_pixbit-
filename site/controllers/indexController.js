@@ -2,16 +2,21 @@
 let dbProduct = require('../data/dataBase') 
 // SEQUELIZE
 const db = require('../database/models')
+const { banner } = require('./adminController')
 module.exports={
     home:((req,res)=>{
         db.noticiabanner.findAll()
         .then((m)=>{
+        let banner=m
+        db.noticiacarta.findAll()
+        .then(m=>{
         res.render("Home",{
              title:"Butterfly pixbit",
-             banner:m,
+             banner:banner,
+             carta:m,
              userLog: req.session.userLog
          })
-      
+        })
         })
        
     }),

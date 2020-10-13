@@ -12,6 +12,7 @@ const path = require('path')
 const userAdminCheck = require('../middlewares/userAdminCheck')
 const multerProduct =require('../middlewares/multerProduct')
 const multerBanner=require("../middlewares/multerBanner.js")
+const multerCarta=require("../middlewares/multerCarta")
 
 //RUTAS
 
@@ -23,14 +24,21 @@ router.post('/newProduct',multerProduct.any(), controller.publicar);
 router.get("/banner",controller.banner)
 router.post("/banner",multerBanner.any(),controller.bannerpub)
 
+router.get("/card",controller.carta)
+router.post("/card",multerCarta.any(),controller.cartapub)
+
 router.get('/editproduct/:id', userAdminCheck, controller.edit);
 router.post('/editproduct/:id',multerProduct.any(), controller.editp);
 
 router.get("/editbanner/:id",userAdminCheck,controller.banneredit)
 router.post("/editbanner/:id",multerBanner.any(),controller.bannereditp)
 
+router.get("/editcarta/:id",userAdminCheck,controller.cartaedit)
+router.post("/editcarta/:id",multerCarta.any(),controller.cartaeditp)
+
 router.delete("/deleteB/:id",userAdminCheck,controller.bannerdelete)
 
 router.delete('/delete/:id',userAdminCheck, controller.eliminar)
+router.delete("/deleteC/:id",userAdminCheck,controller.cartadelete)
 
 module.exports = router;

@@ -13,11 +13,14 @@
     display: flex;
   }
   .bannerh{
-    max-width:100%; 
-    height:500px;
-    width: 1180px;
+    height: 500px;
+    width: 100%;
+   position: inherit;
+  }
+  .cartah{
+    height: 380px;
+    width: 296px;
     position: inherit;
-  
   }
   .homedet{
     margin-top: 30px;

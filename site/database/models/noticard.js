@@ -1,5 +1,5 @@
 module.exports=(sequelize,dataTypes)=>{
-    let alias = "noticiabanner"
+    let alias = "noticiacarta"
 
     let cols ={
         id:{
@@ -26,10 +26,10 @@ module.exports=(sequelize,dataTypes)=>{
         },
     }
     let config = {
-        tableName: "noticiabanner",
+        tableName: "noticiacarta",
         timestamps : false,
         underscored : true
     } 
-    const noticiabanner = sequelize.define(alias,cols,config);
-    return noticiabanner;
+    const noticiacarta = sequelize.define(alias,cols,config);
+    return noticiacarta;
 }

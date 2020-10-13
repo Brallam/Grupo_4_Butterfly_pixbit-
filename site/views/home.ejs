@@ -3,84 +3,63 @@
 <h6 class="osi">dadsadsa</h6>
     <%- include("./partials/banner.ejs") %> 
 <section class="container ur homedet">
-  
+  <div id="carouselExampleIndicators" class="carousel slide car" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="<%=banner[0].id%> " class="active"></li>
+    <% for(let i=1;i<banner.length;i++){  %> 
+      <li data-target="#carouselExampleIndicators" data-slide-to="<%=banner[i].id%> " class=""></li>
+    <%}%>
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="<%=banner[0].id%> " class="active"></li>
-        <% for(let i=1;i<banner.length;i++){  %> 
-          <li data-target="#carouselExampleIndicators" data-slide-to="<%=banner[i].id%> " class=""></li>
-        <%}%>
-
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active container">
-                <div class="row imgbox">
-               <a href="/products/<%-banner[0].ref%>" > <img src="/images/newsBanner/<%-banner[0].image %>" class="d-block bannerh " alt="">
-                <div class="box ">
-                <p class="titlenews col-12"><%-banner[0].titulo%></p>
-                <h3 class="description col-12"><%-banner[0].descripcion%></h3>
-                </div></a>
-                 </div>
-              </div>
-         <% for(let i=1;i<banner.length;i++){  %> 
-          <div class="carousel-item  container">
+    </ol>
+    <div class="carousel-inner ">
+      <div class="carousel-item active container ">
             <div class="row imgbox">
-           <a href="/products/<%-banner[i].ref%>" > <img src="/images/newsBanner/<%-banner[i].image %>" class="d-block bannerh " alt="">
+           <a <% if(banner[0].ref!=null){%>href="/products/<%-banner[0].ref %>"<%}%> > <img src="/images/newsBanner/<%-banner[0].image %>" class="d-block bannerh " alt="">
             <div class="box ">
-            <p class="titlenews col-12"><%-banner[i].titulo%></p>
-            <h3 class="description col-12"><%-banner[i].descripcion%> </h3>
+            <p class="titlenews col-12"><%-banner[0].titulo%></p>
+            <h3 class="description col-12"><%-banner[0].descripcion%></h3>
             </div></a>
              </div>
           </div>
-          <%}%>
-        
-          </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+     <% for(let i=1;i<banner.length;i++){  %> 
+      <div class="carousel-item  container">
+        <div class="row imgbox">
+       <a <%if(banner[i].ref!=0){%>href="/products/<%-banner[i].ref%>"<%}%> > <img src="/images/newsBanner/<%-banner[i].image %>" class="d-block bannerh " alt="">
+        <div class="box ">
+        <p class="titlenews col-12"><%-banner[i].titulo%></p>
+        <h3 class="description col-12"><%-banner[i].descripcion%> </h3>
+        </div></a>
+         </div>
       </div>
+      <%}%>
+    
+      </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
       <div>
           <div class="container contnoti">
-        <div class="row col-lg-4 col-md-6 col-sm-12 boxnoti">
-              <div class="card noti zoom1">
-                <img src="/images/products/image1602218478915.jpg " class="card-img-top" alt="">
-                <div class="card-body">
-                  <h5 class="card-title minititle">Card title</h5>
-                  <p class="card-text minidesc">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text miniprice">$140</p>
-                </div>
-            </div>
-        </div>
-        <div class="row col-lg-4 col-md-6 col-sm-12 boxnoti">
+            <% carta.forEach(m=>{%>
+          <div class="row col-lg-4 col-md-6 col-sm-12 boxnoti">
             <div class="">
+              <a <% if(m.ref!=null){%>href="/products/<%-m.ref %>"<%}%> >
               <div class="card noti zoom1">
-                <img src="/images/products/image1602218478915.jpg " class="card-img-top" alt="">
+                <img src="/images/newsCard/<%= m.image%> " class="card-img-top cartah" alt="">
                 <div class="card-body">
-                  <h5 class="card-title minititle">Card title</h5>
-                  <p class="card-text minidesc">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text miniprice">$140</p>
+                <h5 class="card-title minititle"><%-m.titulo%> </h5>
+                  <p class="card-text minidesc"><%-m.descripcion%></p>
                 </div>
               </div>
+            </a>
             </div>
-        </div>
-        <div class="row col-lg-4 col-md-6 col-sm-12 boxnoti">
-            <div class="">
-              <div class="card noti zoom1">
-                <img src="/images/products/image1602218478915.jpg " class="card-img-top" alt="">
-                <div class="card-body">
-                  <h5 class="card-title minititle">Card title</h5>
-                  <p class="card-text minidesc">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text miniprice">$140</p>
-                </div>
-              </div>
-            </div>
-        </div>
+         </div>
+       <% }) %> 
       </div>
 </section>
 <%-include("./partials/footer.ejs")%>

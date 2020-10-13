@@ -82,7 +82,7 @@ CREATE TABLE `noticiabanner` (
   `image` varchar(200) NOT NULL,
   `ref` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,8 +91,35 @@ CREATE TABLE `noticiabanner` (
 
 LOCK TABLES `noticiabanner` WRITE;
 /*!40000 ALTER TABLE `noticiabanner` DISABLE KEYS */;
-INSERT INTO `noticiabanner` VALUES (1,'Ahora en dispositivos moviles','dsadsad','image1602578119153.webp',1),(3,'YA SALIO NUEVA EXPANCION \"NEXT\"','llegamos hasta \'No Man\'s Sky: NEXT\', o lo que es lo mismo, la actualización 1.5 (sí, el estudio se saltó la 1.4), donde destaca la implementación de un modo multijugador online real, donde cuatro personas (conocidas o no) se podrán juntar por el espacio para hacer todo tipo de diabluras... o simplem','image1602574669183.jpg',3),(4,'EN DESARROLLO SEGUNDA PARTE!','Si, nuestro amigos de sekai projects ya se encuentran en desarrollo de la secuela de este gran juego','image1602579599909.jpg',4);
+INSERT INTO `noticiabanner` VALUES (1,'Ahora en dispositivos moviles','Por fin dimos la salida de este diviertidisimo juego a las plataformas de IOS y Android!','image1602578119153.webp',1),(3,'YA SALIO NUEVA EXPANCION \"NEXT\"','llegamos hasta \'No Man\'s Sky: NEXT\', o lo que es lo mismo, la actualización 1.5 (sí, el estudio se saltó la 1.4), donde destaca la implementación de un modo multijugador online real, donde cuatro personas (conocidas o no) se podrán juntar por el espacio para hacer todo tipo de diabluras... o simplem','image1602574669183.jpg',3),(4,'EN DESARROLLO SEGUNDA PARTE!','Si, nuestro amigos de sekai projects ya se encuentran en desarrollo de la secuela de este gran juego','image1602579599909.jpg',4);
 /*!40000 ALTER TABLE `noticiabanner` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `noticiacarta`
+--
+
+DROP TABLE IF EXISTS `noticiacarta`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `noticiacarta` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(20) NOT NULL,
+  `descripcion` varchar(200) NOT NULL,
+  `image` varchar(200) NOT NULL,
+  `ref` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `noticiacarta`
+--
+
+LOCK TABLES `noticiacarta` WRITE;
+/*!40000 ALTER TABLE `noticiacarta` DISABLE KEYS */;
+INSERT INTO `noticiacarta` VALUES (2,'Pronto a salir!','Llega dentro de poco DagerFall, un juego medieval ¿te atreves adentrarte en el?','image1602603563526.jpg',NULL),(4,'Nuevo parche fix','se han arreglado errores de....','image1602605445292.jpg',3);
+/*!40000 ALTER TABLE `noticiacarta` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -153,7 +180,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'asdjhsadgh','easdsad','adhuwia@gmail.com','$2b$10$dv9fn/gi4XLXOvzrwZj7iOpqEqxIspwA9mV8gFJLqF4OozjhH05Qi','default-image.png',0),(3,'Brallam','Brallam','hola@gmail.com','$2b$10$IZC8X3gNnLwAGrpWgzUZo.rWa91zNAjbtmwiv7vld7QrVwDMaVuhC','image1602450043027.jpg',1);
+INSERT INTO `users` VALUES (0,'Brallam','Brallam','hola@gmail.com','$2b$10$IZC8X3gNnLwAGrpWgzUZo.rWa91zNAjbtmwiv7vld7QrVwDMaVuhC','image1602450043027.jpg',1),(1,'asdjhsadgh','easdsad','adhuwia@gmail.com','$2b$10$dv9fn/gi4XLXOvzrwZj7iOpqEqxIspwA9mV8gFJLqF4OozjhH05Qi','default-image.png',0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -166,4 +193,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-13  6:13:23
+-- Dump completed on 2020-10-13 13:47:30

@@ -13,7 +13,7 @@
         <div class="row botones">
             <a href="/"><button type="button" class="btn btn-success">Volver</button></a>
             <a href="/admin/banner"><button type="button" class="btn btn-success">Crear noticia banner</button></a>
-            <a href="/card"><button type="button" class="btn btn-success">Crear noticia tarjeta</button></a>
+            <a href="/admin/card"><button type="button" class="btn btn-success">Crear noticia tarjeta</button></a>
             <a href="/admin/newProduct"><button type="button" class="btn btn-success">Añadir producto</button></a>
         </div>
         <div class="row">
@@ -27,6 +27,9 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" id="profile-tab" data-toggle="tab" href="#banner" role="tab" aria-controls="profile" aria-selected="false">Banners</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#carta" role="tab" aria-controls="profile" aria-selected="false">Cartas</a>
                     </li>
                   </ul>
                   <div class="tab-content" id="myTabContent">
@@ -102,6 +105,42 @@
                                   <td><a href="/admin/editbanner/<%-m.id%>">
                                    <button type="button" class="btn btn-info" >Editar</button></a>
                                    <form class="btn" action="/admin/deleteB/<%-m.id%>?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger"> Borrar </button></td></form>
+                                </tr>
+                                <% }); %> 
+                              </tbody>
+                            </table>
+                       </div>
+                    </div>
+                    <div class="tab-pane fade show " id="carta" role="tabpanel" aria-labelledby="home-tab">
+                      <div class="row">
+                          <table class="table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">#</th>
+                                  <th scope="col">producto afectado</th>
+                                  <th scope="col">Editar</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                  <% carta.forEach(m => { %>
+                                <tr>
+                                  <% let ref=null %> 
+                                  <th scope="row"><%- m.id %></th>
+                                  <% if(m.ref!=null){  %>
+                                  <%let id=m.ref
+                                  dbP.forEach(m=>{
+                                    if(m.id==id){
+                                      ref=m.name
+                                    }
+                                  })%>
+                                  <td><%- ref %></td>
+                                  <%} %>
+                                  <% if(m.ref==null){ %><td><%-m.titulo %></td> <% } %> 
+
+                                  
+                                  <td><a href="/admin/editcarta/<%-m.id%>">
+                                   <button type="button" class="btn btn-info" >Editar</button></a>
+                                   <form class="btn" action="/admin/deleteC/<%-m.id%>?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger"> Borrar </button></td></form>
                                 </tr>
                                 <% }); %> 
                               </tbody>

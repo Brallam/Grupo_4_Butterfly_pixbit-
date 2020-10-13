@@ -26,11 +26,16 @@ module.exports = {
                 let dpb=element
                  db.noticiabanner.findAll()
                  .then(element=>{
+                    let banner=element
+                db.noticiacarta.findAll()
+                .then(element=>{
                  res.render("admin",{
                      usuarios:dbusuario,
                      dbP: dpb,
-                     banner:element
+                     banner:banner,
+                     carta:element
                     });
+                })
               })
              })
          })
@@ -157,7 +162,68 @@ module.exports = {
              }
         })
          return res.redirect('/admin')
-    }
-
+    },
+    carta:(req,res)=>{
+        db.products.findAll({include: [{association: "generos"}], })
+        .then((m)=>{
+        res.render("noticiacarta",{
+            title:"Carga del producto",
+            producto:m, 
+        })
+         })
+    },
+    cartapub:(req,res)=>{
+        db.noticiacarta.create({
+            titulo: req.body.title.trim(),
+            descripcion: req.body.description.trim(),
+            image: (req.files[0])?req.files[0].filename:"default-image.png", 
+            ref:req.body.ref,
+        })
+        .catch(errores=>{
+            console.log(errores)
+        })
+        res.redirect('/admin')
+    },
+    cartaedit:(req,res)=>{
+        let id = req.params.id;
+        db.products.findAll({include: [{association: "generos"}], })
+        .then(m=>{ 
+        let produ=m
+        db.noticiacarta.findAll({where:{id: req.params.id}})
+        .then((m)=>{
+            console.log(m)
+            res.render("editcarta",{
+                title:"Editar producto",
+                producto:produ,
+                carta:m[0]
+            })
+        } )
+        })
+    },
+    cartaeditp:(req,res)=>{
+        let id= Number(req.params.id)
+        let img
+        db.noticiacarta.findAll({ 
+            where:{id:id}})
+            .then((m)=>{
+            return img=m[0].image
+             })
+        let carta={
+             titulo: req.body.title.trim(),
+             descripcion: req.body.description.trim(),
+             image: (req.files[0])?req.files[0].filename:img, 
+             ref:req.body.ref,
+          }
+        db.noticiacarta.update(carta,{ where:{id:id}})
+        res.redirect('/admin')
+     },
+     cartadelete:(req,res)=>{
+        db.noticiacarta.destroy({
+         where:{
+          id:req.params.id
+         }
+    })
+     return res.redirect('/admin')
+    },
     };
     
