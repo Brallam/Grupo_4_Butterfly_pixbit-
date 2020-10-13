@@ -7,38 +7,34 @@
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="<%=banner[0].id%> " class="active"></li>
+        <% for(let i=1;i<banner.length;i++){  %> 
+          <li data-target="#carouselExampleIndicators" data-slide-to="<%=banner[i].id%> " class=""></li>
+        <%}%>
+
         </ol>
         <div class="carousel-inner">
-          <div class="carousel-item active container">
-            <div class="row imgbox">
-           <a href=""> <img src="/images/news/human-fall-flat-android-ios-download-banner.webp" class="d-block bannerh " alt="">
-            <div class="box ">
-            <p class="titlenews col-12">Human fall flat<br></p>
-            <h3 class="description col-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias expedita eaque laboriosam veniam itaque voluptas? Consectetur dolores amet maxime quas, corporis consequuntur voluptatum, ipsum blanditiis cupiditate, culpa excepturi provident modi.</h3>
-            </div></a>
-             </div>
-          </div>
-          <div class="carousel-item container">
-            <div class="row">
-           <a href=""> <img src="/images/news/images.jpg" class="d-block bannerh " alt="">
-            <div class="box ">
-            <p class="titlenews col-12">Human fall flat<br></p>
-            <h3 class="description col-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias expedita eaque laboriosam veniam itaque voluptas? Consectetur dolores amet maxime quas, corporis consequuntur voluptatum, ipsum blanditiis cupiditate, culpa excepturi provident modi.</h3>
-            </div></a>
-             </div>
-          </div>
+            <div class="carousel-item active container">
+                <div class="row imgbox">
+               <a href="/products/<%-banner[0].ref%>" > <img src="/images/newsBanner/<%-banner[0].image %>" class="d-block bannerh " alt="">
+                <div class="box ">
+                <p class="titlenews col-12"><%-banner[0].titulo%></p>
+                <h3 class="description col-12"><%-banner[0].descripcion%></h3>
+                </div></a>
+                 </div>
+              </div>
+         <% for(let i=1;i<banner.length;i++){  %> 
           <div class="carousel-item  container">
-            <div class="row">
-           <a href=""> <img src="/images/news/Peluche_en_la_ventana_thumb_1280.jpg" class="d-block bannerh " alt="">
+            <div class="row imgbox">
+           <a href="/products/<%-banner[i].ref%>" > <img src="/images/newsBanner/<%-banner[i].image %>" class="d-block bannerh " alt="">
             <div class="box ">
-            <p class="titlenews col-12">Human fall flat<br></p>
-            <h3 class="description col-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias expedita eaque laboriosam veniam itaque voluptas? Consectetur dolores amet maxime quas, corporis consequuntur voluptatum, ipsum blanditiis cupiditate, culpa excepturi provident modi.</h3>
+            <p class="titlenews col-12"><%-banner[i].titulo%></p>
+            <h3 class="description col-12"><%-banner[i].descripcion%> </h3>
             </div></a>
              </div>
           </div>
+          <%}%>
+        
           </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>

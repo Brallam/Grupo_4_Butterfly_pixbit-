@@ -17,7 +17,7 @@ module.exports = {
     //console.log(producto);
 
     db.products.findAll({
-      include: [{association: "generos"}],
+    include: [{association: "generos"}],
       where:{id: req.params.id}
    })
    .then(function(element){

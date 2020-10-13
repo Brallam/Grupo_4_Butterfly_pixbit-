@@ -34,15 +34,15 @@
                 </div>
                 <div class="row caja1">
                     <label for="nombre-producto">Titulo</label>
-                    <input class="nombre" type="text" maxlength="45" name="title" id="title" >
+                    <input class="nombre" type="text" maxlength="45" name="title" id="title" value="<%-banner.titulo%>" >
                 </div>
                 <div class="row caja2">
                     <label for="descripcion" maxlength="300">Descripcion</label>
-                    <textarea class="descripcion" name="description" id="description" cols="40" rows="6" ></textarea>
+                    <textarea class="descripcion" name="description" id="description" cols="40" rows="6"  ><%-banner.descripcion%></textarea>
                 </div>
                 <% producto.forEach((m)=>{%>
                 <div class="caja2">
-                  <input class="form-check-input" type="radio" value="<%-m.id%>" id="accion" name="ref">
+                  <input class="form-check-input" type="radio" value="<%-m.id%>" id="accion" name="ref" <%if(m.id==banner.ref){%> checked<%  } %>  >
                   <label for=""><%-m.name%></label>
                 </div>
                 <%})%>

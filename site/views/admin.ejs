@@ -25,6 +25,9 @@
                     <li class="nav-item">
                       <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Usuarios</a>
                     </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#banner" role="tab" aria-controls="profile" aria-selected="false">Banners</a>
+                    </li>
                   </ul>
                   <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -74,6 +77,37 @@
                         </tbody>
                       </table>
                     </div>
+                    <div class="tab-pane fade show " id="banner" role="tabpanel" aria-labelledby="home-tab">
+                      <div class="row">
+                          <table class="table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">#</th>
+                                  <th scope="col">producto afectado</th>
+                                  <th scope="col">Editar</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                  <% banner.forEach(m => { %>
+                                <tr>
+                                  <% let ref=null %> 
+                                  <th scope="row"><%- m.id %></th>
+                                  <%let id=m.ref
+                                  dbP.forEach(m=>{
+                                    if(m.id==id){
+                                      ref=m.name
+                                    }
+                                  })%>
+                                  <td><%- ref %></td>
+                                  <td><a href="/admin/editbanner/<%-m.id%>">
+                                   <button type="button" class="btn btn-info" >Editar</button></a>
+                                   <form class="btn" action="/admin/deleteB/<%-m.id%>?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger"> Borrar </button></td></form>
+                                </tr>
+                                <% }); %> 
+                              </tbody>
+                            </table>
+                      </div>
+                  </div>
                   </div>
             </div>
         </div>

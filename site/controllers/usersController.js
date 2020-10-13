@@ -77,7 +77,7 @@ module.exports = {
             email:req.body.email.trim(),
             password:bcrypt.hashSync(req.body.password,10),
             image: (req.files[0])?req.files[0].filename:"default-image.png",
-            admin: false
+            admin: true
         }
         )
         .then(function(result){

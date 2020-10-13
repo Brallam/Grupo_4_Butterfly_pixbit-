@@ -239,8 +239,12 @@
     text-align: center;
     color: white;
     background-color: rgba(0, 0, 0, 0.377);
+    text-overflow: inherit;
+    overflow: hidden;
   }
-  
+  .pet{
+    
+  }
   .aff:hover .paf {
     display: block;
   }

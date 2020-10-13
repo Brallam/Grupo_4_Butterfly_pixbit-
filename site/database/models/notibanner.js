@@ -12,7 +12,7 @@ module.exports=(sequelize,dataTypes)=>{
             type: dataTypes.STRING(45),
             allowNull:false
         },
-        descrition:{
+        descripcion:{
             type: dataTypes.STRING(300),
             allowNull:false
         },
@@ -30,6 +30,6 @@ module.exports=(sequelize,dataTypes)=>{
         timestamps : false,
         underscored : true
     } 
-    const Product = sequelize.define(alias,cols,config);
-    return Product;
+    const noticiabanner = sequelize.define(alias,cols,config);
+    return noticiabanner;
 }

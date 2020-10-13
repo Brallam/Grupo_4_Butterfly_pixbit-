@@ -1,12 +1,19 @@
+
 let dbProduct = require('../data/dataBase') 
 // SEQUELIZE
 const db = require('../database/models')
 module.exports={
     home:((req,res)=>{
+        db.noticiabanner.findAll()
+        .then((m)=>{
         res.render("Home",{
-            title:"Butterfly pixbit",
-            userLog: req.session.userLog
+             title:"Butterfly pixbit",
+             banner:m,
+             userLog: req.session.userLog
+         })
+      
         })
+       
     }),
     index:((req,res)=>{
         db.products.findAll({
@@ -24,30 +31,11 @@ module.exports={
                 let af=element
                 res.render("index", {
                 title:"Tienda",
-                producto: element[0],
                 bpb:bpb,
                 af:af,
                 userLog: req.session.userLog})
             })
          })
 
-       /* db.sequelize.query('SELECT * FROM users')
-        .then(function(resultados){
-            let usuarios = resultados[0]   
-            console.log(usuarios)
-        })
-        let bpb=dbProduct.filter(m =>{
-            return m.propiedad==true;
-        })
-        let af=dbProduct.filter(m=>{
-            return m.propiedad==false;
-        })
-
-        res.render("index", {
-            title: "Butterfly PixBit",
-            bpb:bpb,
-            af:af,
-            userLog: req.session.userLog
-        })*/
     })
     }

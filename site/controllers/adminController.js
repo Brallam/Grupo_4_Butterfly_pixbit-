@@ -4,7 +4,7 @@ const dbUsers = require('../data/databaseUsers');
 //MODULOS 
 const fs = require("fs");
 const path = require("path");
-// SEQUELIZE
+//DB SEQUELIZE
 const db = require('../database/models')
 
 module.exports = {
@@ -20,17 +20,20 @@ module.exports = {
         .then((element)=>{
             dbusuario = element
          db.products.findAll({
-                include: [{association: "generos"}]
+                //include: [{association: "generos"}]
              })
              .then(function(element){
+                let dpb=element
+                 db.noticiabanner.findAll()
+                 .then(element=>{
                  res.render("admin",{
                      usuarios:dbusuario,
-                     dbP: element
-                 });
+                     dbP: dpb,
+                     banner:element
+                    });
+              })
              })
-        })
-
-       
+         })
     },
     publicar:(req,res)=>{
 
@@ -85,37 +88,76 @@ module.exports = {
         res.redirect('/admin')
     },
     eliminar:function(req,res){
-        let aEliminar;
-        let idProducto = req.params.id;
-        dbProduct.forEach(producto => {
-          if(producto.id== idProducto){
-             aEliminar = dbProduct.indexOf(producto)
-            
-          }
+        
+        db.products.destroy({
+            where:{
+                id:req.params.id
+            }
         })
-        dbProduct.splice(aEliminar,1)
-        fs.writeFileSync(path.join(__dirname,"..", "data","productsDataBase.json"),JSON.stringify(dbProduct), "utf-8");
-        res.redirect('/admin')
-      },
+        return res.redirect('/admin')},
     banner:(req,res)=>{
+        db.products.findAll({include: [{association: "generos"}], })
+        .then((m)=>{
         res.render("noticiabanner",{
-            title:"Carga del producto"
+            title:"Carga del producto",
+            producto:m, 
         })
+         })
+        
     },
     bannerpub:(req,res)=>{
-
         db.noticiabanner.create({
-            titulo: req.body.name.trim(),
+            titulo: req.body.title.trim(),
             descripcion: req.body.description.trim(),
             image: (req.files[0])?req.files[0].filename:"default-image.png", 
             ref:req.body.ref,
         })
-       
         .catch(errores=>{
             console.log(errores)
         })
         res.redirect('/admin')
-
+    },
+    banneredit:(req,res)=>{
+        let id = req.params.id;
+        db.products.findAll({include: [{association: "generos"}], })
+        .then(m=>{ 
+        let produ=m
+        db.noticiabanner.findAll({where:{id: req.params.id}})
+        .then((m)=>{
+            console.log(m)
+            res.render("editbanner",{
+                title:"Editar producto",
+                producto:produ,
+                banner:m[0]
+            })
+        } )
+        })
+    },
+    bannereditp:(req,res)=>{
+    let id= Number(req.params.id)
+    let img
+    db.noticiabanner.findAll({ 
+        where:{id:id}})
+        .then((m)=>{
+        return img=m[0].image
+         })
+    let banner={
+         titulo: req.body.title.trim(),
+         descripcion: req.body.description.trim(),
+         image: (req.files[0])?req.files[0].filename:img, 
+         ref:req.body.ref,
+      }
+    db.noticiabanner.update(banner,{ where:{id:id}})
+    res.redirect('/admin')
+ },
+    bannerdelete:(req,res)=>{
+            db.noticiabanner.destroy({
+             where:{
+              id:req.params.id
+             }
+        })
+         return res.redirect('/admin')
     }
+
     };
     
