@@ -25,6 +25,10 @@ a:hover {
 li {
   list-style: none;
 }
+.ossi{
+  display: block;
+  padding-bottom: 70px;
+}
 .osi{
   display: none;
   padding-bottom: 50px;
@@ -95,7 +99,9 @@ input {
     flex-wrap: wrap;
     justify-content: space-between;
   }
-
+  .ossi{
+    margin-bottom: 70px;
+  }
   .osi{
     display: block;
     padding-bottom: 155px;
@@ -180,6 +186,9 @@ input {
     position: relative;
     text-align: center;
     font-size: 62%;
+  }
+  .ossi{
+    margin-bottom: 70px;
   }
   /*footer*/
   footer {
