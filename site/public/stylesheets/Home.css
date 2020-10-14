@@ -92,7 +92,55 @@
     border-radius: 50% solid;
     padding-top: 100px;
   }
-  .productos {
+  .caja1{
+    border-radius: 20px;
+    min-height: 600px;
+    background-color: rgba(82, 82, 82, 0.24);
+  }
+  .inactive{ 
+    margin: 2px;
+    background-color:rgba(65, 65, 65, 0.815);
+    color: white;
+  }
+  .inactive :hover{
+    color: black;
+    text-decoration: none;
+    text-shadow: none;
+  }
+  .active1{
+    background-color:rgb(21, 185, 226) ;
+    color: black;
+  }
+  .cajam{
+    display: flex;
+    justify-content: center;
+   }
+  .productC{
+ 
+  text-align: center;
+  height: 400px ;
+  margin: 0 5px;
+  max-width: 23.8%;
+  }
+  .productC{
+    background-color:rgba(21, 185, 226, 0.603);
+  }
+  .card-body {
+    padding:0
+  }
+  .titleC{
+    font-variant: small-caps;
+    font-size: 26px;
+  }
+  .priceC{
+    font-variant: small-caps;
+    color: rgb(40, 201, 0);
+    font-size: 20px;
+  }
+  .imgCarta{
+    height: 300px;
+  }
+  /*.productos {
     border-radius: 15px;
     display: flex;
     flex-wrap: wrap;
@@ -250,5 +298,5 @@
   
   .aff:hover .paf {
     display: block;
-  }
+  }*/
   

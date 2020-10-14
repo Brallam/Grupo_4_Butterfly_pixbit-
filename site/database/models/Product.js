@@ -27,7 +27,7 @@ module.exports=(sequelize,dataTypes)=>{
             allowNull:false
         },
         propiedad:{
-            type: dataTypes.BOOLEAN(),
+            type: dataTypes.BOOLEAN(11),
             allowNull:false
         },
         price: {

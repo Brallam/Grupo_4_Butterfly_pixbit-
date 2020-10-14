@@ -2,60 +2,57 @@
 <%-include("./partials/header.ejs")%>
 <h6 class="osi">dadsadsa</h6>
 <%- include("./partials/banner.ejs") %> 
-
-<section class="container ur">
-  
-  
-  <div class="productos col-12">
-    <div class="row">
-      
-      <div class="titulo col-md-12 col-12">
-        <p>JUEGOS BUTTEFLY PIX BIT</p>
+<%- include("./partials/stores.ejs")  %>  
+  <div class="row">
+    <div class="col-2">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="" aria-orientation="vertical">
+        <a class="nav-link inactive  <%-ge%> " href="/store/<%-id%>">Todos</a>
+        <% genero.forEach(m=>{%>
+        <a class="nav-link inactive <% if(g==m.id){%> active1<%  } %> " href="/store/<%-id%>/<%-m.id%>"><%-m.gname%></a>
+          <%})%> 
       </div>
-      <% bpb.forEach(p => { %>
-      <div class="col-12 col-md-6 content">
-        <a class="vermas" href="/products/<%-p.id%> ">
-          <figure class="col-md-4 fig">
-            <img
-              class="img-fluid imag"
-              src="/images/products/<%=p.image %> "
-              alt=""
-            />
-          </figure>
-          <article class="art col-md-8">
-            <h2 class="tituloG"><%-p.name%></h2>
-            <p class="pd">
-              <%- p.descripcion%>
-            </p>
-            <h3 class="pri col-6"><%if (p.price!=0){ %>$<%-p.price %><% }else{%>Free to Play<%}%></h3>
-          </article>
-        </a>
-      </div>
-      <%})%>
     </div>
-  </div>
-  <div class="productos col-12 prf">
-    <div class="row">
-      <div class="titulo col-12 col-md-12">
-        <p>JUEGOS DE COMPANIAS AFILIADAS</p>
-      </div>
-      <% af.forEach(p => { %>
-      <div class="col-lg-3 col-md-6 col-12 of">
-        <div class="aff">
-          <a href="/products/<%- p.id%>">
-            <img class="imga" src="/images/products/<%-p.image%>" alt=""> 
-            <div class="paf col-12">
-              <h4 class="pet"><%-p.name %></h4>
-              <p class="pet">
-                <%- p.descripcion %> 
-              </p>
-            </img>
+    <div class="col-10">
+      <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+         <div class="row  cajam ">
+           <%pro.forEach(m=>{ %>
+              <div class="card col-3 productC">
+                <a href="/products/<%-m.id  %> " sstyle="text-decoration:none;">
+                  <div class="row ">
+                  <img src="/images/products/<%-m.image%>" class="card-img  imgCarta" alt="">
+                  <div class="card-body">
+                    <h5 class="card-title titleC"><%-m.name  %> </h5>
+                    <p class="card-text priceC"><%if(m.price==0){%>Free to play<%}else{%>$<%-m.price  %><%}%> </p>
+                  </div>
+                  </div>
+                </a>
+              </div>
+         <!--- <div class="card col-6 productC" style="max-width: 550px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="/images/products/<%-m.image%>" class="card-img " alt="">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title"><h5><%-m.name%></h5>
+                  <p class="card-text"><p><%-m.descripcion%> </p>
+                  <p class="card-text"><small class="text-muted"><%-m.price%></small></p>
+                </div>
+              </div>
             </div>
-          </a>
-        </div>
+          </div>-->
+       
+          <%}) %>
+        
+          </div>
+        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
       </div>
-      <% }) %>
     </div>
   </div>
-</section>
+</div>
+</div>
+</div>
 <%-include("./partials/footer.ejs")%>
