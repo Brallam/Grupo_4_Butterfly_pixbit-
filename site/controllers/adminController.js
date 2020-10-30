@@ -4,6 +4,7 @@ const dbUsers = require('../data/databaseUsers');
 //MODULOS 
 const fs = require("fs");
 const path = require("path");
+const {validationResult} = require('express-validator');
 //DB SEQUELIZE
 const db = require('../database/models')
 
@@ -42,20 +43,35 @@ module.exports = {
     },
     publicar:(req,res)=>{
 
-        db.products.create({
-            name: req.body.name.trim(),
-            price: Number(req.body.price),
-            id_genre: req.body.genero,
-            descripcion: req.body.description.trim(),
-            requisito: req.body.requirements.trim(),
-            image: (req.files[0])?req.files[0].filename:"default-image.png",
-            propiedad: Boolean(Number(req.body.propiedad))
-        })
-       
-        .catch(errores=>{
-            console.log(errores)
-        })
-        res.redirect('/admin')
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            db.products.create({
+                name: req.body.name.trim(),
+                price: (req.body.price)?Number(req.body.price):0,
+                id_genre: req.body.genero,
+                descripcion: req.body.description.trim(),
+                requisito: req.body.requirements.trim(),
+                image: (req.files[0])?req.files[0].filename:"default-image.png",
+                propiedad: Boolean(Number(req.body.propiedad))
+            })
+           
+            .catch(errores=>{
+                console.log(errores)
+            })
+            res.redirect('/admin')
+        }else{
+            console.log("error-----------------")
+            console.log(errors.errors)
+            //res.redirect('/admin')
+            res.render("newProduct",{
+                title:"Carga del producto",
+                old:req.body,
+                errors:errors.errors
+            });
+        }
+
+        
 
     },
     edit:(req,res)=>{

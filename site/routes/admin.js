@@ -14,12 +14,15 @@ const multerProduct =require('../middlewares/multerProduct')
 const multerBanner=require("../middlewares/multerBanner.js")
 const multerCarta=require("../middlewares/multerCarta")
 
+//VALIDATORS
+const adminValidator = require("../validators/newProductsValidaror")
+
 //RUTAS
 
 router.get('/',userAdminCheck, controller.lista);
 
 router.get('/newProduct', controller.mostrarForm);
-router.post('/newProduct',multerProduct.any(), controller.publicar);
+router.post('/newProduct',multerProduct.any(), adminValidator, controller.publicar);
 
 router.get("/banner",controller.banner)
 router.post("/banner",multerBanner.any(),controller.bannerpub)
