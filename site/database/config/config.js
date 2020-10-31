@@ -2,7 +2,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": null,
-    "database": "butterfly-pix-bit",
+    "database": "Butterfly_pixbit_v2",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "port":3306

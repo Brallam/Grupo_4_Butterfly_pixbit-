@@ -28,7 +28,7 @@ module.exports = [
                 return false
             }
         }
-    }).withMessage('extencion invalida')
+    }).withMessage('Extencion de imagen invalida')
 
     //check('price').isNumeric().withMessage('El precio debe ser numeros')
     
