@@ -69,11 +69,11 @@
                           </tr>
                         </thead>
                         <tbody>
-                            <% usuarios.forEach(producto => { %>
+                            <% usuarios.forEach(user => { %>
                           
                           <tr>
-                            <th scope="row"> <%- producto.id %> </th>
-                           <td> <a href="/users/profile/<%-producto.id%> "><%- producto.name %></a></td>
+                            <th scope="row"> <%- user.id %> </th>
+                           <td> <a href="/users/profile/<%-user.id%> "><%- user.name %></a></td>
                           </tr>
                         
                           <% }); %> 

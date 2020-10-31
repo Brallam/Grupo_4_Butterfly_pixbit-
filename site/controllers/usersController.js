@@ -77,7 +77,7 @@ module.exports = {
             email:req.body.email.trim(),
             password:bcrypt.hashSync(req.body.password,10),
             image: (req.files[0])?req.files[0].filename:"default-image.png",
-            admin: true
+            admin: false
         }
         )
         .then(function(result){
@@ -139,5 +139,12 @@ module.exports = {
         res.cookie('usrsess','',{maxAge:-1})
     }
     res.redirect('/')
-   }
-}
+   },
+   eliminar:function(req,res){
+        
+        db.users.destroy({
+            where:{
+                id:req.params.id
+            }
+        })
+}}
