@@ -12,7 +12,15 @@
                         <label for="image"><i class="fas fa-cloud-upload-alt labeledit" aria-hidden="true"> Cambiar foto</i><input id="image"type="file" class="imputedit formimagen" name="image"></label>
                         
                       </div>
+                      <div class="errores">
+
                     </div>
+                    <% if(typeof errors != 'undefined'){ %> 
+                        <% for (let i = 0; i < errors.length; i++){ %> 
+                            <small class="text-danger"><%= errors[i].msg %></small><br>
+                        <% } %>                      
+                <% } %> 
+                </div>
                 <ul class=" id col-12 col-md-6">
                 <li >Numero de Identificacion: <%-user.id%>  </li>
                 <li>Nombre: <input class="nombre formNombre" type="text" name="name" id="nombre-de-usuario " value="<%- (typeof old != 'undefined' && old.name)?old.name:user.name %> "> </li>
@@ -20,14 +28,8 @@
                 <li >Email: <%-user.email%>  </li>
                 <li>Juegos Adquiridos: Undefined </li>
                 </ul>
-                <% if(typeof errors != 'undefined'){ %> 
-                    <% for (let i = 0; i < errors.length; i++){ %> 
-                        <small class="text-danger"><%= errors[i].msg %></small><br>
-                    <% } %>                      
-            <% } %> 
-            <div class="errores">
-
-            </div>
+                
+            
                 <div class="col-12">
                 <button type="submit" class=" btn-success col-6 col-md-2 editbttm">Guardar</button><a href="/users/profile/<%-user.id%>"><button type="button" class="editbttm btn-success col-6 col-md-2">Atras</button></a>
                 </div>

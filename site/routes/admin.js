@@ -31,7 +31,7 @@ router.get("/card",controller.carta)
 router.post("/card",multerCarta.any(),controller.cartapub)
 
 router.get('/editproduct/:id', userAdminCheck, controller.edit);
-router.post('/editproduct/:id',multerProduct.any(), controller.editp);
+router.post('/editproduct/:id',multerProduct.any(), adminValidator, controller.editp);
 
 router.get("/editbanner/:id",userAdminCheck,controller.banneredit)
 router.post("/editbanner/:id",multerBanner.any(),controller.bannereditp)

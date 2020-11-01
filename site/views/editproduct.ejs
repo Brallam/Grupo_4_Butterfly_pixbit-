@@ -6,6 +6,7 @@
     <script src="https://kit.fontawesome.com/d302e505c7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
     <link rel="stylesheet" href="/stylesheets/stylenewProduct.css">
+    <script src="/js-front/validnewProduct.js"></script>
     <title><%= title %></title>
 </head>
 
@@ -24,60 +25,67 @@
                     <img src="/images/LogoMakr_8h3KUr.png" alt="">
                     <h5>Carga de producto</h5>
                 </div>
+                <div class="errores caja0">
+                  <% if(typeof errors != 'undefined'){ %> 
+                    <% for (let i = 0; i < errors.length; i++){ %> 
+                        <small class="text-danger"><%= errors[i].msg %></small><br>
+                    <% } %>                      
+                  <% } %> 
+                </div>
                 <div class="row caja1">
                     <label for="nombre-producto">Nombre</label>
-                    <input class="nombre" type="text" name="name" id="nombre-producto " value="<%-producto.name %> ">
+                    <input class="nombre" type="text" name="name" id="nombre-producto " value="<%-(typeof old != 'undefined' && old.name)?old.name:producto.name %> ">
                 </div>
                 <div class="row caja2">
                     <label for="descripcion">Descripcion</label>
-                    <textarea class="descripcion" name="description" id="descripcion" cols="40" rows="6" ><%- producto.descripcion %> </textarea>
+                    <textarea class="descripcion" name="description" id="descripcion" cols="40" rows="6" ><%- (typeof old != 'undefined' && old.description)?old.description:producto.descripcion %> </textarea>
                 </div>
                 <div class="row caja3">
     <p>Generos</p>
     <div class="form-check">
-      <input class="form-check-input" type="radio" value="1" id="accion" name="genero" <% if(producto.id_genre==1){%> checked <% };%> >
+      <input class="form-check-input genero" type="radio" value="1" id="accion" name="genero" <% if(typeof old != 'undefined' && old.genero==1){%> checked <% } else if(typeof old == 'undefined' && producto.id_genre==1){ %> checked <% };%> >
       <label class="form-check-label" for="accion">
         Accion
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" value="2" id="disparos" name="genero" <% if(producto.id_genre==2){%> checked <% };%>>
+      <input class="form-check-input genero" type="radio" value="2" id="disparos" name="genero" <% if(typeof old != 'undefined' && old.genero==2){%> checked <% } else if(typeof old == 'undefined' && producto.id_genre==2){ %> checked <% };%>>
       <label class="form-check-label" for="disparos">
         Disparos
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" value="3" id="estrategia" name="genero"<% if(producto.id_genre==3){%> checked <% };%>>
+      <input class="form-check-input genero" type="radio" value="3" id="estrategia" name="genero"<% if(typeof old != 'undefined' && old.genero==3){%> checked <% } else if(typeof old == 'undefined' && producto.id_genre==3){ %> checked <% };%>>
       <label class="form-check-label" for="estrategia" >
         Estrategia
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" value="4" id="simulacion" name="genero" <% if(producto.id_genre==4){%> checked <% };%>>
+      <input class="form-check-input genero" type="radio" value="4" id="simulacion" name="genero" <% if(typeof old != 'undefined' && old.genero==4){%> checked <% } else if(typeof old == 'undefined' && producto.id_genre==4){ %> checked <% };%>>
       <label class="form-check-label" for="simulacion">
         Simulacion
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" value="5" id="deporte" name="genero"<% if(producto.id_genre==5){%> checked <% };%>>
+      <input class="form-check-input genero" type="radio" value="5" id="deporte" name="genero"<% if(typeof old != 'undefined' && old.genero==5){%> checked <% } else if(typeof old == 'undefined' && producto.id_genre==5){ %> checked <% };%>>
       <label class="form-check-label" for="deporte">
         Deporte
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" value="6" id="carrera" name="genero"<% if(producto.id_genre==6){%> checked <% };%>>
+      <input class="form-check-input genero" type="radio" value="6" id="carrera" name="genero"<% if(typeof old != 'undefined' && old.genero==6){%> checked <% } else if(typeof old == 'undefined' && producto.id_genre==6){ %> checked <% };%>>
       <label class="form-check-label" for="carrera">
         Carrera
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" value="7" id="aventura" name="genero"<% if(producto.id_genre==7){%> checked <% };%>>
+      <input class="form-check-input genero" type="radio" value="7" id="aventura" name="genero"<% if(typeof old != 'undefined' && old.genero==7){%> checked <% } else if(typeof old == 'undefined' && producto.id_genre==7){ %> checked <% };%>>
       <label class="form-check-label" for="aventura">
         Aventura
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" value="8" id="rol" name="genero"<% if(producto.id_genre==8){%> checked <% };%>>
+      <input class="form-check-input genero" type="radio" value="8" id="rol" name="genero"<% if(typeof old != 'undefined' && old.genero==8){%> checked <% } else if(typeof old == 'undefined' && producto.id_genre==8){ %> checked <% };%>>
         <label class="form-check-label" for="rol">
           Rol
         </label>
@@ -88,33 +96,32 @@
             <div class="col-12 col-md-7 cd">
               <div class="row caja4">
                 <label for="especificasiones">Especificasiones</label>
-                <textarea class="especificaiones" name="requirements" id="especificasiones" cols="40" rows="5"><%- producto.requisito %> </textarea>
+                <textarea class="especificaiones" name="requirements" id="especificasiones" cols="40" rows="5"><%- (typeof old != 'undefined' && old.requirements)?old.requirements:producto.requisito %> </textarea>
             </div>
                 <div class="row caja5">
                     <div class="uploadimage">
                     <i class="fas fa-images"></i>
                     <h6>Carga aqui las imagenes</h6>
-                    <input type="file" name="image">
-
+                    <input type="file" name="image" class="imagen">
                   </div>
                 </div>
                 <div class="row caja7">
                   <p>Este producto pertenece a ButterFlyPixbit?</p>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="propiedad" id="exampleRadios1" value="1" <% if(producto.propiedad==true){ %>  checked <%}%> >
+                    <input class="form-check-input" type="radio" name="propiedad" id="exampleRadios1" value="1" <% if(typeof old != 'undefined' && old.propiedad==1){%> checked <% } else if(typeof old == 'undefined' && producto.propiedad==true){ %> checked <% };%> >
                     <label class="form-check-label" for="exampleRadios1">
                       Si
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="propiedad" id="exampleRadios2" value="0"<% if(producto.propiedad==false){ %>  checked <%  } %>>
+                    <input class="form-check-input" type="radio" name="propiedad" id="exampleRadios2" value="0"<% if(typeof old != 'undefined' && old.propiedad==0){%> checked <% } else if(typeof old == 'undefined' && producto.propiedad==false){ %> checked <% };%>>
                     <label class="form-check-label" for="exampleRadios2">
                       No
                     </label>
                   </div>
                     <div class="precio">
                       <label for="precio"> </label>
-                      <input type="number" id="precio" name="price" value="<%-producto.price%>">
+                      <input type="number" id="precio" name="price" value="<%- (typeof old != 'undefined' && old.price)?old.price:producto.price%>">
                     </div>
                 </div>
             </div>

@@ -88,25 +88,47 @@ module.exports = {
         })
     },
     editp:(req,res)=>{
-        let id= Number(req.params.id)
-        let img
-        db.products.findAll({  include: [{association: "generos"}],
-        where:{id:id}})
-        .then((m)=>{
-            return img=m[0].image
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            let id= Number(req.params.id)
+            let img
+            db.products.findAll({  include: [{association: "generos"}],
+            where:{id:id}})
+            .then((m)=>{
+                return img=m[0].image
+            })
+            let producto={
+                name: req.body.name.trim(),
+                price: Number(req.body.price),
+                id_genre: req.body.genero,
+                descripcion: req.body.description.trim(),
+                requisito: req.body.requirements.trim(),
+                image: (req.files[0])?req.files[0].filename:img,
+                propiedad: Boolean(Number(req.body.propiedad))
+              }
+            db.products.update(producto,{  include: [{association: "generos"}],
+            where:{id:id}})
+            res.redirect('/admin')
+        }else{
+            console.log("error-----------------")
+            console.log(errors.errors)
+            console.log(req.body.genero)
+
+            db.products.findAll({  include: [{association: "generos"}],
+            where:{id: req.params.id}})
+            .then((m)=>{
+                console.log(m)
+                res.render("editproduct",{
+                    title:"Editar producto",
+                    producto:m[0],
+                    old: req.body,
+                    errors:errors.errors
+                })
         })
-        let producto={
-            name: req.body.name.trim(),
-            price: Number(req.body.price),
-            id_genre: req.body.genero,
-            descripcion: req.body.description.trim(),
-            requisito: req.body.requirements.trim(),
-            image: (req.files[0])?req.files[0].filename:img,
-            propiedad: Boolean(Number(req.body.propiedad))
-          }
-        db.products.update(producto,{  include: [{association: "generos"}],
-        where:{id:id}})
-        res.redirect('/admin')
+        }
+
+        
     },
     eliminar:function(req,res){
         
