@@ -50,11 +50,17 @@
     justify-content: center;
     text-align: center;
   }
+  .fafafa{
+    border:3px solid green;
+  }
+  .isinvalid{
+    border:3px solid red;
+  }
   .inf {
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  .btn-success {
+  .btn-success{
     margin-right: 30%;
   }
   /*LOGIN*/

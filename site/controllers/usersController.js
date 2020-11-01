@@ -36,20 +36,49 @@ module.exports = {
       
     },
     editf:(req,res,next)=>{
-        let id =req.params.id;
-        db.users.findAll({where: { id:id}})
-        .then((m)=>{
-        let newusr = {
-            id:Number(m.id),
-            name: req.body.name.trim(),
-            nameU: req.body.nameU.trim(),
-            email:m[0].email,
-            password:m[0].password,
-            admin:m[0].admin,
-            image: (req.files[0])?req.files[0].filename:m.image,
-         }
-         db.users.update(newusr, {where: { id:id}})
-        })
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            let id =req.params.id;
+            db.users.findAll({where: { id:id}})
+            .then((m)=>{
+                let newImagen = (typeof req.files[0] != 'undefined')?req.files[0].filename:m[0].image
+            let newusr = {
+                id:Number(m.id),
+                name: req.body.name.trim(),
+                nameU: req.body.nameU.trim(),
+                email:m[0].email,
+                password:m[0].password,
+                admin:m[0].admin,
+                image: newImagen,
+            }
+            req.session.userLog.name = req.body.name.trim()
+            req.session.userLog.nameU = req.body.nameU.trim()
+            req.session.userLog.image = newImagen
+            
+            db.users.update(newusr, {where: { id:id}})
+            res.redirect('/users/profile/' + id)
+            })
+        }else{
+            //res.redirect('/')
+            console.log(errors.errors)
+            
+            //console.log("hubo error!!!!")
+            let id  =req.params.id;
+            db.users.findAll({
+            where:{id: req.params.id}})
+            .then((m)=>{
+                res.render("editusr",{
+                    title:"Editar Perfil",
+                    user:m[0],
+                    old:req.body,
+                    errors:errors.errors,
+                    userLog: req.session.userLog
+                })
+            })
+        }
+
+        
 
     },
     registro:(req,res,next)=>{

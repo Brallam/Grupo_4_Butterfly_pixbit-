@@ -9,6 +9,7 @@ let controller = require('../controllers/usersController');
 //VALIDACIONES
 const registerValidator = require('../validators/registerValidator');
 const loginValidator = require('../validators/loginValidator');
+const editusrValidator = require('../validators/editusrValidator')
 
 //MIDDLEWARES
 const sessionUserCheck = require('../middlewares/sessionUserCheck')
@@ -22,7 +23,7 @@ router.get('/', function(req, res, next) {
 router.get("/profile/:id",controller.profile)
 
 router.get("/edit/:id",userCheck,controller.editper)
-router.post("/edit/:id",multerUsers.any(),controller.editf)
+router.post("/edit/:id",multerUsers.any(), editusrValidator ,controller.editf)
 
 router.get('/register',sessionUserCheck, controller.registro)
 router.post('/register', multerUsers.any(),registerValidator, controller.processRegister)
