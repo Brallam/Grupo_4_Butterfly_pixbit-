@@ -6,6 +6,7 @@
     <script src="https://kit.fontawesome.com/d302e505c7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
     <link rel="stylesheet" href="/stylesheets/stylenewProduct.css">
+    <script src="/js-front/validatornoticia.js"></script>
     <title><%= title %></title>
 </head>
 
@@ -24,13 +25,20 @@
                     <img src="/images/LogoMakr_8h3KUr.png" alt="">
                     <h5>Noticia tipo banner</h5>
                 </div>
+                <div class="errores">
+                  <% if(typeof errors != 'undefined'){ %> 
+                    <% for (let i = 0; i < errors.length; i++){ %> 
+                        <small class="text-danger"><%= errors[i].msg %></small><br>
+                    <% } %>             
+                  <% } %> 
+                </div>
                 <div class="uploadimage col-12">
                   <i class="fas fa-images col-12"></i>
                   <h6>Carga aqui las imagenes</h6>
                   <div class="alert alert-secondary" role="alert">
                     Se recomienda imagenes 1180x500
                   </div>
-                  <input class="col-12" type="file" name="image">
+                  <input class="col-12" type="file" name="image" accept="image/png, image/jpg, image/jpeg, image/gif">
                 </div>
                 <div class="row caja1">
                     <label for="nombre-producto">Titulo</label>

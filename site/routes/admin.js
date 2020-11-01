@@ -16,6 +16,8 @@ const multerCarta=require("../middlewares/multerCarta")
 
 //VALIDATORS
 const adminValidator = require("../validators/newProductsValidaror")
+const noticiavalidator= require("../validators/notivalidators");
+const notivalidators = require('../validators/notivalidators');
 
 //RUTAS
 
@@ -25,19 +27,19 @@ router.get('/newProduct', controller.mostrarForm);
 router.post('/newProduct',multerProduct.any(), adminValidator, controller.publicar);
 
 router.get("/banner",controller.banner)
-router.post("/banner",multerBanner.any(),controller.bannerpub)
+router.post("/banner",multerBanner.any(),notivalidators,controller.bannerpub)
 
 router.get("/card",controller.carta)
-router.post("/card",multerCarta.any(),controller.cartapub)
+router.post("/card",multerCarta.any(),noticiavalidator,controller.cartapub)
 
 router.get('/editproduct/:id', userAdminCheck, controller.edit);
 router.post('/editproduct/:id',multerProduct.any(), adminValidator, controller.editp);
 
 router.get("/editbanner/:id",userAdminCheck,controller.banneredit)
-router.post("/editbanner/:id",multerBanner.any(),controller.bannereditp)
+router.post("/editbanner/:id",multerBanner.any(),noticiavalidator,controller.bannereditp)
 
 router.get("/editcarta/:id",userAdminCheck,controller.cartaedit)
-router.post("/editcarta/:id",multerCarta.any(),controller.cartaeditp)
+router.post("/editcarta/:id",multerCarta.any(),noticiavalidator,controller.cartaeditp)
 
 router.delete("/deleteB/:id",userAdminCheck,controller.bannerdelete)
 
