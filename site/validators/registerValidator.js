@@ -4,9 +4,9 @@ let dbUsers = require('../data/databaseUsers');
 const db = require('../database/models')
 
 module.exports= [
-        check('name').trim().isLength({min: 1}).withMessage('El nombre es obligatorio'),
+        check('name').trim().isLength({min: 2}).withMessage('El nombre es obligatorio'),
 
-        check('nameU').trim().isLength({min: 1}).withMessage('El nombre de usuario es obligatorio'),
+        check('nameU').trim().isLength({min: 2}).withMessage('El nombre de usuario es obligatorio'),
 
         check('email').trim().isEmail().withMessage('El email ingresado es invalido'),
 
