@@ -15,7 +15,7 @@ module.exports = [
         }
     }).withMessage('Se necesita un genero.'),
 
-    check('requirements').trim().isLength({min:1}).withMessage('La descripcion es obligatoria'),
+    check('requirements').trim().isLength({min:1}).withMessage('Las especificaiones son obligatorias.'),
 
     body('image').custom(function(value,{req}){
         if(req.files[0] == undefined){
