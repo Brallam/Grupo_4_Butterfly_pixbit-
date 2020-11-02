@@ -11,7 +11,8 @@
                 <div class=" col-12 titulo4">
                     <h4>Login</h4>
                 </div>
-                <form action="" method="POST" class="col-12 col-md-5 formu">
+                <div id= "divError"></div><br>
+                <form action="" id = "formLogin" method="POST" class="col-12 col-md-5 formu">
                     <% if(typeof errors != 'undefined'){ %> 
                         <% for (let i = 0; i < errors.length; i++){ %> 
                             <small class="text-danger"><%= errors[i].msg %></small><br>

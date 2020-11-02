@@ -1,7 +1,7 @@
 window.addEventListener('load',function(){
-    console.log("esta enlasado")
+    console.log("esta enlasado")    
 
-    let form = document.querySelector('form')
+    let form = document.querySelector('form')                                                                                       
     let name = document.querySelector('.formNombre')
     let nameU = document.querySelector('.formNombreU')
     let imagen = document.querySelector('.formimagen')

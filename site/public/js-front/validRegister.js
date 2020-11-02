@@ -1,11 +1,13 @@
 window.addEventListener('load', function() {
-    let divErrores2 = document.getElementById('cajaErrores2');
 let divErrores = document.getElementById('cajaErrores');
 let form = document.getElementById('formulario');
 let name = document.getElementById('name')
 let nameU = document.getElementById('nameU') 
 let email = document.getElementById('email')
 let pass = document.getElementById('pwd')
+let pass2 = document.getElementById('pwd2')
+
+
 let emailregex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 let passregex = /^(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ]/;
 
@@ -23,7 +25,10 @@ if(!emailregex.test(email.value)){
     errors.push(' El formato de el email es inválido')
 }
 if(!passregex.test(pass.value)){
-    errors.push('La contraseña debe contener mayúscula y un número')
+    errors.push('La contraseña debe contener mayúscula y un número y una minuscula')
+}
+if(pass.value!=pass2.value){
+    errors.push('Las contraseñas deben ser iguales')
 }
 
 return errors
@@ -45,7 +50,6 @@ form.onsubmit=function(e){
         }
         })
 })
-
     console.log(email.value)
     e.preventDefault()
      divErrores.innerHTML = "";
