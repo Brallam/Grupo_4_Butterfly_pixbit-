@@ -25,15 +25,15 @@
                     <img src="/images/LogoMakr_8h3KUr.png" alt="">
                     <h5>Carga de producto</h5>
                 </div>
-                <div class="errores">
+                <div class="errores caja0">
 
-                </div>
-                <% if(typeof errors != 'undefined'){ %> 
-                  <% for (let i = 0; i < errors.length; i++){ %> 
-                      <small class="text-danger"><%= errors[i].msg %></small><br>
-                  <% } %>                      
-          <% } %> 
-                 
+                  <% if(typeof errors != 'undefined'){ %> 
+                    <% for (let i = 0; i < errors.length; i++){ %> 
+                        <small class="text-danger"><%= errors[i].msg %></small><br>
+                    <% } %> 
+                                         
+                  <% } %> 
+                    </div>
                 <div class="row caja1">
                     <label for="nombre-producto">Nombre</label>
                     <input class="nombre" type="text" name="name" id="nombre-producto "  value="<%= (typeof old != 'undefined' && old.name)?old.name:'' %>">
@@ -104,7 +104,7 @@
                     <div class="uploadimage">
                     <i class="fas fa-images"></i>
                     <h6>Carga aqui las imagenes</h6>
-                    <input type="file" name="image" class="imagen">
+                    <input type="file" name="image" class="imagen" accept="image/png, image/jpg, image/jpeg, image/gif">
                   </div>
                 </div>
                 <div class="row caja7">

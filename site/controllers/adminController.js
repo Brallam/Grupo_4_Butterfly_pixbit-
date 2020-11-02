@@ -88,25 +88,47 @@ module.exports = {
         })
     },
     editp:(req,res)=>{
-        let id= Number(req.params.id)
-        let img
-        db.products.findAll({  include: [{association: "generos"}],
-        where:{id:id}})
-        .then((m)=>{
-            return img=m[0].image
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            let id= Number(req.params.id)
+            let img
+            db.products.findAll({  include: [{association: "generos"}],
+            where:{id:id}})
+            .then((m)=>{
+                return img=m[0].image
+            })
+            let producto={
+                name: req.body.name.trim(),
+                price: Number(req.body.price),
+                id_genre: req.body.genero,
+                descripcion: req.body.description.trim(),
+                requisito: req.body.requirements.trim(),
+                image: (req.files[0])?req.files[0].filename:img,
+                propiedad: Boolean(Number(req.body.propiedad))
+              }
+            db.products.update(producto,{  include: [{association: "generos"}],
+            where:{id:id}})
+            res.redirect('/admin')
+        }else{
+            console.log("error-----------------")
+            console.log(errors.errors)
+            console.log(req.body.genero)
+
+            db.products.findAll({  include: [{association: "generos"}],
+            where:{id: req.params.id}})
+            .then((m)=>{
+                console.log(m)
+                res.render("editproduct",{
+                    title:"Editar producto",
+                    producto:m[0],
+                    old: req.body,
+                    errors:errors.errors
+                })
         })
-        let producto={
-            name: req.body.name.trim(),
-            price: Number(req.body.price),
-            id_genre: req.body.genero,
-            descripcion: req.body.description.trim(),
-            requisito: req.body.requirements.trim(),
-            image: (req.files[0])?req.files[0].filename:img,
-            propiedad: Boolean(Number(req.body.propiedad))
-          }
-        db.products.update(producto,{  include: [{association: "generos"}],
-        where:{id:id}})
-        res.redirect('/admin')
+        }
+
+        
     },
     eliminar:function(req,res){
         
@@ -120,15 +142,19 @@ module.exports = {
         db.products.findAll({include: [{association: "generos"}], })
         .then((m)=>{
         res.render("noticiabanner",{
-            title:"Carga del producto",
+            title:"Creacion banner",
             producto:m, 
         })
          })
         
     },
     bannerpub:(req,res)=>{
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            
         db.noticiabanner.create({
-            titulo: req.body.title.trim(),
+            titulo: req.body.name.trim(),
             descripcion: req.body.description.trim(),
             image: (req.files[0])?req.files[0].filename:"default-image.png", 
             ref:req.body.ref,
@@ -137,8 +163,23 @@ module.exports = {
             console.log(errores)
         })
         res.redirect('/admin')
+         }
+        else{
+            db.products.findAll({include: [{association: "generos"}], })
+            .then((m)=>{
+            res.render("noticiabanner",{
+                title:"Creacion banner",
+                producto:m, 
+                old:req.body,
+                errors:errors.errors
+            })  })
+            console.log("error-----------------")
+            console.log(errors.error);
+        }
+        
     },
     banneredit:(req,res)=>{
+        
         let id = req.params.id;
         db.products.findAll({include: [{association: "generos"}], })
         .then(m=>{ 
@@ -155,21 +196,38 @@ module.exports = {
         })
     },
     bannereditp:(req,res)=>{
+
     let id= Number(req.params.id)
     let img
+    let errors = validationResult(req);
+
+    if(errors.isEmpty()){
     db.noticiabanner.findAll({ 
         where:{id:id}})
         .then((m)=>{
         return img=m[0].image
          })
     let banner={
-         titulo: req.body.title.trim(),
+         titulo: req.body.name.trim(),
          descripcion: req.body.description.trim(),
          image: (req.files[0])?req.files[0].filename:img, 
          ref:req.body.ref,
       }
     db.noticiabanner.update(banner,{ where:{id:id}})
     res.redirect('/admin')
+     }
+     else{
+        db.products.findAll({include: [{association: "generos"}], })
+        .then((m)=>{
+        res.render("noticiabanner",{
+            title:"Creacion Banner",
+            producto:m, 
+            old:req.body,
+            errors:errors.errors
+        })  })
+        console.log("error-----------------")
+        console.log(errors.error);
+    }
  },
     bannerdelete:(req,res)=>{
             db.noticiabanner.destroy({
@@ -183,14 +241,16 @@ module.exports = {
         db.products.findAll({include: [{association: "generos"}], })
         .then((m)=>{
         res.render("noticiacarta",{
-            title:"Carga del producto",
+            title:"Creacion de tarjeta",
             producto:m, 
         })
          })
     },
     cartapub:(req,res)=>{
+    let errors = validationResult(req);
+    if(errors.isEmpty()){
         db.noticiacarta.create({
-            titulo: req.body.title.trim(),
+            titulo: req.body.name.trim(),
             descripcion: req.body.description.trim(),
             image: (req.files[0])?req.files[0].filename:"default-image.png", 
             ref:req.body.ref,
@@ -199,6 +259,20 @@ module.exports = {
             console.log(errores)
         })
         res.redirect('/admin')
+     }
+     else{
+        db.products.findAll({include: [{association: "generos"}], })
+        .then((m)=>{
+        res.render("noticiacarta",{
+            title:"Creacion de tarjeta", 
+            producto:m, 
+            old:req.body,
+            errors:errors.errors
+        })  })
+        console.log("error-----------------")
+        console.log(errors.error);
+    }
+
     },
     cartaedit:(req,res)=>{
         let id = req.params.id;
@@ -219,19 +293,34 @@ module.exports = {
     cartaeditp:(req,res)=>{
         let id= Number(req.params.id)
         let img
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
         db.noticiacarta.findAll({ 
             where:{id:id}})
             .then((m)=>{
             return img=m[0].image
              })
         let carta={
-             titulo: req.body.title.trim(),
+             titulo: req.body.name.trim(),
              descripcion: req.body.description.trim(),
              image: (req.files[0])?req.files[0].filename:img, 
              ref:req.body.ref,
           }
         db.noticiacarta.update(carta,{ where:{id:id}})
         res.redirect('/admin')
+         }
+         else{
+            db.products.findAll({include: [{association: "generos"}], })
+            .then((m)=>{
+            res.render("noticiacarta",{
+                title:"Creacion de tarjeta", 
+                producto:m, 
+                old:req.body,
+                errors:errors.errors
+            })  })
+            console.log("error-----------------")
+            console.log(errors.error);
+        }
      },
      cartadelete:(req,res)=>{
         db.noticiacarta.destroy({

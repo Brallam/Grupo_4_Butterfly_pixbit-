@@ -95,13 +95,7 @@
                                 <tr>
                                   <% let ref=null %> 
                                   <th scope="row"><%- m.id %></th>
-                                  <%let id=m.ref
-                                  dbP.forEach(m=>{
-                                    if(m.id==id){
-                                      ref=m.name
-                                    }
-                                  })%>
-                                  <td><%- ref %></td>
+                                  <td><%- m.titulo %></td>
                                   <td><a href="/admin/editbanner/<%-m.id%>">
                                    <button type="button" class="btn btn-info" >Editar</button></a>
                                    <form class="btn" action="/admin/deleteB/<%-m.id%>?_method=DELETE" method="POST"><button type="submit" class="btn btn-danger"> Borrar </button></td></form>

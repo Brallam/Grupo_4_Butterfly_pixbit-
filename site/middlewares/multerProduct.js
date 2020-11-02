@@ -11,6 +11,16 @@ let storage = multer.diskStorage({
     }
 })
 
-let upload = multer({storage:storage})
+let upload = multer({storage:storage,
+    fileFilter:(req,res,next)=>{
+        if(file.mimemtype=="image/png"||file.mimemtype=="image/jpg"||file.mimemtype=="image/jpeg"||file.mimemtype=="image/gif"){
+            next(null,true)
+        }
+        else{
+            next(null,false);
+            return next ({message:"Solo se acepta archivos jpg,png,jpeg y gif"});
+        }
+    }
+})
 
 module.exports = upload

@@ -2,14 +2,15 @@
 const fs = require("fs");
 const path = require("path");
 const bcrypt = require('bcrypt');
-var { check, validationResult, body } = require('express-validator')
+var {check , validationResult, body} = require('express-validator')
 //BASE DE DATOS
 let dbUsers = require('../data/databaseUsers');
 
 // SEQUELIZE
 const db = require('../database/models')
+
 module.exports = {
-    profile:(req,res,next)=>{
+    profile:(req,res,next)=>{  
         db.users.findAll(
             {where: { id:req.params.id}}
         )
@@ -19,7 +20,6 @@ module.exports = {
                 title: "Perfil ",
                 user:element[0],
                 userLog: req.session.userLog
-          
          }) } )
     },
     editper:(req,res,next)=>{
@@ -129,13 +129,13 @@ module.exports = {
        let errors = validationResult(req);
        
        if(errors.isEmpty()){
-           console.log('viene bieeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeen')
+           
         db.users.findOne({
             where:{
                 email:req.body.email
             }
         }).then(function(user){
-            console.log('salió maaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaal')
+            
             req.session.userLog={
             id:user.id,
             name:user.name,

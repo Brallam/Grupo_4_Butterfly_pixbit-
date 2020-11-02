@@ -3,20 +3,8 @@ const path = require('path');
 //let img = req.files[0].filename;
 
 module.exports = [
-    check('name').trim().isLength({min:1}).withMessage('El nombre es obligatorio.'),
-
+    check('name').trim().isLength({min:1}).withMessage('El titulo es obligatorio.'),
     check('description').trim().isLength({min:1}).withMessage('La descripcion es obligatoria.'),
-    
-    body('genero').custom(function(value,{req}){
-        if(value == undefined){
-            return false
-        }else{
-            return true
-        }
-    }).withMessage('Se necesita un genero.'),
-
-    check('requirements').trim().isLength({min:1}).withMessage('Las especificaiones son obligatorias.'),
-
     body('image').custom(function(value,{req}){
         if(req.files[0] == undefined){
             return true
