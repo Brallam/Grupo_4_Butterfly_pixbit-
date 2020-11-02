@@ -1,4 +1,4 @@
-//BASE DE DATOS
+//BASE DE DATOS JSON
 const dbProduct = require("../data/database");
 const dbUsers = require('../data/databaseUsers');
 //MODULOS 

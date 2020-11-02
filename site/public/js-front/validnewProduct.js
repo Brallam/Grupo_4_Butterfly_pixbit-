@@ -1,5 +1,5 @@
 //const { format } = require("sequelize/types/lib/utils");
-
+/*
 window.addEventListener('load', function() {
     console.log("esta enlasado")
 
@@ -55,4 +55,4 @@ window.addEventListener('load', function() {
             });
         }
     })
-})
+})*/

@@ -15,6 +15,7 @@ var recsess = require("./middlewares/usrsessmidd")
 
 var admin = require('./routes/admin')
 var carritoRouter=require("./routes/carrito")
+var userApisRouter = require('./routes/apis/usersApis')
 
 
 
@@ -41,6 +42,7 @@ app.use("/products", productRouter)
 app.use("/admin", admin)
 app.use("/carrito",carritoRouter)
 
+app.use("/api/users",userApisRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
