@@ -2,12 +2,12 @@
 var express = require('express');
 var router = express.Router();
 
+//CONTROLADOR
+var carritoController = require('../controllers/carritoController')
+
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render("carrito",{
-    title:"Carrito de compras",
-    userLog: req.session.userLog
-  });
-});
+router.get('/', carritoController.vistaCarrito);
+router.delete('/delete/:id', carritoController.borrarP)
+router.delete('/deleteAll', carritoController.borrarT)
 
 module.exports = router;

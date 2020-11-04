@@ -6,7 +6,7 @@ module.exports = {
         .then((element)=>{
                 let emails=[]
             for(let i = 0; i < element.length; i++) {
-                 emails.push(element[i].email);
+                 emails.push(element[i]);
                 
             }
 

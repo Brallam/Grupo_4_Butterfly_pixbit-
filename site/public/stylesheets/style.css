@@ -30,23 +30,17 @@ li {
   padding-bottom: 70px;
 }
 .osi{
-  display: none;
+  /*display: none;*/
   padding-bottom: 50px;
 }
 /*
 VARIABLES
 */
-:root {
-  color: blue;
-}
+
 body {
   background-image: url(/images/back.png);
   background-repeat: initial;
   background-size: 300px 300px;
-}
-input {
-  width: 145px;
-  overflow:hidden;
 }
 .imputedit{
   display: none;

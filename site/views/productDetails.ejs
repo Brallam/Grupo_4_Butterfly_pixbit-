@@ -1,7 +1,10 @@
 <%-include("./partials/head.ejs")%>
+<%-include("./partials/header.ejs")%>
 
 <body>
-    <%-include("./partials/header.ejs")%>
+
+    
+    <h6 class="osi">PelucheOsi</h6>
 
     <div class="container">
         <%- include("./partials/banner.ejs") %> 
@@ -60,8 +63,8 @@
                         </span>
                     </div>
                     <div class="col-4 col-md-4 ">
-                        <button class="botonAñadir" type="button">Añadir <i class="fa fa-shopping-cart"
-                                aria-hidden="true"></i></button>
+                        <form action="" method="POST"><button class="botonAñadir" type="submit">Añadir <i class="fa fa-shopping-cart"
+                            aria-hidden="true"></i></button></form>
                     </div>
                 </div>
             </div>

@@ -21,6 +21,12 @@ module.exports = {
       where:{id: req.params.id}
    })
    .then(function(element){
+     console.log("--------------------------------------------------")
+     console.log(element[0].name)
+     console.log(req.session.cart)
+     console.log("--------------------------------------------------")
+     
+
       res.render("productDetails", {
       title:"Detalle del producto",
       producto: element[0],
@@ -33,5 +39,40 @@ module.exports = {
         producto: producto[0],
         userLog: req.session.userLog
     });*/
-  }
+  },
+  detalleCarrito: function(req,res,next){
+    db.products.findAll({
+      include: [{association: "generos"}],
+        where:{id: req.params.id}
+     })
+     .then(function(element){
+      if(req.session.cart  == undefined){
+        req.session.cart = []
+      }
+       
+       
+       let producto = {
+         id: element[0].id,
+         name: element[0].name,
+         price: element[0].price,
+         image: element[0].image
+       }
+       let resultado = true
+       let productId = ()=>{
+         
+         req.session.cart.forEach(element => {
+         if(element.id == producto.id){
+           return resultado = false
+         }
+       })
+       return resultado
+      };
+       if(productId()){
+        req.session.cart.push(producto)
+       }
+       console.log(req.session.cart)
+       console.log(productId)
+      res.redirect("/products/"+req.params.id);
+     })
+  } 
 }
