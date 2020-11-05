@@ -33,7 +33,7 @@ window.addEventListener('load', function () {
                     errors.push('Las contraseñas deben ser iguales')
                 }
                 info.forEach(function (data) {
-                    if (data.email== email.value) {
+                    if (data.email == email.value) {
                         errors.push('El email está registrado')
                     }
                 })
