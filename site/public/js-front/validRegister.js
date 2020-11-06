@@ -37,7 +37,6 @@ window.addEventListener('load', function () {
                         errors.push('El email está registrado')
                     }
                 })
-
                 return errors
             }
             form.onsubmit = function (e) {
