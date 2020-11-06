@@ -12,7 +12,8 @@ const db = require('../database/models')
 module.exports = {
     profile:(req,res,next)=>{  
         db.users.findAll(
-            {where: { id:req.params.id}}
+            {where: { id:req.params.id},
+            include: [{association: "product"}]}
         )
         .then((element)=>{
             console.log(element)
@@ -131,6 +132,7 @@ module.exports = {
        if(errors.isEmpty()){
            
         db.users.findOne({
+            include: [{association: "product"}],
             where:{
                 email:req.body.email
             }
@@ -142,12 +144,14 @@ module.exports = {
             nameU:user.nameU,
             email:user.email,
             image:user.image,
-            admin:user.admin
+            admin:user.admin,
+            productos:user.product
             }
             if(req.body.remember=! undefined){
                 res.cookie("usrsess", req.session.userLog.email,{maxAge: 3.154e+10} )
             }
             res.locals.user = req.session.userLog
+            console.log(req.session.userLog.productos[0].cart.cantidad)
             res.redirect('/')
         })
         

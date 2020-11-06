@@ -11,7 +11,7 @@ module.exports=(sequelize,dataTypes)=>{
             primaryKey: true
         },
         cantidad : {
-            type: dataTypes.INTEGER(100),
+            type: dataTypes.STRING(500),
             allowNull:false
         },
     

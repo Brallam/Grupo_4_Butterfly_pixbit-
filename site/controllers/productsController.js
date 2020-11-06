@@ -22,7 +22,7 @@ module.exports = {
    })
    .then(function(element){
      console.log("--------------------------------------------------")
-     console.log(element[0].name)
+     console.log(element[0].generos.gname)
      console.log(req.session.cart)
      console.log("--------------------------------------------------")
      
@@ -46,33 +46,38 @@ module.exports = {
         where:{id: req.params.id}
      })
      .then(function(element){
-      if(req.session.cart  == undefined){
-        req.session.cart = []
-      }
-       
-       
-       let producto = {
-         id: element[0].id,
-         name: element[0].name,
-         price: element[0].price,
-         image: element[0].image
-       }
-       let resultado = true
-       let productId = ()=>{
+       if(req.session.userLog){
+        if(req.session.cart  == undefined){
+          req.session.cart = []
+        }
          
-         req.session.cart.forEach(element => {
-         if(element.id == producto.id){
-           return resultado = false
+         
+         let producto = {
+           id: element[0].id,
+           name: element[0].name,
+           price: element[0].price,
+           image: element[0].image
          }
-       })
-       return resultado
-      };
-       if(productId()){
-        req.session.cart.push(producto)
+         let resultado = true
+         let productId = ()=>{
+           
+           req.session.cart.forEach(element => {
+           if(element.id == producto.id){
+             return resultado = false
+           }
+         })
+         return resultado
+        };
+         if(productId()){
+          req.session.cart.push(producto)
+         }
+         console.log(req.session.cart)
+         console.log(productId)
+        res.redirect("/products/"+req.params.id);
+       }else{
+         res.redirect('/users/login')
        }
-       console.log(req.session.cart)
-       console.log(productId)
-      res.redirect("/products/"+req.params.id);
+      
      })
   } 
 }

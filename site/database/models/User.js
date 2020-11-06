@@ -46,5 +46,15 @@ let config = {
 
 const User = sequelize.define ( alias , cols, config)
 
+User.associate = function(models){
+    User.belongsToMany(models.products,{
+        as:"product",
+        through:"cart",
+        foreignKey:"id_user",
+        otherKey:"id_product",
+        timestamps: false
+    });
+}
+
 return User;
 }
