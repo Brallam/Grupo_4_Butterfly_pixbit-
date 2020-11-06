@@ -12,7 +12,7 @@
                 <li>Nombre: <%-user.name%>  </li>
                 <li>Nombre de usuario: <%-user.nameU%> </li>
                 <li>Email: <%-user.email%>  </li>
-                <li>Juegos Adquiridos: Undefined </li>
+                <li>Juegos Adquiridos: <%- user.product.length %>  </li>
                 </ul>
                 <%if (userLog!=undefined){ if(userLog.id==user.id){%>
                 <a href="/users/edit/<%-user.id%> "><button>Editar perfil</button></a>

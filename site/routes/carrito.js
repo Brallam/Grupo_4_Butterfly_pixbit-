@@ -7,6 +7,7 @@ var carritoController = require('../controllers/carritoController')
 
 /* GET home page. */
 router.get('/', carritoController.vistaCarrito);
+router.post('/', carritoController.processCart)
 router.delete('/delete/:id', carritoController.borrarP)
 router.delete('/deleteAll', carritoController.borrarT)
 
