@@ -19,7 +19,7 @@ const multerUsers =require('../middlewares/multerUsers')
 /* RUTAS DE USUARIOS */
 router.get('/', function(req, res, next) {
  res.send('respond with a resource');
-});
+}); 
 router.get("/profile/:id",controller.profile)
 
 router.get("/edit/:id",userCheck,controller.editper)
@@ -32,6 +32,9 @@ router.get("/login", controller.login )
 router.post('/login',loginValidator ,controller.processLogin)
 
 router.get('/logout', controller.logout)
+
+router.get("/keys",controller.key)
+
 
 
 

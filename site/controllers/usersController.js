@@ -180,4 +180,11 @@ module.exports = {
                 id:req.params.id
             }
         })
-}}
+},
+    key:((req,res)=>{
+        res.render("keys",{
+            title:"keys",
+            userLog:req.session.userLog
+        })
+      })
+}
