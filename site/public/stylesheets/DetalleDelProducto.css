@@ -115,14 +115,24 @@ DETALLE DEL PRODUCTO
 .tablek{
   background-color: rgba(90, 90, 90, 0.425);
 }
+.sinJuegos{
+  text-align: center;
+  font-size: 30px;
+}
   /*MEDIA QUERY DETALLE DEL PRODUCTO */
   @media (min-width: 767px) and (max-width: 2570px) {
     .img1{
       display: none;
        }
+    .cover{
+      width: 300px;
+    }
     }
     @media (min-width: 320px) and (max-width: 767px) {
       .img2{
       display: none;
       }
+      .cover{
+        width: 190px;
       }
+    }

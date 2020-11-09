@@ -186,10 +186,14 @@ module.exports = {
         )
         .then(function(element){
             let productoss = element[0].product
-            let productoFiltrado = []
+            let productoFiltrado = null
             productoss.forEach(element => {
+                if(productoFiltrado == null){
+                    productoFiltrado = []
+                }
                 productoFiltrado.push(element.dataValues)
             });
+            console.log(productoFiltrado)
             res.render("keys",{
                 title:"keys",
                 userLog:req.session.userLog,

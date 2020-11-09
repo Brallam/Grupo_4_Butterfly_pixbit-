@@ -63,8 +63,12 @@
                         </span>
                     </div>
                     <div class="col-4 col-md-4 ">
+                        <% if(puedeComprar){ %> 
                         <form action="" method="POST"><button class="botonAñadir" type="submit">Añadir <i class="fa fa-shopping-cart"
                             aria-hidden="true"></i></button></form>
+                        <% }else{ %>
+                            <p>ya tienes este producto</p>
+                        <% } %>  
                     </div>
                 </div>
             </div>
