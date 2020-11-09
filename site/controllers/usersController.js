@@ -17,11 +17,16 @@ module.exports = {
         )
         .then((element)=>{
             console.log(element)
-            res.render("usersProf",{
-                title: "Perfil ",
-                user:element[0],
-                userLog: req.session.userLog
-         }) } )
+            if(element.length != 0){
+                res.render("usersProf",{
+                    title: "Perfil ",
+                    user:element[0],
+                    userLog: req.session.userLog
+                })
+            }else{
+                res.redirect('/')
+            }
+        })
     },
     editper:(req,res,next)=>{
         let id  =req.params.id;

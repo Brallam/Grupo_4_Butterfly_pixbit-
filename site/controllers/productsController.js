@@ -16,10 +16,11 @@ module.exports = {
    })
    .then(function(element){
      console.log("--------------------------------------------------")
-    
+      
      console.log("--------------------------------------------------")
 
-    if(req.session.userLog){
+     if(element.length != 0){
+    if(req.session.userLog && element){
       let idUsers = []
         element[0].users.forEach(function(usuario){
           idUsers.push(usuario.id)
@@ -49,6 +50,9 @@ module.exports = {
       userLog: req.session.userLog,
       puedeComprar: compra()
   });
+}else{
+  res.redirect('/')
+}
    })
   },
   detalleCarrito: function(req,res,next){
