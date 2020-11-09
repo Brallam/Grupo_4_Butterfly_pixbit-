@@ -13,16 +13,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td ><div class="cover">Acerque el mause para revelar la key</div><div>dhasjdhadkjahdakdhasjdhsadadshjkdhashasjdhadsjk</div></td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-          </tr>
+          <% productos.forEach(element => { %> 
+            <tr>
+              <th scope="row"><%- element.id %></th>
+              <td><%- element.name %> </td>
+              <td ><div class="cover">Acerque el mause para revelar la key</div><div><%- element.cart.cantidad %></div></td>
+            </tr>
+          <% }); %> 
         </tbody>
       </table>
 </div>

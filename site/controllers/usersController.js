@@ -151,7 +151,6 @@ module.exports = {
                 res.cookie("usrsess", req.session.userLog.email,{maxAge: 3.154e+10} )
             }
             res.locals.user = req.session.userLog
-            console.log(req.session.userLog.productos[0].cart.cantidad)
             res.redirect('/')
         })
         
@@ -160,8 +159,7 @@ module.exports = {
             title:'Iniciar Sesion',
             errors: errors.errors,
             userLog: req.session.userLog,
-            old:req.body,
-
+            old:req.body
           })
        }
    },
@@ -182,9 +180,21 @@ module.exports = {
         })
 },
     key:((req,res)=>{
-        res.render("keys",{
-            title:"keys",
-            userLog:req.session.userLog
+        db.users.findAll(
+            {where: { id:req.session.userLog.id},
+            include: [{association: "product"}]}
+        )
+        .then(function(element){
+            let productoss = element[0].product
+            let productoFiltrado = []
+            productoss.forEach(element => {
+                productoFiltrado.push(element.dataValues)
+            });
+            res.render("keys",{
+                title:"keys",
+                userLog:req.session.userLog,
+                productos:productoFiltrado
+            })
         })
       })
 }

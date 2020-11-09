@@ -14,6 +14,7 @@ const editusrValidator = require('../validators/editusrValidator')
 //MIDDLEWARES
 const sessionUserCheck = require('../middlewares/sessionUserCheck')
 const userCheck=require("../middlewares/editmidd")
+const userLog = require('../middlewares/userLog')
 const multerUsers =require('../middlewares/multerUsers')
 
 /* RUTAS DE USUARIOS */
@@ -33,7 +34,7 @@ router.post('/login',loginValidator ,controller.processLogin)
 
 router.get('/logout', controller.logout)
 
-router.get("/keys",controller.key)
+router.get("/keys",userLog,controller.key)
 
 
 
