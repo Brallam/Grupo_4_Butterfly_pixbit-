@@ -61,7 +61,7 @@ module.exports = {
         where:{id: req.params.id}
      })
     .then(function(element){
-      if(req.session.userLog){
+      //if(req.session.userLog){
 
 
         let idUsers = []
@@ -112,9 +112,9 @@ module.exports = {
 
 
         
-      }else{
-        res.redirect('/users/login')
-      }
+      //}else{
+        //res.redirect('/users/login')
+      //}
       
      })
   }
