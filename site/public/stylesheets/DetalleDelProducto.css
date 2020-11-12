@@ -98,16 +98,41 @@ DETALLE DEL PRODUCTO
   }
  .detalles3 span .fas {
     font-size: 30px;  }
-
-
+/* Keys */
+.cover{
+  text-align: center;
+  background-color: black;
+  width: 400px;
+  position:absolute;
+}
+.cover:hover{
+  display: none;
+}
+.titJ{
+  text-align: center;
+  color: #2792ad;
+}
+.tablek{
+  background-color: rgba(90, 90, 90, 0.425);
+}
+.sinJuegos{
+  text-align: center;
+  font-size: 30px;
+}
   /*MEDIA QUERY DETALLE DEL PRODUCTO */
   @media (min-width: 767px) and (max-width: 2570px) {
     .img1{
       display: none;
        }
+    .cover{
+      width: 300px;
+    }
     }
     @media (min-width: 320px) and (max-width: 767px) {
       .img2{
       display: none;
       }
+      .cover{
+        width: 190px;
       }
+    }

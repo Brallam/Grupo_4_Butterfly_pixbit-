@@ -13,6 +13,9 @@ GENERAL
   box-sizing: border-box;
   margin: 0;
 }
+.principal{
+  min-height: 70vh;
+}
 a {
   text-decoration: none;
   color: black;
@@ -31,7 +34,7 @@ li {
 }
 .osi{
   /*display: none;*/
-  padding-bottom: 50px;
+  padding-bottom: 91.08px;
 }
 /*
 VARIABLES
@@ -101,7 +104,7 @@ body {
   }
   .osi{
     display: block;
-    padding-bottom: 155px;
+    padding-bottom: 173px;
   }
   /*
     home

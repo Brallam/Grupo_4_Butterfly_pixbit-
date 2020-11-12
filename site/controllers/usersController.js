@@ -17,11 +17,16 @@ module.exports = {
         )
         .then((element)=>{
             console.log(element)
-            res.render("usersProf",{
-                title: "Perfil ",
-                user:element[0],
-                userLog: req.session.userLog
-         }) } )
+            if(element.length != 0){
+                res.render("usersProf",{
+                    title: "Perfil ",
+                    user:element[0],
+                    userLog: req.session.userLog
+                })
+            }else{
+                res.redirect('/')
+            }
+        })
     },
     editper:(req,res,next)=>{
         let id  =req.params.id;
@@ -151,7 +156,6 @@ module.exports = {
                 res.cookie("usrsess", req.session.userLog.email,{maxAge: 3.154e+10} )
             }
             res.locals.user = req.session.userLog
-            console.log(req.session.userLog.productos[0].cart.cantidad)
             res.redirect('/')
         })
         
@@ -160,8 +164,7 @@ module.exports = {
             title:'Iniciar Sesion',
             errors: errors.errors,
             userLog: req.session.userLog,
-            old:req.body,
-
+            old:req.body
           })
        }
    },
@@ -180,4 +183,27 @@ module.exports = {
                 id:req.params.id
             }
         })
-}}
+},
+    key:((req,res)=>{
+        db.users.findAll(
+            {where: { id:req.session.userLog.id},
+            include: [{association: "product"}]}
+        )
+        .then(function(element){
+            let productoss = element[0].product
+            let productoFiltrado = null
+            productoss.forEach(element => {
+                if(productoFiltrado == null){
+                    productoFiltrado = []
+                }
+                productoFiltrado.push(element.dataValues)
+            });
+            console.log(productoFiltrado)
+            res.render("keys",{
+                title:"keys",
+                userLog:req.session.userLog,
+                productos:productoFiltrado
+            })
+        })
+      })
+}

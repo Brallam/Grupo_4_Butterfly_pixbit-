@@ -2,10 +2,6 @@
 <%-include("./partials/header.ejs")%>
 
 <body>
-
-    
-    <h6 class="osi">PelucheOsi</h6>
-
     <div class="container">
         <%- include("./partials/banner.ejs") %> 
         <div class="row">
@@ -63,8 +59,12 @@
                         </span>
                     </div>
                     <div class="col-4 col-md-4 ">
+                        <% if(puedeComprar){ %> 
                         <form action="" method="POST"><button class="botonAñadir" type="submit">Añadir <i class="fa fa-shopping-cart"
                             aria-hidden="true"></i></button></form>
+                        <% }else{ %>
+                            <p>ya tienes este producto</p>
+                        <% } %>  
                     </div>
                 </div>
             </div>
