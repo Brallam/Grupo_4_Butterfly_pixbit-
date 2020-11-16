@@ -14,7 +14,7 @@ GENERAL
   margin: 0;
 }
 .principal{
-  min-height: 70vh;
+  min-height: calc(100vh - 91.08px - 216px);
 }
 a {
   text-decoration: none;
@@ -34,7 +34,7 @@ li {
 }
 .osi{
   /*display: none;*/
-  padding-bottom: 91.08px;
+  padding-bottom: 83.08px;
 }
 /*
 VARIABLES
