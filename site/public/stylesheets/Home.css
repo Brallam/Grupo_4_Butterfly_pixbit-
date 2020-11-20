@@ -41,11 +41,11 @@
     float:left;
     font-size: 500%;
   }
-  .description{
+  .descriptionb{
     display:none ;
     font-size: 130%;
   }
-  .imgbox:hover .description{
+  .imgbox:hover .descriptionb{
     display: block;
   }
   .contnoti{display: flex;

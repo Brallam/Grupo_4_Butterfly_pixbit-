@@ -55,7 +55,6 @@ module.exports = {
                 image: (req.files[0])?req.files[0].filename:"default-image.png",
                 propiedad: Boolean(Number(req.body.propiedad))
             })
-           
             .catch(errores=>{
                 console.log(errores)
             })
@@ -137,7 +136,8 @@ module.exports = {
                 id:req.params.id
             }
         })
-        return res.redirect('/admin')},
+        res.redirect('/admin')
+    },
     banner:(req,res)=>{
         db.products.findAll({include: [{association: "generos"}], })
         .then((m)=>{

@@ -18,6 +18,7 @@ header {
   }
   .avatarimg{
     width: 60px;
+    height: 60px;
     margin: 0px;
     border-radius: 50px;
   }

@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 cajaPrincipal">
-                <div class="col-4"><img src="/images/users/<%=user.image%> " alt="" class="img-fluid"></div>
+                <div class="col-4"><img src="/images/users/<%=user.image%> " alt="" class="img-fluid" style="width: 100%;;"></div>
                 <ul>
                 <li class="">Numero de Identificacion: <%-user.id%>  </li>
                 <li>Nombre: <%-user.name%>  </li>
@@ -14,7 +14,7 @@
                 <li>Juegos Adquiridos: <%- user.product.length %>  </li>
                 </ul>
                 <%if (userLog!=undefined){ if(userLog.id==user.id){%>
-                <a href="/users/edit/<%-user.id%> "><button>Editar perfil</button></a>
+                <div><a href="/users/edit/<%-user.id%> "><button>Editar perfil</button></a></div>
                 <% } }%>
             </div>
             

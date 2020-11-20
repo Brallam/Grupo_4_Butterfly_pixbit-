@@ -29,8 +29,8 @@ router.post("/edit/:id",multerUsers.any(), editusrValidator ,controller.editf)
 router.get('/register',sessionUserCheck, controller.registro)
 router.post('/register', multerUsers.any(),registerValidator, controller.processRegister)
 
-router.get("/login", controller.login )
-router.post('/login',loginValidator ,controller.processLogin)
+router.get("/login", sessionUserCheck, controller.login )
+router.post('/login',loginValidator,controller.processLogin)
 
 router.get('/logout', controller.logout)
 

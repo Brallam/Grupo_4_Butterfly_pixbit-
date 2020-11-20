@@ -45,26 +45,31 @@ module.exports = {
         let errors = validationResult(req);
 
         if(errors.isEmpty()){
-            let id =req.params.id;
-            db.users.findAll({where: { id:id}})
+            let ids = req.params.id;
+            db.users.findOne({where: { id:ids}})
             .then((m)=>{
-                let newImagen = (typeof req.files[0] != 'undefined')?req.files[0].filename:m[0].image
+                console.log(m)
+            let newImagen = (typeof req.files[0] != 'undefined')?req.files[0].filename:m.image
             let newusr = {
                 id:Number(m.id),
                 name: req.body.name.trim(),
                 nameU: req.body.nameU.trim(),
-                email:m[0].email,
-                password:m[0].password,
-                admin:m[0].admin,
-                image: newImagen,
+                email:m.email,
+                password:m.password,
+                admin:m.admin,
+                image: (typeof req.files[0] != 'undefined')?req.files[0].filename:m.image,
             }
             req.session.userLog.name = req.body.name.trim()
             req.session.userLog.nameU = req.body.nameU.trim()
             req.session.userLog.image = newImagen
             
-            db.users.update(newusr, {where: { id:id}})
-            res.redirect('/users/profile/' + id)
+            db.users.update(newusr, {where: {id:ids}})
+            res.redirect('/users/profile/' + ids)
             })
+            .catch(function(error){
+                console.log(error)
+            })
+            
         }else{
             //res.redirect('/')
             console.log(errors.errors)
